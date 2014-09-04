@@ -1,0 +1,562 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B27453E419B8AEB4003BDC07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27453E319B8AEB4003BDC07 /* Foundation.framework */; };
+		B27453E619B8AEB4003BDC07 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27453E519B8AEB4003BDC07 /* CoreGraphics.framework */; };
+		B27453E819B8AEB4003BDC07 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27453E719B8AEB4003BDC07 /* UIKit.framework */; };
+		B27453EE19B8AEB4003BDC07 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B27453EC19B8AEB4003BDC07 /* InfoPlist.strings */; };
+		B27453F019B8AEB4003BDC07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B27453EF19B8AEB4003BDC07 /* main.m */; };
+		B27453F419B8AEB4003BDC07 /* ReachMeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B27453F319B8AEB4003BDC07 /* ReachMeAppDelegate.m */; };
+		B27453F719B8AEB4003BDC07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27453F519B8AEB4003BDC07 /* Main.storyboard */; };
+		B27453FA19B8AEB4003BDC07 /* ReachMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27453F919B8AEB4003BDC07 /* ReachMeViewController.m */; };
+		B27453FC19B8AEB4003BDC07 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27453FB19B8AEB4003BDC07 /* Images.xcassets */; };
+		B274540319B8AEB4003BDC07 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274540219B8AEB4003BDC07 /* XCTest.framework */; };
+		B274540419B8AEB4003BDC07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27453E319B8AEB4003BDC07 /* Foundation.framework */; };
+		B274540519B8AEB4003BDC07 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27453E719B8AEB4003BDC07 /* UIKit.framework */; };
+		B274540D19B8AEB4003BDC07 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B274540B19B8AEB4003BDC07 /* InfoPlist.strings */; };
+		B274540F19B8AEB4003BDC07 /* ReachMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B274540E19B8AEB4003BDC07 /* ReachMeTests.m */; };
+		B274542119B8B064003BDC07 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274541D19B8B064003BDC07 /* FacebookSDK.framework */; };
+		B274542219B8B064003BDC07 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274541E19B8B064003BDC07 /* GoogleOpenSource.framework */; };
+		B274542319B8B064003BDC07 /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B274541F19B8B064003BDC07 /* GooglePlus.bundle */; };
+		B274542419B8B064003BDC07 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274542019B8B064003BDC07 /* GooglePlus.framework */; };
+		B274542519B8B07C003BDC07 /* GooglePlus.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = B274541F19B8B064003BDC07 /* GooglePlus.bundle */; };
+		B274542719B8B351003BDC07 /* facebook-login-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = B274542619B8B351003BDC07 /* facebook-login-btn.png */; };
+		B274542919B8B48B003BDC07 /* google-plus-login-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = B274542819B8B48B003BDC07 /* google-plus-login-btn.png */; };
+		B274542D19B8B66B003BDC07 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B274542C19B8B66B003BDC07 /* MBProgressHUD.m */; };
+		B274542F19B8B85F003BDC07 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274542E19B8B85F003BDC07 /* AssetsLibrary.framework */; };
+		B274543119B8B868003BDC07 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274543019B8B868003BDC07 /* AddressBook.framework */; };
+		B274543319B8B872003BDC07 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274543219B8B872003BDC07 /* CoreLocation.framework */; };
+		B274543519B8B87A003BDC07 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274543419B8B87A003BDC07 /* CoreMotion.framework */; };
+		B274543719B8B886003BDC07 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274543619B8B886003BDC07 /* CoreText.framework */; };
+		B274543919B8B88C003BDC07 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274543819B8B88C003BDC07 /* MediaPlayer.framework */; };
+		B274543B19B8B894003BDC07 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274543A19B8B894003BDC07 /* Security.framework */; };
+		B274543D19B8B89E003BDC07 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274543C19B8B89E003BDC07 /* SystemConfiguration.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B274540619B8AEB4003BDC07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B27453D819B8AEB4003BDC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B27453DF19B8AEB4003BDC07;
+			remoteInfo = ReachMe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B27453E019B8AEB4003BDC07 /* ReachMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReachMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B27453E319B8AEB4003BDC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B27453E519B8AEB4003BDC07 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B27453E719B8AEB4003BDC07 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B27453EB19B8AEB4003BDC07 /* ReachMe-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ReachMe-Info.plist"; sourceTree = "<group>"; };
+		B27453ED19B8AEB4003BDC07 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B27453EF19B8AEB4003BDC07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B27453F119B8AEB4003BDC07 /* ReachMe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReachMe-Prefix.pch"; sourceTree = "<group>"; };
+		B27453F219B8AEB4003BDC07 /* ReachMeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReachMeAppDelegate.h; sourceTree = "<group>"; };
+		B27453F319B8AEB4003BDC07 /* ReachMeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReachMeAppDelegate.m; sourceTree = "<group>"; };
+		B27453F619B8AEB4003BDC07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B27453F819B8AEB4003BDC07 /* ReachMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReachMeViewController.h; sourceTree = "<group>"; };
+		B27453F919B8AEB4003BDC07 /* ReachMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReachMeViewController.m; sourceTree = "<group>"; };
+		B27453FB19B8AEB4003BDC07 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B274540119B8AEB4003BDC07 /* ReachMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReachMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B274540219B8AEB4003BDC07 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B274540A19B8AEB4003BDC07 /* ReachMeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ReachMeTests-Info.plist"; sourceTree = "<group>"; };
+		B274540C19B8AEB4003BDC07 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B274540E19B8AEB4003BDC07 /* ReachMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReachMeTests.m; sourceTree = "<group>"; };
+		B274541D19B8B064003BDC07 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = frameworks/FacebookSDK.framework; sourceTree = "<group>"; };
+		B274541E19B8B064003BDC07 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleOpenSource.framework; path = frameworks/GoogleOpenSource.framework; sourceTree = "<group>"; };
+		B274541F19B8B064003BDC07 /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlus.bundle; path = frameworks/GooglePlus.bundle; sourceTree = "<group>"; };
+		B274542019B8B064003BDC07 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlus.framework; path = frameworks/GooglePlus.framework; sourceTree = "<group>"; };
+		B274542619B8B351003BDC07 /* facebook-login-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-login-btn.png"; sourceTree = "<group>"; };
+		B274542819B8B48B003BDC07 /* google-plus-login-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-plus-login-btn.png"; sourceTree = "<group>"; };
+		B274542B19B8B66B003BDC07 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		B274542C19B8B66B003BDC07 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		B274542E19B8B85F003BDC07 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		B274543019B8B868003BDC07 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		B274543219B8B872003BDC07 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B274543419B8B87A003BDC07 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		B274543619B8B886003BDC07 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		B274543819B8B88C003BDC07 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		B274543A19B8B894003BDC07 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B274543C19B8B89E003BDC07 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B27453DD19B8AEB4003BDC07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B274543D19B8B89E003BDC07 /* SystemConfiguration.framework in Frameworks */,
+				B274543B19B8B894003BDC07 /* Security.framework in Frameworks */,
+				B274543919B8B88C003BDC07 /* MediaPlayer.framework in Frameworks */,
+				B274543719B8B886003BDC07 /* CoreText.framework in Frameworks */,
+				B274543519B8B87A003BDC07 /* CoreMotion.framework in Frameworks */,
+				B274543319B8B872003BDC07 /* CoreLocation.framework in Frameworks */,
+				B274543119B8B868003BDC07 /* AddressBook.framework in Frameworks */,
+				B274542F19B8B85F003BDC07 /* AssetsLibrary.framework in Frameworks */,
+				B274542219B8B064003BDC07 /* GoogleOpenSource.framework in Frameworks */,
+				B274542419B8B064003BDC07 /* GooglePlus.framework in Frameworks */,
+				B27453E619B8AEB4003BDC07 /* CoreGraphics.framework in Frameworks */,
+				B274542119B8B064003BDC07 /* FacebookSDK.framework in Frameworks */,
+				B274542519B8B07C003BDC07 /* GooglePlus.bundle in Frameworks */,
+				B27453E819B8AEB4003BDC07 /* UIKit.framework in Frameworks */,
+				B27453E419B8AEB4003BDC07 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B27453FE19B8AEB4003BDC07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B274540319B8AEB4003BDC07 /* XCTest.framework in Frameworks */,
+				B274540519B8AEB4003BDC07 /* UIKit.framework in Frameworks */,
+				B274540419B8AEB4003BDC07 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B27453D719B8AEB4003BDC07 = {
+			isa = PBXGroup;
+			children = (
+				B274542A19B8B66B003BDC07 /* MBProgressHUD */,
+				B274541819B8B049003BDC07 /* assets */,
+				B27453E919B8AEB4003BDC07 /* ReachMe */,
+				B274540819B8AEB4003BDC07 /* ReachMeTests */,
+				B27453E219B8AEB4003BDC07 /* Frameworks */,
+				B27453E119B8AEB4003BDC07 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B27453E119B8AEB4003BDC07 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B27453E019B8AEB4003BDC07 /* ReachMe.app */,
+				B274540119B8AEB4003BDC07 /* ReachMeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B27453E219B8AEB4003BDC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B274543C19B8B89E003BDC07 /* SystemConfiguration.framework */,
+				B274543A19B8B894003BDC07 /* Security.framework */,
+				B274543819B8B88C003BDC07 /* MediaPlayer.framework */,
+				B274543619B8B886003BDC07 /* CoreText.framework */,
+				B274543419B8B87A003BDC07 /* CoreMotion.framework */,
+				B274543219B8B872003BDC07 /* CoreLocation.framework */,
+				B274543019B8B868003BDC07 /* AddressBook.framework */,
+				B274542E19B8B85F003BDC07 /* AssetsLibrary.framework */,
+				B274541D19B8B064003BDC07 /* FacebookSDK.framework */,
+				B274541E19B8B064003BDC07 /* GoogleOpenSource.framework */,
+				B274541F19B8B064003BDC07 /* GooglePlus.bundle */,
+				B274542019B8B064003BDC07 /* GooglePlus.framework */,
+				B27453E319B8AEB4003BDC07 /* Foundation.framework */,
+				B27453E519B8AEB4003BDC07 /* CoreGraphics.framework */,
+				B27453E719B8AEB4003BDC07 /* UIKit.framework */,
+				B274540219B8AEB4003BDC07 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B27453E919B8AEB4003BDC07 /* ReachMe */ = {
+			isa = PBXGroup;
+			children = (
+				B27453F219B8AEB4003BDC07 /* ReachMeAppDelegate.h */,
+				B27453F319B8AEB4003BDC07 /* ReachMeAppDelegate.m */,
+				B27453F519B8AEB4003BDC07 /* Main.storyboard */,
+				B27453F819B8AEB4003BDC07 /* ReachMeViewController.h */,
+				B27453F919B8AEB4003BDC07 /* ReachMeViewController.m */,
+				B27453FB19B8AEB4003BDC07 /* Images.xcassets */,
+				B27453EA19B8AEB4003BDC07 /* Supporting Files */,
+			);
+			path = ReachMe;
+			sourceTree = "<group>";
+		};
+		B27453EA19B8AEB4003BDC07 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B27453EB19B8AEB4003BDC07 /* ReachMe-Info.plist */,
+				B27453EC19B8AEB4003BDC07 /* InfoPlist.strings */,
+				B27453EF19B8AEB4003BDC07 /* main.m */,
+				B27453F119B8AEB4003BDC07 /* ReachMe-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B274540819B8AEB4003BDC07 /* ReachMeTests */ = {
+			isa = PBXGroup;
+			children = (
+				B274540E19B8AEB4003BDC07 /* ReachMeTests.m */,
+				B274540919B8AEB4003BDC07 /* Supporting Files */,
+			);
+			path = ReachMeTests;
+			sourceTree = "<group>";
+		};
+		B274540919B8AEB4003BDC07 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B274540A19B8AEB4003BDC07 /* ReachMeTests-Info.plist */,
+				B274540B19B8AEB4003BDC07 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B274541819B8B049003BDC07 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				B274542819B8B48B003BDC07 /* google-plus-login-btn.png */,
+				B274542619B8B351003BDC07 /* facebook-login-btn.png */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
+		B274542A19B8B66B003BDC07 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				B274542B19B8B66B003BDC07 /* MBProgressHUD.h */,
+				B274542C19B8B66B003BDC07 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B27453DF19B8AEB4003BDC07 /* ReachMe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B274541219B8AEB4003BDC07 /* Build configuration list for PBXNativeTarget "ReachMe" */;
+			buildPhases = (
+				B27453DC19B8AEB4003BDC07 /* Sources */,
+				B27453DD19B8AEB4003BDC07 /* Frameworks */,
+				B27453DE19B8AEB4003BDC07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReachMe;
+			productName = ReachMe;
+			productReference = B27453E019B8AEB4003BDC07 /* ReachMe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B274540019B8AEB4003BDC07 /* ReachMeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B274541519B8AEB4003BDC07 /* Build configuration list for PBXNativeTarget "ReachMeTests" */;
+			buildPhases = (
+				B27453FD19B8AEB4003BDC07 /* Sources */,
+				B27453FE19B8AEB4003BDC07 /* Frameworks */,
+				B27453FF19B8AEB4003BDC07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B274540719B8AEB4003BDC07 /* PBXTargetDependency */,
+			);
+			name = ReachMeTests;
+			productName = ReachMeTests;
+			productReference = B274540119B8AEB4003BDC07 /* ReachMeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B27453D819B8AEB4003BDC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ReachMe;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = IntruO;
+				TargetAttributes = {
+					B274540019B8AEB4003BDC07 = {
+						TestTargetID = B27453DF19B8AEB4003BDC07;
+					};
+				};
+			};
+			buildConfigurationList = B27453DB19B8AEB4003BDC07 /* Build configuration list for PBXProject "ReachMe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B27453D719B8AEB4003BDC07;
+			productRefGroup = B27453E119B8AEB4003BDC07 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B27453DF19B8AEB4003BDC07 /* ReachMe */,
+				B274540019B8AEB4003BDC07 /* ReachMeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B27453DE19B8AEB4003BDC07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B27453FC19B8AEB4003BDC07 /* Images.xcassets in Resources */,
+				B274542719B8B351003BDC07 /* facebook-login-btn.png in Resources */,
+				B274542919B8B48B003BDC07 /* google-plus-login-btn.png in Resources */,
+				B27453EE19B8AEB4003BDC07 /* InfoPlist.strings in Resources */,
+				B27453F719B8AEB4003BDC07 /* Main.storyboard in Resources */,
+				B274542319B8B064003BDC07 /* GooglePlus.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B27453FF19B8AEB4003BDC07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B274540D19B8AEB4003BDC07 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B27453DC19B8AEB4003BDC07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B27453FA19B8AEB4003BDC07 /* ReachMeViewController.m in Sources */,
+				B27453F419B8AEB4003BDC07 /* ReachMeAppDelegate.m in Sources */,
+				B27453F019B8AEB4003BDC07 /* main.m in Sources */,
+				B274542D19B8B66B003BDC07 /* MBProgressHUD.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B27453FD19B8AEB4003BDC07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B274540F19B8AEB4003BDC07 /* ReachMeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B274540719B8AEB4003BDC07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B27453DF19B8AEB4003BDC07 /* ReachMe */;
+			targetProxy = B274540619B8AEB4003BDC07 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B27453EC19B8AEB4003BDC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B27453ED19B8AEB4003BDC07 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B27453F519B8AEB4003BDC07 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B27453F619B8AEB4003BDC07 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B274540B19B8AEB4003BDC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B274540C19B8AEB4003BDC07 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B274541019B8AEB4003BDC07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B274541119B8AEB4003BDC07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B274541319B8AEB4003BDC07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ReachMe/ReachMe-Prefix.pch";
+				INFOPLIST_FILE = "ReachMe/ReachMe-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B274541419B8AEB4003BDC07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ReachMe/ReachMe-Prefix.pch";
+				INFOPLIST_FILE = "ReachMe/ReachMe-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B274541619B8AEB4003BDC07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ReachMe.app/ReachMe";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ReachMe/ReachMe-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ReachMeTests/ReachMeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		B274541719B8AEB4003BDC07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ReachMe.app/ReachMe";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ReachMe/ReachMe-Prefix.pch";
+				INFOPLIST_FILE = "ReachMeTests/ReachMeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B27453DB19B8AEB4003BDC07 /* Build configuration list for PBXProject "ReachMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B274541019B8AEB4003BDC07 /* Debug */,
+				B274541119B8AEB4003BDC07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B274541219B8AEB4003BDC07 /* Build configuration list for PBXNativeTarget "ReachMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B274541319B8AEB4003BDC07 /* Debug */,
+				B274541419B8AEB4003BDC07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B274541519B8AEB4003BDC07 /* Build configuration list for PBXNativeTarget "ReachMeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B274541619B8AEB4003BDC07 /* Debug */,
+				B274541719B8AEB4003BDC07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B27453D819B8AEB4003BDC07 /* Project object */;
+}
