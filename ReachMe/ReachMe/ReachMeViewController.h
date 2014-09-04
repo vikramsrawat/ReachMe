@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ReachMeAppDelegate.h"
+#import <FacebookSDK/FacebookSDK.h>
+@interface ReachMeViewController : UIViewController <FBLoginViewDelegate>
 
-@interface ReachMeViewController : UIViewController
-
+@property (strong, nonatomic) ReachMeAppDelegate *appDelegate;
 @end

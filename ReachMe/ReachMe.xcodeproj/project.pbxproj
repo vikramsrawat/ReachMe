@@ -37,6 +37,9 @@
 		B274543919B8B88C003BDC07 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274543819B8B88C003BDC07 /* MediaPlayer.framework */; };
 		B274543B19B8B894003BDC07 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274543A19B8B894003BDC07 /* Security.framework */; };
 		B274543D19B8B89E003BDC07 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274543C19B8B89E003BDC07 /* SystemConfiguration.framework */; };
+		B274544019B8CDC7003BDC07 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = B274543F19B8CDC7003BDC07 /* Constants.m */; };
+		B274544D19B8CF70003BDC07 /* ReachMeUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B274544C19B8CF70003BDC07 /* ReachMeUserInfoViewController.m */; };
+		B274545019B8D69D003BDC07 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = B274544F19B8D69D003BDC07 /* Utils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,12 @@
 		B274543819B8B88C003BDC07 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		B274543A19B8B894003BDC07 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B274543C19B8B89E003BDC07 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B274543E19B8CDC7003BDC07 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		B274543F19B8CDC7003BDC07 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		B274544B19B8CF70003BDC07 /* ReachMeUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachMeUserInfoViewController.h; sourceTree = "<group>"; };
+		B274544C19B8CF70003BDC07 /* ReachMeUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachMeUserInfoViewController.m; sourceTree = "<group>"; };
+		B274544E19B8D69D003BDC07 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		B274544F19B8D69D003BDC07 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +179,10 @@
 		B27453E919B8AEB4003BDC07 /* ReachMe */ = {
 			isa = PBXGroup;
 			children = (
+				B274544B19B8CF70003BDC07 /* ReachMeUserInfoViewController.h */,
+				B274544C19B8CF70003BDC07 /* ReachMeUserInfoViewController.m */,
+				B274543E19B8CDC7003BDC07 /* Constants.h */,
+				B274543F19B8CDC7003BDC07 /* Constants.m */,
 				B27453F219B8AEB4003BDC07 /* ReachMeAppDelegate.h */,
 				B27453F319B8AEB4003BDC07 /* ReachMeAppDelegate.m */,
 				B27453F519B8AEB4003BDC07 /* Main.storyboard */,
@@ -177,6 +190,8 @@
 				B27453F919B8AEB4003BDC07 /* ReachMeViewController.m */,
 				B27453FB19B8AEB4003BDC07 /* Images.xcassets */,
 				B27453EA19B8AEB4003BDC07 /* Supporting Files */,
+				B274544E19B8D69D003BDC07 /* Utils.h */,
+				B274544F19B8D69D003BDC07 /* Utils.m */,
 			);
 			path = ReachMe;
 			sourceTree = "<group>";
@@ -329,9 +344,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B274544019B8CDC7003BDC07 /* Constants.m in Sources */,
+				B274544D19B8CF70003BDC07 /* ReachMeUserInfoViewController.m in Sources */,
 				B27453FA19B8AEB4003BDC07 /* ReachMeViewController.m in Sources */,
 				B27453F419B8AEB4003BDC07 /* ReachMeAppDelegate.m in Sources */,
 				B27453F019B8AEB4003BDC07 /* main.m in Sources */,
+				B274545019B8D69D003BDC07 /* Utils.m in Sources */,
 				B274542D19B8B66B003BDC07 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,6 +565,7 @@
 				B274541419B8AEB4003BDC07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B274541519B8AEB4003BDC07 /* Build configuration list for PBXNativeTarget "ReachMeTests" */ = {
 			isa = XCConfigurationList;
@@ -555,6 +574,7 @@
 				B274541719B8AEB4003BDC07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

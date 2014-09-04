@@ -22,6 +22,9 @@
                                 <state key="normal" title="Button" image="facebook-login-btn.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="doFBLogin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="KXI-n0-NML"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qj2-b4-pgf">
                                 <rect key="frame" x="60" y="303" width="200" height="42"/>
@@ -29,6 +32,9 @@
                                 <state key="normal" title="Button" image="google-plus-login-btn.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="doGPlusLogin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CG0-nv-YsB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -36,6 +42,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="4" y="43"/>
+        </scene>
+        <!--Reach Me User Info View Controller-->
+        <scene sceneID="g0h-wv-y6f">
+            <objects>
+                <viewController storyboardIdentifier="UserInfo" id="XrS-T2-u52" customClass="ReachMeUserInfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VaC-8A-b2K"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q7Z-8W-GSz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0kS-uo-9Bp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XCI-Mx-z0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="387" y="43"/>
         </scene>
     </scenes>
     <resources>
