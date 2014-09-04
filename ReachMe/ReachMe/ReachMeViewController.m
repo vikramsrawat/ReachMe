@@ -9,6 +9,7 @@
 #import "ReachMeViewController.h"
 #import "MBProgressHUD.h"
 #import "Utils.h"
+#import "Constants.h"
 @interface ReachMeViewController ()
 
 @end
@@ -29,6 +30,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)doFBLogin:(id)sender {
+    [Utils setLoginContext:FB];
     {
         // If the session state is any of the two "open" states when the button is clicked
         if (FBSession.activeSession.state == FBSessionStateOpen
@@ -42,7 +44,7 @@
         } else {
             // Open a session showing the user the login UI
             // You must ALWAYS ask for public_profile permissions when opening a session
-            [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"]
+            [FBSession openActiveSessionWithReadPermissions:@[@"public_profile,email"]
                                                allowLoginUI:YES
                                           completionHandler:
              ^(FBSession *session, FBSessionState state, NSError *error) {
@@ -50,7 +52,7 @@
                  // Retrieve the app delegate
                  
                  // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
-                 [self.sessionStateChanged:session state:state error:error];
+                 [self sessionStateChanged:session state:state error:error];
              }];
         }
     }
@@ -58,20 +60,37 @@
 - (IBAction)doGPlusLogin:(id)sender {
 }
 
+-(void)showUserInfoView{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *userInfoVC = [storyboard instantiateViewControllerWithIdentifier:@"UserInfo"];
+    [self.appDelegate.window.rootViewController presentViewController:userInfoVC animated:YES completion:nil];
+}
+
 - (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error
 {
     // If the session was opened successfully
     if (!error && state == FBSessionStateOpen){
         NSLog(@"Session opened");
+        [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection,
+                                                               id<FBGraphUser> user,
+                                                               NSError *error2) {
+            
+            NSLog(@"user = %@",user);
+            [Utils setLoginContext:FB];
+            [Utils setContextId:user.objectID];
+            [self showUserInfoView];
+            return;
+            
+        }];
         // Show the user the logged-in UI
-        [Utils
-        return;
+        
+        
     }
     if (state == FBSessionStateClosed || state == FBSessionStateClosedLoginFailed){
         // If the session is closed
         NSLog(@"Session closed");
         // Show the user the logged-out UI
-        [self userLoggedOut];
+//        [self userLoggedOut];
     }
     
     // Handle errors
@@ -83,7 +102,7 @@
         if ([FBErrorUtility shouldNotifyUserForError:error] == YES){
             alertTitle = @"Something went wrong";
             alertText = [FBErrorUtility userMessageForError:error];
-            [self showMessage:alertText withTitle:alertTitle];
+//            [self showMessage:alertText withTitle:alertTitle];
         } else {
             
             // If the user cancelled login, do nothing
@@ -94,7 +113,7 @@
             } else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryAuthenticationReopenSession){
                 alertTitle = @"Session Error";
                 alertText = @"Your current session is no longer valid. Please log in again.";
-                [self showMessage:alertText withTitle:alertTitle];
+//                [self showMessage:alertText withTitle:alertTitle];
                 
                 // Here we will handle all other errors with a generic error message.
                 // We recommend you check our Handling Errors guide for more information
@@ -106,13 +125,13 @@
                 // Show the user an error message
                 alertTitle = @"Something went wrong";
                 alertText = [NSString stringWithFormat:@"Please retry. \n\n If the problem persists contact us and mention this error code: %@", [errorInformation objectForKey:@"message"]];
-                [self showMessage:alertText withTitle:alertTitle];
+//                [self showMessage:alertText withTitle:alertTitle];
             }
         }
         // Clear this token
         [FBSession.activeSession closeAndClearTokenInformation];
         // Show the user the logged-out UI
-        [self userLoggedOut];
+//        [self userLoggedOut];
     }
 }
 @end

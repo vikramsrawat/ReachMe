@@ -40,6 +40,7 @@
 		B274544019B8CDC7003BDC07 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = B274543F19B8CDC7003BDC07 /* Constants.m */; };
 		B274544D19B8CF70003BDC07 /* ReachMeUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B274544C19B8CF70003BDC07 /* ReachMeUserInfoViewController.m */; };
 		B274545019B8D69D003BDC07 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = B274544F19B8D69D003BDC07 /* Utils.m */; };
+		B274545319B8EFFC003BDC07 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B274545219B8EFFC003BDC07 /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		B274544C19B8CF70003BDC07 /* ReachMeUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachMeUserInfoViewController.m; sourceTree = "<group>"; };
 		B274544E19B8D69D003BDC07 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		B274544F19B8D69D003BDC07 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		B274545119B8EFFC003BDC07 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		B274545219B8EFFC003BDC07 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +195,8 @@
 				B27453EA19B8AEB4003BDC07 /* Supporting Files */,
 				B274544E19B8D69D003BDC07 /* Utils.h */,
 				B274544F19B8D69D003BDC07 /* Utils.m */,
+				B274545119B8EFFC003BDC07 /* User.h */,
+				B274545219B8EFFC003BDC07 /* User.m */,
 			);
 			path = ReachMe;
 			sourceTree = "<group>";
@@ -344,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B274545319B8EFFC003BDC07 /* User.m in Sources */,
 				B274544019B8CDC7003BDC07 /* Constants.m in Sources */,
 				B274544D19B8CF70003BDC07 /* ReachMeUserInfoViewController.m in Sources */,
 				B27453FA19B8AEB4003BDC07 /* ReachMeViewController.m in Sources */,

@@ -11,7 +11,7 @@
 @interface Utils : NSObject
 
 +(void)setLoginContext:(NSString*)ctx;
-+(NSString*)ctxId;
++(void)setContextId:(NSString*)ctxId;
 +(NSString*)getLoginContext;
 +(NSString*)getContextId;
 
