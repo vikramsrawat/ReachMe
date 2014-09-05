@@ -7,7 +7,6 @@
 //
 
 #import "ReachMeViewController.h"
-#import "MBProgressHUD.h"
 #import "Utils.h"
 #import "Constants.h"
 #import <GoogleOpenSource/GoogleOpenSource.h>
@@ -48,6 +47,7 @@ static NSString * const kClientId = @"130182801305-tei60s241j8u1nnqg2fqqi8jj7nfk
 }
 - (IBAction)doFBLogin:(id)sender {
     [Utils setLoginContext:FB];
+    [self.appDelegate showLoading];
     {
         // If the session state is any of the two "open" states when the button is clicked
         if (FBSession.activeSession.state == FBSessionStateOpen
@@ -76,6 +76,7 @@ static NSString * const kClientId = @"130182801305-tei60s241j8u1nnqg2fqqi8jj7nfk
 }
 - (IBAction)doGPlusLogin:(id)sender {
     [Utils setLoginContext:GPLUS];
+    [self.appDelegate showLoading];
     [signIn authenticate];
 }
 

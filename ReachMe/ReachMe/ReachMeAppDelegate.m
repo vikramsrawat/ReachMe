@@ -11,6 +11,7 @@
 #import "Utils.h"
 #import "Constants.h"
 #import <GooglePlus/GooglePlus.h>
+#import "MBProgressHUD.h"
 @implementation ReachMeAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -67,5 +68,13 @@
                              annotation:annotation];
     }
     return wasHandled;
+}
+
+-(void)showLoading {
+    [MBProgressHUD showHUDAddedTo:self.window.rootViewController.view animated:YES];
+}
+
+-(void)hideLoading {
+    [MBProgressHUD hideHUDForView:self.window.rootViewController.view animated:YES];
 }
 @end

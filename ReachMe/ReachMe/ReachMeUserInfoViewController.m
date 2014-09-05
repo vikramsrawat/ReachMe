@@ -28,6 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.appDelegate = [UIApplication sharedApplication].delegate;
+    [self.appDelegate hideLoading];
 }
 
 - (void)didReceiveMemoryWarning

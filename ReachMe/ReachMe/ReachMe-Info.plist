@@ -35,7 +35,7 @@
 			<string>com.intruo.ReachMe</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.IntruO.ReachMe</string>
+				<string>com.intruo.ReachMe</string>
 			</array>
 		</dict>
 	</array>

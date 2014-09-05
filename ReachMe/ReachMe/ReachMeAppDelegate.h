@@ -10,6 +10,8 @@
 
 @interface ReachMeAppDelegate : UIResponder <UIApplicationDelegate>
 
+-(void)showLoading;
+-(void)hideLoading;
 @property (strong, nonatomic) UIWindow *window;
 
 @end
