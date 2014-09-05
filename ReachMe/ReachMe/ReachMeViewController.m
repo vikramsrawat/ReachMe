@@ -10,12 +10,14 @@
 #import "MBProgressHUD.h"
 #import "Utils.h"
 #import "Constants.h"
+#import <GoogleOpenSource/GoogleOpenSource.h>
 @interface ReachMeViewController ()
-
+@property (strong, nonatomic) GPPSignIn *signIn;
 @end
 
 @implementation ReachMeViewController
-
+@synthesize appDelegate, signIn;
+static NSString * const kClientId = @"130182801305-tei60s241j8u1nnqg2fqqi8jj7nfktii.apps.googleusercontent.com";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -24,6 +26,21 @@
     self.appDelegate = [UIApplication sharedApplication].delegate;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    self.signIn = [GPPSignIn sharedInstance];
+    self.signIn.shouldFetchGooglePlusUser = YES;
+    self.signIn.shouldFetchGoogleUserEmail = YES;  // Uncomment to get the user's email
+    
+    // You previously set kClientId in the "Initialize the Google+ client" step
+    self.signIn.clientID = kClientId;
+    
+    // Uncomment one of these two statements for the scope you chose in the previous step
+    self.signIn.scopes = @[ kGTLAuthScopePlusLogin ];  // "https://www.googleapis.com/auth/plus.login" scope
+    self.signIn.scopes = @[ @"profile" ];            // "profile" scope
+    
+    // Optional: declare signIn.actions, see "app activities"
+    self.signIn.delegate = self;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -58,6 +75,8 @@
     }
 }
 - (IBAction)doGPlusLogin:(id)sender {
+    [Utils setLoginContext:GPLUS];
+    [signIn authenticate];
 }
 
 -(void)showUserInfoView{
@@ -132,6 +151,18 @@
         [FBSession.activeSession closeAndClearTokenInformation];
         // Show the user the logged-out UI
 //        [self userLoggedOut];
+    }
+}
+
+- (void)finishedWithAuth: (GTMOAuth2Authentication *)auth
+                   error: (NSError *) error {
+    NSLog(@"Received error %@ and auth object %@",error, auth);
+    if (!error) {
+        NSLog(@"id = %@", signIn.userID);
+        NSLog(@"id = %@", signIn.userID);
+        [self showUserInfoView];
+    }else {
+        
     }
 }
 @end

@@ -10,6 +10,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "Utils.h"
 #import "Constants.h"
+#import <GooglePlus/GooglePlus.h>
 @implementation ReachMeAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -61,9 +62,10 @@
         // You can add your app-specific url handling code here if needed
         
     }else if ([loginCtx isEqualToString:GPLUS]){
-        
+        wasHandled = [GPPURLHandler handleURL:url
+                      sourceApplication:sourceApplication
+                             annotation:annotation];
     }
     return wasHandled;
-
 }
 @end

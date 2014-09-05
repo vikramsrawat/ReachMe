@@ -20,8 +20,31 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1430255697227837</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.intruo.ReachMe</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.IntruO.ReachMe</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
+	<key>FacebookAppID</key>
+	<string>1430255697227837</string>
+	<key>FacebookDisplayName</key>
+	<string>ReachMe</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIMainStoryboardFile</key>
@@ -36,18 +59,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fb1430255697227837</string>
-			</array>
-		</dict>
-	</array>
-	<key>FacebookAppID</key>
-	<string>1430255697227837</string>
-	<key>FacebookDisplayName</key>
-	<string>ReachMe</string>
 </dict>
 </plist>

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ReachMeAppDelegate.h"
 @interface ReachMeUserInfoViewController : UIViewController
-
+@property (strong, nonatomic) ReachMeAppDelegate *appDelegate;
 @end
