@@ -20,6 +20,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:ctxId forKey:@"ctxId"];
 }
+
 +(NSString*)getLoginContext {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     return [defaults objectForKey:@"ctx"] ? [defaults objectForKey:@"ctx"] : NULL;
