@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ReachMeAppDelegate.h"
 @interface ReachMeUserInfoViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextView *addressTextView;
 @property (strong, nonatomic) ReachMeAppDelegate *appDelegate;
 @end

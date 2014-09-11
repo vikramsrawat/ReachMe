@@ -7,7 +7,7 @@
 //
 
 #import "ReachMeUserInfoViewController.h"
-
+#import <QuartzCore/QuartzCore.h>
 @interface ReachMeUserInfoViewController ()
 
 @end
@@ -29,6 +29,16 @@
     // Do any additional setup after loading the view.
     self.appDelegate = [UIApplication sharedApplication].delegate;
     [self.appDelegate hideLoading];
+    
+    
+    //To make the border look very close to a UITextField
+    [_addressTextView.layer setBorderColor:[[[UIColor lightGrayColor] colorWithAlphaComponent:0.5] CGColor]];
+    [_addressTextView.layer setBorderWidth:.5];
+    
+    //The rounded corner part, where you specify your view's corner radius:
+    _addressTextView.layer.cornerRadius = 5;
+    _addressTextView.clipsToBounds = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning

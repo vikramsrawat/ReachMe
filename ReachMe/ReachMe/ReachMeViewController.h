@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ReachMeAppDelegate.h"
-#import <FacebookSDK/FacebookSDK.h>
-#import <GooglePlus/GooglePlus.h>
-@interface ReachMeViewController : UIViewController <FBLoginViewDelegate, GPPSignInDelegate> 
+@interface ReachMeViewController : UIViewController<UITextFieldDelegate>
 
 @property (strong, nonatomic) ReachMeAppDelegate *appDelegate;
+@property (weak, nonatomic) IBOutlet UITextField *input_phone;
+- (IBAction)registerBtn:(id)sender;
 @end
