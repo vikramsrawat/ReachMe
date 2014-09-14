@@ -39,7 +39,7 @@
 
 -(void)showUserInfoView{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *userInfoVC = [storyboard instantiateViewControllerWithIdentifier:@"UserInfo"];
+    UITabBarController *userInfoVC = [storyboard instantiateViewControllerWithIdentifier:@"TabsView"];
     [self.appDelegate.window.rootViewController presentViewController:userInfoVC animated:YES completion:nil];
 }
 

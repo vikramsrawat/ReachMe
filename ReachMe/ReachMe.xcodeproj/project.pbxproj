@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B209B04619C4385000D1E6A5 /* address.png in Resources */ = {isa = PBXBuildFile; fileRef = B209B04419C4385000D1E6A5 /* address.png */; };
+		B209B04719C4385000D1E6A5 /* directions.png in Resources */ = {isa = PBXBuildFile; fileRef = B209B04519C4385000D1E6A5 /* directions.png */; };
+		B209B04A19C4CD6500D1E6A5 /* ReachMeDirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B209B04919C4CD6500D1E6A5 /* ReachMeDirectionsViewController.m */; };
+		B209B04D19C5504B00D1E6A5 /* address@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B209B04B19C5504B00D1E6A5 /* address@2x.png */; };
+		B209B04E19C5504B00D1E6A5 /* directions@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B209B04C19C5504B00D1E6A5 /* directions@2x.png */; };
 		B27453E419B8AEB4003BDC07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27453E319B8AEB4003BDC07 /* Foundation.framework */; };
 		B27453E619B8AEB4003BDC07 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27453E519B8AEB4003BDC07 /* CoreGraphics.framework */; };
 		B27453E819B8AEB4003BDC07 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27453E719B8AEB4003BDC07 /* UIKit.framework */; };
@@ -26,8 +31,6 @@
 		B274542319B8B064003BDC07 /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B274541F19B8B064003BDC07 /* GooglePlus.bundle */; };
 		B274542419B8B064003BDC07 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274542019B8B064003BDC07 /* GooglePlus.framework */; };
 		B274542519B8B07C003BDC07 /* GooglePlus.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = B274541F19B8B064003BDC07 /* GooglePlus.bundle */; };
-		B274542719B8B351003BDC07 /* facebook-login-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = B274542619B8B351003BDC07 /* facebook-login-btn.png */; };
-		B274542919B8B48B003BDC07 /* google-plus-login-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = B274542819B8B48B003BDC07 /* google-plus-login-btn.png */; };
 		B274542D19B8B66B003BDC07 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B274542C19B8B66B003BDC07 /* MBProgressHUD.m */; };
 		B274542F19B8B85F003BDC07 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274542E19B8B85F003BDC07 /* AssetsLibrary.framework */; };
 		B274543119B8B868003BDC07 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274543019B8B868003BDC07 /* AddressBook.framework */; };
@@ -54,6 +57,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B209B04419C4385000D1E6A5 /* address.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = address.png; sourceTree = "<group>"; };
+		B209B04519C4385000D1E6A5 /* directions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directions.png; sourceTree = "<group>"; };
+		B209B04819C4CD6500D1E6A5 /* ReachMeDirectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachMeDirectionsViewController.h; sourceTree = "<group>"; };
+		B209B04919C4CD6500D1E6A5 /* ReachMeDirectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachMeDirectionsViewController.m; sourceTree = "<group>"; };
+		B209B04B19C5504B00D1E6A5 /* address@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "address@2x.png"; sourceTree = "<group>"; };
+		B209B04C19C5504B00D1E6A5 /* directions@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "directions@2x.png"; sourceTree = "<group>"; };
 		B27453E019B8AEB4003BDC07 /* ReachMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReachMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B27453E319B8AEB4003BDC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B27453E519B8AEB4003BDC07 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -77,8 +86,6 @@
 		B274541E19B8B064003BDC07 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleOpenSource.framework; path = frameworks/GoogleOpenSource.framework; sourceTree = "<group>"; };
 		B274541F19B8B064003BDC07 /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlus.bundle; path = frameworks/GooglePlus.bundle; sourceTree = "<group>"; };
 		B274542019B8B064003BDC07 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlus.framework; path = frameworks/GooglePlus.framework; sourceTree = "<group>"; };
-		B274542619B8B351003BDC07 /* facebook-login-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-login-btn.png"; sourceTree = "<group>"; };
-		B274542819B8B48B003BDC07 /* google-plus-login-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-plus-login-btn.png"; sourceTree = "<group>"; };
 		B274542B19B8B66B003BDC07 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		B274542C19B8B66B003BDC07 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		B274542E19B8B85F003BDC07 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -197,6 +204,8 @@
 				B274544F19B8D69D003BDC07 /* Utils.m */,
 				B274545119B8EFFC003BDC07 /* User.h */,
 				B274545219B8EFFC003BDC07 /* User.m */,
+				B209B04819C4CD6500D1E6A5 /* ReachMeDirectionsViewController.h */,
+				B209B04919C4CD6500D1E6A5 /* ReachMeDirectionsViewController.m */,
 			);
 			path = ReachMe;
 			sourceTree = "<group>";
@@ -233,8 +242,10 @@
 		B274541819B8B049003BDC07 /* assets */ = {
 			isa = PBXGroup;
 			children = (
-				B274542819B8B48B003BDC07 /* google-plus-login-btn.png */,
-				B274542619B8B351003BDC07 /* facebook-login-btn.png */,
+				B209B04B19C5504B00D1E6A5 /* address@2x.png */,
+				B209B04C19C5504B00D1E6A5 /* directions@2x.png */,
+				B209B04419C4385000D1E6A5 /* address.png */,
+				B209B04519C4385000D1E6A5 /* directions.png */,
 			);
 			path = assets;
 			sourceTree = "<group>";
@@ -326,11 +337,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B27453FC19B8AEB4003BDC07 /* Images.xcassets in Resources */,
-				B274542719B8B351003BDC07 /* facebook-login-btn.png in Resources */,
-				B274542919B8B48B003BDC07 /* google-plus-login-btn.png in Resources */,
+				B209B04D19C5504B00D1E6A5 /* address@2x.png in Resources */,
+				B209B04E19C5504B00D1E6A5 /* directions@2x.png in Resources */,
 				B27453EE19B8AEB4003BDC07 /* InfoPlist.strings in Resources */,
+				B209B04619C4385000D1E6A5 /* address.png in Resources */,
 				B27453F719B8AEB4003BDC07 /* Main.storyboard in Resources */,
 				B274542319B8B064003BDC07 /* GooglePlus.bundle in Resources */,
+				B209B04719C4385000D1E6A5 /* directions.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +366,7 @@
 				B274544019B8CDC7003BDC07 /* Constants.m in Sources */,
 				B274544D19B8CF70003BDC07 /* ReachMeUserInfoViewController.m in Sources */,
 				B27453FA19B8AEB4003BDC07 /* ReachMeViewController.m in Sources */,
+				B209B04A19C4CD6500D1E6A5 /* ReachMeDirectionsViewController.m in Sources */,
 				B27453F419B8AEB4003BDC07 /* ReachMeAppDelegate.m in Sources */,
 				B27453F019B8AEB4003BDC07 /* main.m in Sources */,
 				B274545019B8D69D003BDC07 /* Utils.m in Sources */,

@@ -11,4 +11,7 @@
 @interface ReachMeUserInfoViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextView *addressTextView;
 @property (strong, nonatomic) ReachMeAppDelegate *appDelegate;
+@property (weak, nonatomic) IBOutlet UITabBarItem *addressTabBtn;
+@property (weak, nonatomic) IBOutlet UITabBarItem *directionsTabBtn;
+
 @end
