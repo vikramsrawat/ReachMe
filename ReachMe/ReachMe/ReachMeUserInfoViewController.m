@@ -13,7 +13,7 @@
 @end
 
 @implementation ReachMeUserInfoViewController
-@synthesize appDelegate;
+@synthesize appDelegate, navItem;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -38,7 +38,6 @@
     //The rounded corner part, where you specify your view's corner radius:
     _addressTextView.layer.cornerRadius = 5;
     _addressTextView.clipsToBounds = YES;
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,4 +57,33 @@
 }
 */
 
+- (void)enableEditMode {
+    UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(disableEditMode)];
+    self.navItem.leftBarButtonItem = leftBtn;
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(saveAddress)];
+    self.navItem.rightBarButtonItem = rightBtn;
+}
+
+- (void)editAddress {
+    self.textFieldEmail.userInteractionEnabled = YES;
+    self.textFieldName.userInteractionEnabled = YES;
+    self.textFieldBusiness.userInteractionEnabled = YES;
+    self.addressTextView.userInteractionEnabled = YES;
+    self.btnEdit.title = @"Cancel";
+}
+
+- (void)disableEditMode {
+    UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(editAddress)];
+    self.navItem.leftBarButtonItem = leftBtn;
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"Share" style:UIBarButtonItemStylePlain target:self action:@selector(shareAddress)];
+    self.navItem.rightBarButtonItem = rightBtn;
+}
+
+- (void)shareAddress {
+    
+}
+
+- (void)saveAddress {
+    
+}
 @end

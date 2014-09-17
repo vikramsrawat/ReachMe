@@ -52,7 +52,7 @@
     
     if([self validatePhone]){
         [self.appDelegate showLoading];
-        NSTimer *aTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(timeUp) userInfo:nil repeats:NO];
+        NSTimer *aTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timeUp) userInfo:nil repeats:NO];
         
 //        [self showUserInfoView];
     }

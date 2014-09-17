@@ -30,4 +30,9 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     return [defaults objectForKey:@"ctxId"] ? [defaults objectForKey:@"ctxId"] : NULL;
 }
+
++(BOOL)isLoggedIn {
+    return [Utils getLoginContext] ? TRUE : FALSE;
+}
+
 @end

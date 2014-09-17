@@ -30,7 +30,6 @@
 		B274542219B8B064003BDC07 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274541E19B8B064003BDC07 /* GoogleOpenSource.framework */; };
 		B274542319B8B064003BDC07 /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B274541F19B8B064003BDC07 /* GooglePlus.bundle */; };
 		B274542419B8B064003BDC07 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274542019B8B064003BDC07 /* GooglePlus.framework */; };
-		B274542519B8B07C003BDC07 /* GooglePlus.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = B274541F19B8B064003BDC07 /* GooglePlus.bundle */; };
 		B274542D19B8B66B003BDC07 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B274542C19B8B66B003BDC07 /* MBProgressHUD.m */; };
 		B274542F19B8B85F003BDC07 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274542E19B8B85F003BDC07 /* AssetsLibrary.framework */; };
 		B274543119B8B868003BDC07 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274543019B8B868003BDC07 /* AddressBook.framework */; };
@@ -123,7 +122,6 @@
 				B274542419B8B064003BDC07 /* GooglePlus.framework in Frameworks */,
 				B27453E619B8AEB4003BDC07 /* CoreGraphics.framework in Frameworks */,
 				B274542119B8B064003BDC07 /* FacebookSDK.framework in Frameworks */,
-				B274542519B8B07C003BDC07 /* GooglePlus.bundle in Frameworks */,
 				B27453E819B8AEB4003BDC07 /* UIKit.framework in Frameworks */,
 				B27453E419B8AEB4003BDC07 /* Foundation.framework in Frameworks */,
 			);

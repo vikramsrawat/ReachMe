@@ -14,5 +14,5 @@
 +(void)setContextId:(NSString*)ctxId;
 +(NSString*)getLoginContext;
 +(NSString*)getContextId;
-
++(BOOL)isLoggedIn;
 @end
