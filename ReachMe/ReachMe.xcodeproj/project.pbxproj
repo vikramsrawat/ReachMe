@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B209171B19CDC167003FEE6A /* ReachMeEditUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B209171A19CDC167003FEE6A /* ReachMeEditUserInfoViewController.m */; };
 		B209B04619C4385000D1E6A5 /* address.png in Resources */ = {isa = PBXBuildFile; fileRef = B209B04419C4385000D1E6A5 /* address.png */; };
 		B209B04719C4385000D1E6A5 /* directions.png in Resources */ = {isa = PBXBuildFile; fileRef = B209B04519C4385000D1E6A5 /* directions.png */; };
 		B209B04A19C4CD6500D1E6A5 /* ReachMeDirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B209B04919C4CD6500D1E6A5 /* ReachMeDirectionsViewController.m */; };
@@ -56,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B209171919CDC167003FEE6A /* ReachMeEditUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachMeEditUserInfoViewController.h; sourceTree = "<group>"; };
+		B209171A19CDC167003FEE6A /* ReachMeEditUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachMeEditUserInfoViewController.m; sourceTree = "<group>"; };
 		B209B04419C4385000D1E6A5 /* address.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = address.png; sourceTree = "<group>"; };
 		B209B04519C4385000D1E6A5 /* directions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directions.png; sourceTree = "<group>"; };
 		B209B04819C4CD6500D1E6A5 /* ReachMeDirectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachMeDirectionsViewController.h; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 				B274545219B8EFFC003BDC07 /* User.m */,
 				B209B04819C4CD6500D1E6A5 /* ReachMeDirectionsViewController.h */,
 				B209B04919C4CD6500D1E6A5 /* ReachMeDirectionsViewController.m */,
+				B209171919CDC167003FEE6A /* ReachMeEditUserInfoViewController.h */,
+				B209171A19CDC167003FEE6A /* ReachMeEditUserInfoViewController.m */,
 			);
 			path = ReachMe;
 			sourceTree = "<group>";
@@ -363,6 +368,7 @@
 				B274545319B8EFFC003BDC07 /* User.m in Sources */,
 				B274544019B8CDC7003BDC07 /* Constants.m in Sources */,
 				B274544D19B8CF70003BDC07 /* ReachMeUserInfoViewController.m in Sources */,
+				B209171B19CDC167003FEE6A /* ReachMeEditUserInfoViewController.m in Sources */,
 				B27453FA19B8AEB4003BDC07 /* ReachMeViewController.m in Sources */,
 				B209B04A19C4CD6500D1E6A5 /* ReachMeDirectionsViewController.m in Sources */,
 				B27453F419B8AEB4003BDC07 /* ReachMeAppDelegate.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ReachMeAppDelegate.h"
 
 @interface Utils : NSObject
 
@@ -15,4 +16,5 @@
 +(NSString*)getLoginContext;
 +(NSString*)getContextId;
 +(BOOL)isLoggedIn;
++(ReachMeAppDelegate*)getAppDelegate;
 @end

@@ -40,7 +40,10 @@
 -(void)showUserInfoView{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UITabBarController *userInfoVC = [storyboard instantiateViewControllerWithIdentifier:@"TabsView"];
-    [self.appDelegate.window.rootViewController presentViewController:userInfoVC animated:YES completion:nil];
+//    [self.appDelegate.window.rootViewController presentViewController:userInfoVC animated:YES completion:nil];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:userInfoVC];
+    userInfoVC.navigationItem.title = @"Address";
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 - (IBAction)registerBtn:(id)sender {

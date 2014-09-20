@@ -8,6 +8,8 @@
 
 #import "ReachMeUserInfoViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "Utils.h"
+#import "ReachMeEditUserInfoViewController.h"
 @interface ReachMeUserInfoViewController ()
 
 @end
@@ -27,19 +29,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.appDelegate = [UIApplication sharedApplication].delegate;
+    self.appDelegate = [Utils getAppDelegate];
     [self.appDelegate hideLoading];
-    
-    
-    //To make the border look very close to a UITextField
-    [_addressTextView.layer setBorderColor:[[[UIColor lightGrayColor] colorWithAlphaComponent:0.5] CGColor]];
-    [_addressTextView.layer setBorderWidth:.5];
-    
-    //The rounded corner part, where you specify your view's corner radius:
-    _addressTextView.layer.cornerRadius = 5;
-    _addressTextView.clipsToBounds = YES;
 }
 
+- (void) viewWillAppear:(BOOL)animated{
+    [self setNavigationBarBtns];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -57,33 +53,23 @@
 }
 */
 
-- (void)enableEditMode {
-    UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(disableEditMode)];
-    self.navItem.leftBarButtonItem = leftBtn;
-    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(saveAddress)];
-    self.navItem.rightBarButtonItem = rightBtn;
-}
-
 - (void)editAddress {
-    self.textFieldEmail.userInteractionEnabled = YES;
-    self.textFieldName.userInteractionEnabled = YES;
-    self.textFieldBusiness.userInteractionEnabled = YES;
-    self.addressTextView.userInteractionEnabled = YES;
-    self.btnEdit.title = @"Cancel";
+    //[self.view addSubview:[ReachMeEditUserInfoViewController getInstance].view];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UITabBarController *userInfoVC = [storyboard instantiateViewControllerWithIdentifier:@"EditUserInfo"];
+    //[self.parentViewController.navigationController pushViewController:userInfoVC animated:YES];
+    [self.parentViewController presentViewController:userInfoVC animated:YES completion:nil];
 }
-
-- (void)disableEditMode {
+- (void)setNavigationBarBtns {
+//    UIViewController* vc = self.appDelegate.window.rootViewController;
     UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(editAddress)];
-    self.navItem.leftBarButtonItem = leftBtn;
+    self.parentViewController.navigationItem.leftBarButtonItem = leftBtn;
     UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"Share" style:UIBarButtonItemStylePlain target:self action:@selector(shareAddress)];
-    self.navItem.rightBarButtonItem = rightBtn;
+    self.parentViewController.navigationItem.rightBarButtonItem = rightBtn;
 }
 
 - (void)shareAddress {
     
 }
 
-- (void)saveAddress {
-    
-}
 @end

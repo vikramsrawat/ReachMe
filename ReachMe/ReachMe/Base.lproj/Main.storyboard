@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Reach Me View Controller-->
@@ -18,7 +19,6 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7gG-MS-mDI">
                                 <rect key="frame" x="30" y="268" width="217" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
@@ -27,20 +27,17 @@
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="> Reach Me" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSU-BS-8xU">
                                 <rect key="frame" x="56" y="39" width="209" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="40"/>
                                 <color key="textColor" red="0.17117609650000001" green="0.61739979619999996" blue="0.53462538380000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter phone number to register" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbt-to-QPU">
                                 <rect key="frame" x="30" y="226" width="261" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFG-ca-l1c">
                                 <rect key="frame" x="255" y="268" width="36" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="GO!">
                                     <color key="titleColor" red="1" green="0.28340501019999997" blue="0.14868647239999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -52,84 +49,38 @@
                         </subviews>
                         <color key="backgroundColor" red="0.87153957199999998" green="0.79229520779999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="yFf-sL-jaj"/>
                     <connections>
                         <outlet property="input_phone" destination="7gG-MS-mDI" id="iyw-0M-UmM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4" y="43"/>
+            <point key="canvasLocation" x="-900" y="131"/>
         </scene>
-        <!--Reach Me User Info View Controller - Address-->
+        <!--UserInfo-->
         <scene sceneID="g0h-wv-y6f">
             <objects>
-                <viewController storyboardIdentifier="UserInfo" id="XrS-T2-u52" customClass="ReachMeUserInfoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserInfo" title="UserInfo" id="XrS-T2-u52" customClass="ReachMeUserInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VaC-8A-b2K"/>
                         <viewControllerLayoutGuide type="bottom" id="Q7Z-8W-GSz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0kS-uo-9Bp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zWc-8O-tCD">
-                                <rect key="frame" x="20" y="107" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U2q-Pb-QY1">
-                                <rect key="frame" x="20" y="166" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Business" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z2k-wF-AjX">
-                                <rect key="frame" x="20" y="224" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PiW-Am-zX8">
-                                <rect key="frame" x="20" y="284" width="280" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                                <dataDetectorType key="dataDetectorTypes" address="YES"/>
-                            </textView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aPJ-JM-rHt">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
-                                    <color key="textColor" red="0.31729717010000003" green="0.7196911412" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Your Info" id="udu-DW-J4g"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Address" image="address.png" id="vk9-pK-9DX"/>
-                    <connections>
-                        <outlet property="addressTextView" destination="PiW-Am-zX8" id="srN-m0-cYK"/>
-                        <outlet property="navItem" destination="udu-DW-J4g" id="yOg-Lu-ymy"/>
-                        <outlet property="textFieldBusiness" destination="Z2k-wF-AjX" id="xDs-2Q-dzm"/>
-                        <outlet property="textFieldEmail" destination="U2q-Pb-QY1" id="61A-vg-qTO"/>
-                        <outlet property="textFieldName" destination="zWc-8O-tCD" id="Z72-fL-KoJ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XCI-Mx-z0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="788" y="-146"/>
+            <point key="canvasLocation" x="640" y="-314"/>
         </scene>
-        <!--Tab Bar Controller - tabsView-->
+        <!--Tab Bar Controller-->
         <scene sceneID="hTD-qd-Mfa">
             <objects>
-                <tabBarController storyboardIdentifier="TabsView" title="tabsView" definesPresentationContext="YES" id="qmN-CX-hWI" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabsView" definesPresentationContext="YES" id="qmN-CX-hWI" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="4VE-b3-Tf7">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -143,9 +94,67 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0cJ-6h-ITX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="261" y="131"/>
+            <point key="canvasLocation" x="85" y="131"/>
         </scene>
-        <!--Reach Me Directions View Controller - Directions-->
+        <!--Reach Me Edit User Info View Controller-->
+        <scene sceneID="6FG-zV-fBV">
+            <objects>
+                <viewController storyboardIdentifier="EditUserInfo" id="sic-Tp-d5g" customClass="ReachMeEditUserInfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sN9-SS-SPU"/>
+                        <viewControllerLayoutGuide type="bottom" id="kg1-Fi-co4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q3P-ji-3PJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ygE-33-gfB">
+                                <rect key="frame" x="16" y="80" width="288" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U2q-Pb-QY1">
+                                <rect key="frame" x="16" y="133" width="288" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Business" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z2k-wF-AjX">
+                                <rect key="frame" x="16" y="191" width="288" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PiW-Am-zX8">
+                                <rect key="frame" x="16" y="251" width="288" height="105"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                <dataDetectorType key="dataDetectorTypes" address="YES"/>
+                            </textView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dJm-CA-Yc3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Edit Address" id="9rV-I4-IaT"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="addressTextView" destination="PiW-Am-zX8" id="Qvz-8J-B4T"/>
+                        <outlet property="navItem" destination="9rV-I4-IaT" id="xe2-GI-AbX"/>
+                        <outlet property="textFieldBusiness" destination="Z2k-wF-AjX" id="1Vp-Aj-ev6"/>
+                        <outlet property="textFieldEmail" destination="U2q-Pb-QY1" id="qJl-id-0JJ"/>
+                        <outlet property="textFieldName" destination="ygE-33-gfB" id="SyV-Yr-SuE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CGu-AF-Xui" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1188" y="-338"/>
+        </scene>
+        <!--Directions-->
         <scene sceneID="ccP-Jk-h0X">
             <objects>
                 <viewController id="8CA-cF-2PH" customClass="ReachMeDirectionsViewController" sceneMemberID="viewController">
@@ -154,7 +163,7 @@
                         <viewControllerLayoutGuide type="bottom" id="UaS-ec-oGo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7qa-Rj-6AW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -162,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OgK-uF-cYZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="795" y="457"/>
+            <point key="canvasLocation" x="595" y="549"/>
         </scene>
     </scenes>
     <resources>

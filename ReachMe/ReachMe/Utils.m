@@ -35,4 +35,8 @@
     return [Utils getLoginContext] ? TRUE : FALSE;
 }
 
++(ReachMeAppDelegate*)getAppDelegate {
+    ReachMeAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+    return appDelegate;
+}
 @end
