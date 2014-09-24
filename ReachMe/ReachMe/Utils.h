@@ -17,4 +17,5 @@
 +(NSString*)getContextId;
 +(BOOL)isLoggedIn;
 +(ReachMeAppDelegate*)getAppDelegate;
++(UIStoryboard*)getStoryBoard;
 @end

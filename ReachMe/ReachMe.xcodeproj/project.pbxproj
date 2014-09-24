@@ -10,9 +10,10 @@
 		B209171B19CDC167003FEE6A /* ReachMeEditUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B209171A19CDC167003FEE6A /* ReachMeEditUserInfoViewController.m */; };
 		B209B04619C4385000D1E6A5 /* address.png in Resources */ = {isa = PBXBuildFile; fileRef = B209B04419C4385000D1E6A5 /* address.png */; };
 		B209B04719C4385000D1E6A5 /* directions.png in Resources */ = {isa = PBXBuildFile; fileRef = B209B04519C4385000D1E6A5 /* directions.png */; };
-		B209B04A19C4CD6500D1E6A5 /* ReachMeDirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B209B04919C4CD6500D1E6A5 /* ReachMeDirectionsViewController.m */; };
 		B209B04D19C5504B00D1E6A5 /* address@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B209B04B19C5504B00D1E6A5 /* address@2x.png */; };
 		B209B04E19C5504B00D1E6A5 /* directions@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B209B04C19C5504B00D1E6A5 /* directions@2x.png */; };
+		B21259D319D1E2F0002D5D8C /* ReachMeDirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21259D219D1E2F0002D5D8C /* ReachMeDirectionsViewController.m */; };
+		B21259D619D1EB76002D5D8C /* ReachMeDirectionsPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21259D519D1EB76002D5D8C /* ReachMeDirectionsPageContentViewController.m */; };
 		B27453E419B8AEB4003BDC07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27453E319B8AEB4003BDC07 /* Foundation.framework */; };
 		B27453E619B8AEB4003BDC07 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27453E519B8AEB4003BDC07 /* CoreGraphics.framework */; };
 		B27453E819B8AEB4003BDC07 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27453E719B8AEB4003BDC07 /* UIKit.framework */; };
@@ -22,7 +23,6 @@
 		B27453F719B8AEB4003BDC07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27453F519B8AEB4003BDC07 /* Main.storyboard */; };
 		B27453FA19B8AEB4003BDC07 /* ReachMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27453F919B8AEB4003BDC07 /* ReachMeViewController.m */; };
 		B27453FC19B8AEB4003BDC07 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27453FB19B8AEB4003BDC07 /* Images.xcassets */; };
-		B274540319B8AEB4003BDC07 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274540219B8AEB4003BDC07 /* XCTest.framework */; };
 		B274540419B8AEB4003BDC07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27453E319B8AEB4003BDC07 /* Foundation.framework */; };
 		B274540519B8AEB4003BDC07 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27453E719B8AEB4003BDC07 /* UIKit.framework */; };
 		B274540D19B8AEB4003BDC07 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B274540B19B8AEB4003BDC07 /* InfoPlist.strings */; };
@@ -61,10 +61,12 @@
 		B209171A19CDC167003FEE6A /* ReachMeEditUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachMeEditUserInfoViewController.m; sourceTree = "<group>"; };
 		B209B04419C4385000D1E6A5 /* address.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = address.png; sourceTree = "<group>"; };
 		B209B04519C4385000D1E6A5 /* directions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directions.png; sourceTree = "<group>"; };
-		B209B04819C4CD6500D1E6A5 /* ReachMeDirectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachMeDirectionsViewController.h; sourceTree = "<group>"; };
-		B209B04919C4CD6500D1E6A5 /* ReachMeDirectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachMeDirectionsViewController.m; sourceTree = "<group>"; };
 		B209B04B19C5504B00D1E6A5 /* address@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "address@2x.png"; sourceTree = "<group>"; };
 		B209B04C19C5504B00D1E6A5 /* directions@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "directions@2x.png"; sourceTree = "<group>"; };
+		B21259D119D1E2F0002D5D8C /* ReachMeDirectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachMeDirectionsViewController.h; sourceTree = "<group>"; };
+		B21259D219D1E2F0002D5D8C /* ReachMeDirectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachMeDirectionsViewController.m; sourceTree = "<group>"; };
+		B21259D419D1EB76002D5D8C /* ReachMeDirectionsPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachMeDirectionsPageContentViewController.h; sourceTree = "<group>"; };
+		B21259D519D1EB76002D5D8C /* ReachMeDirectionsPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachMeDirectionsPageContentViewController.m; sourceTree = "<group>"; };
 		B27453E019B8AEB4003BDC07 /* ReachMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReachMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B27453E319B8AEB4003BDC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B27453E519B8AEB4003BDC07 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -80,7 +82,6 @@
 		B27453F919B8AEB4003BDC07 /* ReachMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReachMeViewController.m; sourceTree = "<group>"; };
 		B27453FB19B8AEB4003BDC07 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B274540119B8AEB4003BDC07 /* ReachMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReachMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B274540219B8AEB4003BDC07 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B274540A19B8AEB4003BDC07 /* ReachMeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ReachMeTests-Info.plist"; sourceTree = "<group>"; };
 		B274540C19B8AEB4003BDC07 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B274540E19B8AEB4003BDC07 /* ReachMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReachMeTests.m; sourceTree = "<group>"; };
@@ -134,7 +135,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B274540319B8AEB4003BDC07 /* XCTest.framework in Frameworks */,
 				B274540519B8AEB4003BDC07 /* UIKit.framework in Frameworks */,
 				B274540419B8AEB4003BDC07 /* Foundation.framework in Frameworks */,
 			);
@@ -182,7 +182,6 @@
 				B27453E319B8AEB4003BDC07 /* Foundation.framework */,
 				B27453E519B8AEB4003BDC07 /* CoreGraphics.framework */,
 				B27453E719B8AEB4003BDC07 /* UIKit.framework */,
-				B274540219B8AEB4003BDC07 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -205,10 +204,12 @@
 				B274544F19B8D69D003BDC07 /* Utils.m */,
 				B274545119B8EFFC003BDC07 /* User.h */,
 				B274545219B8EFFC003BDC07 /* User.m */,
-				B209B04819C4CD6500D1E6A5 /* ReachMeDirectionsViewController.h */,
-				B209B04919C4CD6500D1E6A5 /* ReachMeDirectionsViewController.m */,
 				B209171919CDC167003FEE6A /* ReachMeEditUserInfoViewController.h */,
 				B209171A19CDC167003FEE6A /* ReachMeEditUserInfoViewController.m */,
+				B21259D119D1E2F0002D5D8C /* ReachMeDirectionsViewController.h */,
+				B21259D219D1E2F0002D5D8C /* ReachMeDirectionsViewController.m */,
+				B21259D419D1EB76002D5D8C /* ReachMeDirectionsPageContentViewController.h */,
+				B21259D519D1EB76002D5D8C /* ReachMeDirectionsPageContentViewController.m */,
 			);
 			path = ReachMe;
 			sourceTree = "<group>";
@@ -367,10 +368,11 @@
 			files = (
 				B274545319B8EFFC003BDC07 /* User.m in Sources */,
 				B274544019B8CDC7003BDC07 /* Constants.m in Sources */,
+				B21259D619D1EB76002D5D8C /* ReachMeDirectionsPageContentViewController.m in Sources */,
+				B21259D319D1E2F0002D5D8C /* ReachMeDirectionsViewController.m in Sources */,
 				B274544D19B8CF70003BDC07 /* ReachMeUserInfoViewController.m in Sources */,
 				B209171B19CDC167003FEE6A /* ReachMeEditUserInfoViewController.m in Sources */,
 				B27453FA19B8AEB4003BDC07 /* ReachMeViewController.m in Sources */,
-				B209B04A19C4CD6500D1E6A5 /* ReachMeDirectionsViewController.m in Sources */,
 				B27453F419B8AEB4003BDC07 /* ReachMeAppDelegate.m in Sources */,
 				B27453F019B8AEB4003BDC07 /* main.m in Sources */,
 				B274545019B8D69D003BDC07 /* Utils.m in Sources */,

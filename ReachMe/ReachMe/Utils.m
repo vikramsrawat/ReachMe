@@ -39,4 +39,9 @@
     ReachMeAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
     return appDelegate;
 }
+
++(UIStoryboard*)getStoryBoard{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    return storyboard;
+}
 @end

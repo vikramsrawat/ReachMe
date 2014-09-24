@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -75,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XCI-Mx-z0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="640" y="-314"/>
+            <point key="canvasLocation" x="280" y="-58"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hTD-qd-Mfa">
@@ -89,12 +88,12 @@
                     </tabBar>
                     <connections>
                         <segue destination="XrS-T2-u52" kind="relationship" relationship="viewControllers" id="ixF-TZ-Fqb"/>
-                        <segue destination="8CA-cF-2PH" kind="relationship" relationship="viewControllers" id="Adr-hX-Brr"/>
+                        <segue destination="LMi-KI-Lb1" kind="relationship" relationship="viewControllers" id="l5R-Gp-Mdc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0cJ-6h-ITX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="85" y="131"/>
+            <point key="canvasLocation" x="-439" y="131"/>
         </scene>
         <!--Reach Me Edit User Info View Controller-->
         <scene sceneID="6FG-zV-fBV">
@@ -152,26 +151,72 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGu-AF-Xui" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1188" y="-338"/>
+            <point key="canvasLocation" x="280" y="-769"/>
         </scene>
-        <!--Directions-->
-        <scene sceneID="ccP-Jk-h0X">
+        <!--PageContentHolderVC-->
+        <scene sceneID="Sam-Ca-fBR">
             <objects>
-                <viewController id="8CA-cF-2PH" customClass="ReachMeDirectionsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DirectionsContentHolder" title="PageContentHolderVC" id="hZy-Zy-ho7" customClass="ReachMeDirectionsPageContentViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="4lF-vf-VYY"/>
-                        <viewControllerLayoutGuide type="bottom" id="UaS-ec-oGo"/>
+                        <viewControllerLayoutGuide type="top" id="rxe-UY-7Li"/>
+                        <viewControllerLayoutGuide type="bottom" id="DhO-uZ-26h"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7qa-Rj-6AW">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <view key="view" contentMode="scaleToFill" id="hj7-gq-EjS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ju-Pe-cah" userLabel="title">
+                                <rect key="frame" x="92" y="71" width="127" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="direction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2x-V1-5Ic">
+                                <rect key="frame" x="33" y="120" width="255" height="216"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Directions" image="directions.png" id="ghf-x5-c0a"/>
+                    <connections>
+                        <outlet property="direction" destination="V2x-V1-5Ic" id="phM-pd-yCB"/>
+                        <outlet property="directionTitle" destination="1Ju-Pe-cah" id="jzE-z0-eNE"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OgK-uF-cYZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cta-rn-C5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="595" y="549"/>
+            <point key="canvasLocation" x="664" y="-769"/>
+        </scene>
+        <!--DirectionsVCHolder-->
+        <scene sceneID="GI2-Rv-u93">
+            <objects>
+                <viewController storyboardIdentifier="DirectionsVCHolder" id="LMi-KI-Lb1" userLabel="DirectionsVCHolder" customClass="ReachMeDirectionsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rTt-Nf-J87"/>
+                        <viewControllerLayoutGuide type="bottom" id="Luh-Vh-nJ5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xaW-xU-nym">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Directions" image="directions.png" id="4gO-f1-7o2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8lT-0S-DNQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="280" y="613"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="PQH-Na-plR">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="sbq-H6-3We" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I6C-pp-51r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="864" y="597"/>
         </scene>
     </scenes>
     <resources>
