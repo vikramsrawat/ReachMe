@@ -9,6 +9,7 @@
 #import "ReachMeDirectionsViewController.h"
 #import "Utils.h"
 #import "ReachMeDirectionsPageContentViewController.h"
+#import "ReachMeEditDirectionViewController.h"
 @interface ReachMeDirectionsViewController ()
 
 @end
@@ -39,6 +40,7 @@
     self.pageViewController = [storyboard instantiateViewControllerWithIdentifier:@"PageViewVC"];
     
     self.pageViewController.dataSource = self;
+    self.pageViewController.delegate = self;
     
     ReachMeDirectionsPageContentViewController *  startingViewController = [self viewControllerAtIndex:0];
     
@@ -50,22 +52,35 @@
     [self.view addSubview:_pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
     [self setNavigationBarBtns];
+    self.currentPageIndex = 0;
 }
 
 - (void)setNavigationBarBtns {
     //    UIViewController* vc = self.appDelegate.window.rootViewController;
-    UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(editDirection)];
+    UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editDirection)];
     self.parentViewController.navigationItem.leftBarButtonItem = leftBtn;
-    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"Share" style:UIBarButtonItemStylePlain target:self action:@selector(shareAddress)];
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareAddress)];
     self.parentViewController.navigationItem.rightBarButtonItem = rightBtn;
 }
 
 - (void) editDirection{
-    NSLog(@"edit direction");
+    
+    ReachMeEditDirectionViewController *vc = [ReachMeEditDirectionViewController getInstance];
+    vc.directionTitleText = [[self.directions objectAtIndex:self.currentPageIndex] objectAtIndex:0];
+    vc.directionText = [[self.directions objectAtIndex:self.currentPageIndex] objectAtIndex:1];
+    
+//    [UIView animateWithDuration:0.75
+//                     animations:^{
+//                         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+//                         [self.navigationController pushViewController:vc animated:YES];
+//                         [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.navigationController.view cache:NO];
+//                     }];
+    [self.navigationController pushViewController:vc animated:YES];
+//    [self.navigationController presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)shareAddress{
-    NSLog(@"share direction");    
+    NSLog(@"share direction");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -131,5 +146,11 @@
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController{
     return 0;
+}
+
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed{
+    if (completed) {
+        self.currentPageIndex = ((ReachMeDirectionsPageContentViewController*)self.pageViewController.viewControllers[0]).pageIndex;
+    }
 }
 @end

@@ -189,6 +189,41 @@
             </objects>
             <point key="canvasLocation" x="664" y="-769"/>
         </scene>
+        <!--DirectionEditVC-->
+        <scene sceneID="w53-Ls-JM9">
+            <objects>
+                <viewController storyboardIdentifier="DirectionEditVC" title="DirectionEditVC" id="fxT-h9-V85" customClass="ReachMeEditDirectionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rm3-Vg-hBF"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ym6-fz-HqA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L3z-3h-KZf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Direction Title" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uKd-MI-qIC">
+                                <rect key="frame" x="16" y="98" width="288" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Direction" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Jsw-8K-hpH">
+                                <rect key="frame" x="16" y="166" width="288" height="160"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="direction" destination="Jsw-8K-hpH" id="eO0-38-wg0"/>
+                        <outlet property="directionTitle" destination="uKd-MI-qIC" id="Ys6-SD-dqp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sq0-FJ-x2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1128" y="-183"/>
+        </scene>
         <!--DirectionsVCHolder-->
         <scene sceneID="GI2-Rv-u93">
             <objects>

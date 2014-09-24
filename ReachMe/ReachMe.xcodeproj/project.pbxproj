@@ -14,6 +14,7 @@
 		B209B04E19C5504B00D1E6A5 /* directions@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B209B04C19C5504B00D1E6A5 /* directions@2x.png */; };
 		B21259D319D1E2F0002D5D8C /* ReachMeDirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21259D219D1E2F0002D5D8C /* ReachMeDirectionsViewController.m */; };
 		B21259D619D1EB76002D5D8C /* ReachMeDirectionsPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21259D519D1EB76002D5D8C /* ReachMeDirectionsPageContentViewController.m */; };
+		B21259D919D3171B002D5D8C /* ReachMeEditDirectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21259D819D3171B002D5D8C /* ReachMeEditDirectionViewController.m */; };
 		B27453E419B8AEB4003BDC07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27453E319B8AEB4003BDC07 /* Foundation.framework */; };
 		B27453E619B8AEB4003BDC07 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27453E519B8AEB4003BDC07 /* CoreGraphics.framework */; };
 		B27453E819B8AEB4003BDC07 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27453E719B8AEB4003BDC07 /* UIKit.framework */; };
@@ -67,6 +68,8 @@
 		B21259D219D1E2F0002D5D8C /* ReachMeDirectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachMeDirectionsViewController.m; sourceTree = "<group>"; };
 		B21259D419D1EB76002D5D8C /* ReachMeDirectionsPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachMeDirectionsPageContentViewController.h; sourceTree = "<group>"; };
 		B21259D519D1EB76002D5D8C /* ReachMeDirectionsPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachMeDirectionsPageContentViewController.m; sourceTree = "<group>"; };
+		B21259D719D3171B002D5D8C /* ReachMeEditDirectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachMeEditDirectionViewController.h; sourceTree = "<group>"; };
+		B21259D819D3171B002D5D8C /* ReachMeEditDirectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachMeEditDirectionViewController.m; sourceTree = "<group>"; };
 		B27453E019B8AEB4003BDC07 /* ReachMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReachMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B27453E319B8AEB4003BDC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B27453E519B8AEB4003BDC07 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -210,6 +213,8 @@
 				B21259D219D1E2F0002D5D8C /* ReachMeDirectionsViewController.m */,
 				B21259D419D1EB76002D5D8C /* ReachMeDirectionsPageContentViewController.h */,
 				B21259D519D1EB76002D5D8C /* ReachMeDirectionsPageContentViewController.m */,
+				B21259D719D3171B002D5D8C /* ReachMeEditDirectionViewController.h */,
+				B21259D819D3171B002D5D8C /* ReachMeEditDirectionViewController.m */,
 			);
 			path = ReachMe;
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 				B21259D319D1E2F0002D5D8C /* ReachMeDirectionsViewController.m in Sources */,
 				B274544D19B8CF70003BDC07 /* ReachMeUserInfoViewController.m in Sources */,
 				B209171B19CDC167003FEE6A /* ReachMeEditUserInfoViewController.m in Sources */,
+				B21259D919D3171B002D5D8C /* ReachMeEditDirectionViewController.m in Sources */,
 				B27453FA19B8AEB4003BDC07 /* ReachMeViewController.m in Sources */,
 				B27453F419B8AEB4003BDC07 /* ReachMeAppDelegate.m in Sources */,
 				B27453F019B8AEB4003BDC07 /* main.m in Sources */,

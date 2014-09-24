@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReachMeDirectionsViewController : UIViewController <UIPageViewControllerDataSource>
+@interface ReachMeDirectionsViewController : UIViewController <UIPageViewControllerDataSource,UIPageViewControllerDelegate>
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) NSMutableArray* directions;
+@property NSInteger currentPageIndex;
 @end
