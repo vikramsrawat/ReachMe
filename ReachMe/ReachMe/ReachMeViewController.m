@@ -13,6 +13,8 @@
 #import "MBProgressHUD.h"
 #import "User.h"
 #import <GoogleOpenSource/GoogleOpenSource.h>
+#import "STHTTPRequest.h"
+#import "ReachMeEditUserInfoViewController.h"
 #define PHONE_MAX_LENGTH 10
 @interface ReachMeViewController ()
 @property (strong, nonatomic) GPPSignIn *signIn;
@@ -38,7 +40,7 @@ static NSString * const kClientId = @"130182801305-tei60s241j8u1nnqg2fqqi8jj7nfk
         
         // Uncomment one of these two statements for the scope you chose in the previous step
         self.signIn.scopes = @[ kGTLAuthScopePlusLogin ];  // "https://www.googleapis.com/auth/plus.login" scope
-        self.signIn.scopes = @[ @"profile" ];            // "profile" scope
+        self.signIn.scopes = @[ @"profile", @"email" ];            // "profile" scope
         
         // Optional: declare signIn.actions, see "app activities"
         self.signIn.delegate = self;
@@ -47,8 +49,8 @@ static NSString * const kClientId = @"130182801305-tei60s241j8u1nnqg2fqqi8jj7nfk
 
 - (void)viewWillAppear:(BOOL)animated{
     NSString *loginCtx = [Utils getLoginContext];
+    [[Utils getAppDelegate] showLoading];
     if ([loginCtx isEqualToString:FB]) {
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
             
             // If there's one, just open the session silently, without showing the user the login UI
@@ -56,11 +58,11 @@ static NSString * const kClientId = @"130182801305-tei60s241j8u1nnqg2fqqi8jj7nfk
         }
         
     }else if ([loginCtx isEqualToString:GPLUS]){
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
         [self.signIn trySilentAuthentication];
     }
     else {
-        //        [self loginToFB:nil];
+        [[Utils getAppDelegate] hideLoading];
     }
 }
 - (void)didReceiveMemoryWarning
@@ -78,42 +80,15 @@ static NSString * const kClientId = @"130182801305-tei60s241j8u1nnqg2fqqi8jj7nfk
     [self presentViewController:navController animated:YES completion:nil];
 }
 
-- (IBAction)registerBtn:(id)sender {
-    [self registerUser];
-    [self.input_phone resignFirstResponder];
+- (void)showEditUserInfoVC{
+    UIViewController *vc = [ReachMeEditUserInfoViewController getInstance];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
-- (void) registerUser {
-    
-    if([self validatePhone]){
-        [self.appDelegate showLoading];
-//        NSTimer *aTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timeUp) userInfo:nil repeats:NO];
-        
-//        [self showUserInfoView];
-    }
-}
 
--(void)timeUp{
-    [self showUserInfoView];
-}
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [self registerUser];
-    [self.input_phone resignFirstResponder];
-    return YES;
-}
-
-- (BOOL)validatePhone{
-    if ([self.input_phone.text length] == PHONE_MAX_LENGTH) {
-        return TRUE;
-    }else {
-        UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enter a valid phone number!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [warningAlert show];
-        return FALSE;
-    }
-}
 - (IBAction)loginToFB:(id)sender {
-    [Utils setLoginContext:FB];
-    [self.appDelegate showLoading];
+    [[Utils getAppDelegate] showLoading];
+    [Utils getAppDelegate].loginSelected = FB;
     {
         // If the session state is any of the two "open" states when the button is clicked
         if (FBSession.activeSession.state == FBSessionStateOpen
@@ -122,7 +97,7 @@ static NSString * const kClientId = @"130182801305-tei60s241j8u1nnqg2fqqi8jj7nfk
             // Close the session and remove the access token from the cache
             // The session state handler (in the app delegate) will be called automatically
             [FBSession.activeSession closeAndClearTokenInformation];
-            [self.appDelegate hideLoading];
+            [[Utils getAppDelegate] hideLoading];
             // If the session state is not any of the two "open" states when the button is clicked
         } else {
             // Open a session showing the user the login UI
@@ -147,8 +122,8 @@ static NSString * const kClientId = @"130182801305-tei60s241j8u1nnqg2fqqi8jj7nfk
 
 }
 - (IBAction)loginToGPlus:(id)sender {
-    [Utils setLoginContext:GPLUS];
-    [self.appDelegate showLoading];
+    [[Utils getAppDelegate] showLoading];
+    [Utils getAppDelegate].loginSelected = GPLUS;
     [self.signIn authenticate];
 }
 
@@ -221,14 +196,53 @@ static NSString * const kClientId = @"130182801305-tei60s241j8u1nnqg2fqqi8jj7nfk
 }
 
 - (void)finishedWithAuth: (GTMOAuth2Authentication *)auth error: (NSError *) error {
-//    NSLog(@"Received error %@ and auth object %@",error, auth);
+    NSLog(@"Received error %@ and auth object %@",error, auth);
     if (!error) {
         NSLog(@"id = %@", self.signIn.userID);
         NSLog(@"email = %@", self.signIn.userEmail);
+        NSLog(@"name = %@", self.signIn.googlePlusUser.displayName);
         [Utils setContextId:self.signIn.userID];
-        [self showUserInfoView];
+        [Utils setLoginContext:GPLUS];
+        NSMutableDictionary* userDict = [[NSMutableDictionary alloc] init];
+        [userDict setObject:self.signIn.userID forKey:@"uid"];
+        [userDict setObject:self.signIn.userEmail forKey:@"email"];
+        [userDict setObject:self.signIn.googlePlusUser.displayName forKey:@"name"];
+        [[User getInstance] saveUserInfo:userDict];
+        [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(getUser) userInfo:nil repeats:NO];
     }else {
-        
+        [[Utils getAppDelegate] hideLoading];
     }
 }
+
+- (void)getUser{
+    NSString *loginCtx = [Utils getLoginContext];
+    NSString *loginId = [Utils getContextId];
+    NSString *url = [NSString stringWithFormat:GETUSER,loginId,loginCtx];
+    STHTTPRequest * r = [STHTTPRequest requestWithURLString:url];
+    [r setHeaderWithName:@"content-type" value:@"application/x-www-form-urlencoded; charset=utf-8"];
+    [r setHTTPMethod:@"GET"];
+ 
+    r.completionBlock=^(NSDictionary *headers, NSString *body) {
+        [self processResponseAndShowUserInfo:body];
+    };
+    r.errorBlock = ^(NSError* error){
+        NSLog(@"error: %@",[error localizedDescription]);
+    };
+    [r startAsynchronous];
+}
+-(void)processResponseAndShowUserInfo:(NSString*) data{
+    if ([data isEqualToString:@"false"]) {
+        NSLog(@"resp data : %@",data);
+        [self showUserInfoView];
+        return;
+    }
+    NSError * localError = nil;
+    NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:[data dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&localError];
+    if(localError){
+        NSLog(@"error parsing json data");
+    }
+    [[User getInstance] saveUserInfo:parsedObject];
+    [self showUserInfoView];
+}
+
 @end

@@ -33,7 +33,7 @@
 @property (weak,nonatomic) NSString *business;
 @property (weak,nonatomic) NSString *address;
 @property (strong, nonatomic) NSMutableDictionary *directions;
-
+@property (weak,nonatomic) NSDictionary *userInfo;
 -(void)saveUserInfo:(NSDictionary*) userInfo;
 +(User*)getInstance;
 @end

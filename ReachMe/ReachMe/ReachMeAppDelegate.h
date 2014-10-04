@@ -14,4 +14,5 @@
 -(void)hideLoading;
 @property (strong, nonatomic) UIWindow *window;
 @property (weak, nonatomic) MBProgressHUD *loading;
+@property (weak, nonatomic) NSString *loginSelected;
 @end

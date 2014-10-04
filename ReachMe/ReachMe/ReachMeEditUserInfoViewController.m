@@ -21,12 +21,10 @@
     // Do any additional setup after loading the view.
     self.textFieldName.text = [User getInstance].name;
     self.textFieldEmail.text = [User getInstance].email;
-    self.textFieldBusiness.text = [User getInstance].business;
-    self.addressTextView.text = [User getInstance].address;
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    //To make the border look very close to a UITextField
+//    self.textFieldBusiness.text = [User getInstance].business;
+    self.addressTextView.text = [User getInstance].address ? [User getInstance].address : self.addressTextView.text;
+    self.addressTextView.delegate = self;
+    
     [_addressTextView.layer setBorderColor:[[[UIColor lightGrayColor] colorWithAlphaComponent:0.5] CGColor]];
     [_addressTextView.layer setBorderWidth:.5];
     
@@ -34,6 +32,11 @@
     _addressTextView.layer.cornerRadius = 5;
     _addressTextView.clipsToBounds = YES;
     [self setNavigationBarBtns];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    //To make the border look very close to a UITextField
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,6 +54,13 @@
 }
 */
 
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
+    if ([textView.text isEqualToString:@"Address"]) {
+        textView.text = nil;
+    }
+    return YES;
+}
+
 
 + (ReachMeEditUserInfoViewController*) getInstance{
     static ReachMeEditUserInfoViewController * instance = nil;
@@ -62,6 +72,7 @@
     return instance;
 }
 - (void) saveAddress{
+    
     [self cancelEdit];
 }
 

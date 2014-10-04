@@ -12,6 +12,7 @@
 #import "ReachMeEditUserInfoViewController.h"
 #import "STHTTPRequest.h"
 #import "Constants.h"
+#import "User.h"
 @interface ReachMeUserInfoViewController ()
 
 @end
@@ -33,8 +34,20 @@
     // Do any additional setup after loading the view.
     self.appDelegate = [Utils getAppDelegate];
     [self.appDelegate hideLoading];
-    [self getUser];
-//    [self putUser];
+    [self.addAddressBtn setHidden:YES];
+    [self.addressLabel setHidden:YES];
+    if(![User getInstance].address){
+        [self.addAddressBtn setHidden:NO];
+    }else {
+        [self.addressLabel setHidden:NO];
+    }
+    [self setNavigationBarBtns];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    self.nameLabel.text = [User getInstance].name;
+    self.emailLabel.text = [User getInstance].email;
+    self.addressLabel.text = [User getInstance].address;
 }
 
 
@@ -99,9 +112,7 @@
     
     [request startAsynchronous];
 }
-- (void) viewWillAppear:(BOOL)animated{
-    [self setNavigationBarBtns];
-}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -118,6 +129,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)addAddress:(id)sender {
+    [self editAddress];
+}
 
 - (void)editAddress {
     //[self.view addSubview:[ReachMeEditUserInfoViewController getInstance].view];

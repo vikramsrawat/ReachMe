@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReachMeEditUserInfoViewController : UIViewController
+@interface ReachMeEditUserInfoViewController : UIViewController <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldEmail;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldName;

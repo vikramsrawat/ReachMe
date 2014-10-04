@@ -11,6 +11,11 @@
 @interface ReachMeUserInfoViewController : UIViewController
 @property (strong, nonatomic) ReachMeAppDelegate *appDelegate;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+@property (weak, nonatomic) IBOutlet UIButton *addAddressBtn;
+- (IBAction)addAddress:(id)sender;
 
 - (void)editAddress;
 

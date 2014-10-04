@@ -29,7 +29,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-        self.directionTitle.text = self.directionTitleText;
+    self.directionTitle.text = self.directionTitleText;
     self.direction.text = self.directionText;
     
 }

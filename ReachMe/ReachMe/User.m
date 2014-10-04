@@ -14,14 +14,17 @@
 
 - (void)saveUserInfo:(NSDictionary *)userInfo{
     self.uid = [userInfo objectForKey:@"uid"];
-    self.name = [userInfo objectForKey:@"name"];
-    self.first_name = [userInfo objectForKey:@"first_name"];
-    self.last_name = [userInfo objectForKey:@"last_name"];
-    self.email = [userInfo objectForKey:@"email"];
-    self.phone = [userInfo objectForKey:@"phone"];
-    self.business = [userInfo objectForKey:@"business"];
-    self.directions = [userInfo objectForKey:@"directions"];
-    self.address = [userInfo objectForKey:@"street_address"];
+    self.name = [userInfo objectForKey:@"name"] ? [userInfo objectForKey:@"name"] : self.name;
+    self.first_name = [userInfo objectForKey:@"first_name"] ? [userInfo objectForKey:@"first_name"] : self.first_name;
+    self.last_name = [userInfo objectForKey:@"last_name"] ? [userInfo objectForKey:@"last_name"] : self.last_name;
+    self.email = [userInfo objectForKey:@"email"] ? [userInfo objectForKey:@"email"] : self.email;
+    self.phone = [userInfo objectForKey:@"phone"] ? [userInfo objectForKey:@"phone"] : self.phone;
+    self.business = [userInfo objectForKey:@"business"] ? [userInfo objectForKey:@"business"] : self.business;
+    self.address = [userInfo objectForKey:@"address"] ? [userInfo objectForKey:@"address"] : self.address;
+    self.directions = [userInfo objectForKey:@"directions"] ? [userInfo objectForKey:@"directions"] : self.directions;
+    self.address = [userInfo objectForKey:@"street_address"] ? [userInfo objectForKey:@"street_address"] : self.address;
+    
+    self.userInfo = userInfo;
 }
 
 +(User*)getInstance{

@@ -70,11 +70,11 @@
 }
 
 -(void)showLoading {
-//    [MBProgressHUD showHUDAddedTo:self.window.rootViewController.view animated:YES];
+    [MBProgressHUD showHUDAddedTo:self.window.rootViewController.view animated:YES];
 }
 
 -(void)hideLoading {
-//    [MBProgressHUD hideHUDForView:self.window.rootViewController.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.window.rootViewController.view animated:YES];
 }
 
 - (BOOL)application:(UIApplication *)application
@@ -82,7 +82,7 @@
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
     BOOL wasHandled = false;
-    NSString *loginCtx = [Utils getLoginContext];
+    NSString *loginCtx = self.loginSelected;
     if ([loginCtx isEqualToString:FB]) {
         // Call FBAppCall's handleOpenURL:sourceApplication to handle Facebook app responses
         wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
