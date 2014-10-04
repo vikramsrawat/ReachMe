@@ -52,7 +52,7 @@
     NSLog(@"%@",parsedObject);
 }
 - (void)getUser{
-    NSString *url = [NSString stringWithFormat:GETUSER,@"12345",@"facebook"];
+    NSString *url = [NSString stringWithFormat:GETUSER,@"123456",@"facebook"];
     STHTTPRequest * r = [STHTTPRequest requestWithURLString:url];
     [r setHeaderWithName:@"content-type" value:@"application/x-www-form-urlencoded; charset=utf-8"];
     [r setHTTPMethod:@"GET"];
