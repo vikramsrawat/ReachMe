@@ -10,7 +10,7 @@
 #import "Utils.h"
 #import "Constants.h"
 #import <FacebookSDK/FacebookSDK.h>
-
+#import <GooglePlus/GooglePlus.h>
 #import "MBProgressHUD.h"
 @implementation ReachMeAppDelegate
 
@@ -70,11 +70,11 @@
 }
 
 -(void)showLoading {
-    [MBProgressHUD showHUDAddedTo:self.window.rootViewController.view animated:YES];
+//    [MBProgressHUD showHUDAddedTo:self.window.rootViewController.view animated:YES];
 }
 
 -(void)hideLoading {
-    [MBProgressHUD hideHUDForView:self.window.rootViewController.view animated:YES];
+//    [MBProgressHUD hideHUDForView:self.window.rootViewController.view animated:YES];
 }
 
 - (BOOL)application:(UIApplication *)application
@@ -90,7 +90,7 @@
         // You can add your app-specific url handling code here if needed
         
     }else if ([loginCtx isEqualToString:GPLUS]){
-        
+        wasHandled = [GPPURLHandler handleURL:url sourceApplication:sourceApplication annotation:annotation];
     }
     return wasHandled;
     

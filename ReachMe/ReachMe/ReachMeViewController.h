@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ReachMeAppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
-@interface ReachMeViewController : UIViewController<UITextFieldDelegate,FBLoginViewDelegate>
+#import <GooglePlus/GooglePlus.h>
+@interface ReachMeViewController : UIViewController<UITextFieldDelegate,FBLoginViewDelegate,GPPSignInDelegate>
 
 @property (strong, nonatomic) ReachMeAppDelegate *appDelegate;
 - (IBAction)loginToFB:(id)sender;

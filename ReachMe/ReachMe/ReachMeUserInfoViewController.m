@@ -10,6 +10,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "Utils.h"
 #import "ReachMeEditUserInfoViewController.h"
+#import "STHTTPRequest.h"
+#import "Constants.h"
 @interface ReachMeUserInfoViewController ()
 
 @end
@@ -31,8 +33,72 @@
     // Do any additional setup after loading the view.
     self.appDelegate = [Utils getAppDelegate];
     [self.appDelegate hideLoading];
+    [self getUser];
+//    [self putUser];
 }
 
+
+-(void)processResponseAndShowUserInfo:(NSString*) data{
+    if ([data isEqualToString:@"false"]) {
+        NSLog(@"resp data : %@",data);
+        return;
+    }
+    NSError * localError = nil;
+    NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:[data dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&localError];
+    if(localError){
+        NSLog(@"error parsing json data");
+    }
+    
+    NSLog(@"%@",parsedObject);
+}
+- (void)getUser{
+    NSString *url = [NSString stringWithFormat:GETUSER,@"12345",@"facebook"];
+    STHTTPRequest * r = [STHTTPRequest requestWithURLString:url];
+    [r setHeaderWithName:@"content-type" value:@"application/x-www-form-urlencoded; charset=utf-8"];
+    [r setHTTPMethod:@"GET"];
+//    r.completionDataBlock = ^(NSDictionary* headers, NSData* data) {
+//      [self processResponseAndShowUserInfo:data];
+//    };
+    r.completionBlock=^(NSDictionary *headers, NSString *body) {
+//        NSLog(@"Body: %@", body);
+        [self processResponseAndShowUserInfo:body];
+    };
+    r.errorBlock = ^(NSError* error){
+        NSLog(@"error: %@",[error localizedDescription]);
+    };
+    [r startAsynchronous];
+}
+
+- (void)putUser {
+    NSDictionary *d = @{ @"uid":@"12345", @"name":@"vikram", @"provider":@"facebook",@"landmark":@"kidzee school",@"locality":@"kodichikanahalli",@"city":@"bangalore",@"street_address":@"kumbha lake shore, kc halli",@"phone":@"1234567890"};
+    
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:d
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    
+    STHTTPRequest *request = [STHTTPRequest requestWithURLString:PUTUSER];
+    
+    [request setHeaderWithName:@"content-type" value:@"application/json; charset=utf-8"];
+    
+    request.rawPOSTData = jsonData;
+    [request setHTTPMethod:@"POST"];
+    
+    request.completionDataBlock=^(NSDictionary *headers, NSData* data){
+        NSString* newStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"resp = %@",newStr);
+    };
+    
+    request.completionBlock=^(NSDictionary *headers, NSString *body) {
+        NSLog(@"Body: %@", body);
+    };
+    
+    request.errorBlock=^(NSError *error) {
+        NSLog(@"Error: %@", [error localizedDescription]);
+    };
+    
+    [request startAsynchronous];
+}
 - (void) viewWillAppear:(BOOL)animated{
     [self setNavigationBarBtns];
 }

@@ -14,5 +14,5 @@ NSString *const whatsAppURL = @"whatsapp://send?text=";
 NSString *const FB = @"fb";
 NSString *const GPLUS = @"gplus";
 NSString *const PUTUSER = @"http://www.intruo.com/putUser";
-NSString *const GETUSER = @"http://www.intruo.com/getUser?uid=%@";
+NSString *const GETUSER = @"http://www.intruo.com/getUser?uid=%@&provider=%@";
 @end

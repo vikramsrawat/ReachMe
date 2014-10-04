@@ -8,6 +8,7 @@
 
 #import "ReachMeEditUserInfoViewController.h"
 #import "Utils.h"
+#import "User.h"
 
 @interface ReachMeEditUserInfoViewController ()
 
@@ -18,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.textFieldName.text = [User getInstance].name;
+    self.textFieldEmail.text = [User getInstance].email;
+    self.textFieldBusiness.text = [User getInstance].business;
+    self.addressTextView.text = [User getInstance].address;
 }
 
 - (void)viewWillAppear:(BOOL)animated{

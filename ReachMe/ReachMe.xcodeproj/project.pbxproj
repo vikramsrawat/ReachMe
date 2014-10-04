@@ -32,7 +32,6 @@
 		B274540F19B8AEB4003BDC07 /* ReachMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B274540E19B8AEB4003BDC07 /* ReachMeTests.m */; };
 		B274542119B8B064003BDC07 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274541D19B8B064003BDC07 /* FacebookSDK.framework */; };
 		B274542219B8B064003BDC07 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274541E19B8B064003BDC07 /* GoogleOpenSource.framework */; };
-		B274542319B8B064003BDC07 /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B274541F19B8B064003BDC07 /* GooglePlus.bundle */; };
 		B274542419B8B064003BDC07 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274542019B8B064003BDC07 /* GooglePlus.framework */; };
 		B274542D19B8B66B003BDC07 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B274542C19B8B66B003BDC07 /* MBProgressHUD.m */; };
 		B274542F19B8B85F003BDC07 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B274542E19B8B85F003BDC07 /* AssetsLibrary.framework */; };
@@ -47,6 +46,8 @@
 		B274544D19B8CF70003BDC07 /* ReachMeUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B274544C19B8CF70003BDC07 /* ReachMeUserInfoViewController.m */; };
 		B274545019B8D69D003BDC07 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = B274544F19B8D69D003BDC07 /* Utils.m */; };
 		B274545319B8EFFC003BDC07 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B274545219B8EFFC003BDC07 /* User.m */; };
+		B2ADB07319D876CC00D55A16 /* ReachMeConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2ADB07219D876CC00D55A16 /* ReachMeConnectionManager.m */; };
+		B2ADB07719DAF1F200D55A16 /* STHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B2ADB07619DAF1F200D55A16 /* STHTTPRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +95,6 @@
 		B274540E19B8AEB4003BDC07 /* ReachMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReachMeTests.m; sourceTree = "<group>"; };
 		B274541D19B8B064003BDC07 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = frameworks/FacebookSDK.framework; sourceTree = "<group>"; };
 		B274541E19B8B064003BDC07 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleOpenSource.framework; path = frameworks/GoogleOpenSource.framework; sourceTree = "<group>"; };
-		B274541F19B8B064003BDC07 /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlus.bundle; path = frameworks/GooglePlus.bundle; sourceTree = "<group>"; };
 		B274542019B8B064003BDC07 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlus.framework; path = frameworks/GooglePlus.framework; sourceTree = "<group>"; };
 		B274542B19B8B66B003BDC07 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		B274542C19B8B66B003BDC07 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
@@ -114,6 +114,10 @@
 		B274544F19B8D69D003BDC07 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		B274545119B8EFFC003BDC07 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		B274545219B8EFFC003BDC07 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		B2ADB07119D876CC00D55A16 /* ReachMeConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachMeConnectionManager.h; sourceTree = "<group>"; };
+		B2ADB07219D876CC00D55A16 /* ReachMeConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachMeConnectionManager.m; sourceTree = "<group>"; };
+		B2ADB07519DAF1F200D55A16 /* STHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STHTTPRequest.h; sourceTree = "<group>"; };
+		B2ADB07619DAF1F200D55A16 /* STHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STHTTPRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,7 @@
 		B27453D719B8AEB4003BDC07 = {
 			isa = PBXGroup;
 			children = (
+				B2ADB07419DAF1F200D55A16 /* STHTTPRequest */,
 				B274542A19B8B66B003BDC07 /* MBProgressHUD */,
 				B274541819B8B049003BDC07 /* assets */,
 				B27453E919B8AEB4003BDC07 /* ReachMe */,
@@ -184,7 +189,6 @@
 				B274542E19B8B85F003BDC07 /* AssetsLibrary.framework */,
 				B274541D19B8B064003BDC07 /* FacebookSDK.framework */,
 				B274541E19B8B064003BDC07 /* GoogleOpenSource.framework */,
-				B274541F19B8B064003BDC07 /* GooglePlus.bundle */,
 				B274542019B8B064003BDC07 /* GooglePlus.framework */,
 				B27453E319B8AEB4003BDC07 /* Foundation.framework */,
 				B27453E519B8AEB4003BDC07 /* CoreGraphics.framework */,
@@ -219,6 +223,8 @@
 				B21259D519D1EB76002D5D8C /* ReachMeDirectionsPageContentViewController.m */,
 				B21259D719D3171B002D5D8C /* ReachMeEditDirectionViewController.h */,
 				B21259D819D3171B002D5D8C /* ReachMeEditDirectionViewController.m */,
+				B2ADB07119D876CC00D55A16 /* ReachMeConnectionManager.h */,
+				B2ADB07219D876CC00D55A16 /* ReachMeConnectionManager.m */,
 			);
 			path = ReachMe;
 			sourceTree = "<group>";
@@ -272,6 +278,15 @@
 				B274542C19B8B66B003BDC07 /* MBProgressHUD.m */,
 			);
 			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		B2ADB07419DAF1F200D55A16 /* STHTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				B2ADB07519DAF1F200D55A16 /* STHTTPRequest.h */,
+				B2ADB07619DAF1F200D55A16 /* STHTTPRequest.m */,
+			);
+			path = STHTTPRequest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,7 +374,6 @@
 				B209B04619C4385000D1E6A5 /* address.png in Resources */,
 				B27453F719B8AEB4003BDC07 /* Main.storyboard in Resources */,
 				B21259DD19D48B5E002D5D8C /* google-plus-login-btn.png in Resources */,
-				B274542319B8B064003BDC07 /* GooglePlus.bundle in Resources */,
 				B209B04719C4385000D1E6A5 /* directions.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,6 +394,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B274545319B8EFFC003BDC07 /* User.m in Sources */,
+				B2ADB07319D876CC00D55A16 /* ReachMeConnectionManager.m in Sources */,
+				B2ADB07719DAF1F200D55A16 /* STHTTPRequest.m in Sources */,
 				B274544019B8CDC7003BDC07 /* Constants.m in Sources */,
 				B21259D619D1EB76002D5D8C /* ReachMeDirectionsPageContentViewController.m in Sources */,
 				B21259D319D1E2F0002D5D8C /* ReachMeDirectionsViewController.m in Sources */,

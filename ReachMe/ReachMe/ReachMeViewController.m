@@ -12,14 +12,15 @@
 #import <GoogleOpenSource/GoogleOpenSource.h>
 #import "MBProgressHUD.h"
 #import "User.h"
+#import <GoogleOpenSource/GoogleOpenSource.h>
 #define PHONE_MAX_LENGTH 10
 @interface ReachMeViewController ()
-
+@property (strong, nonatomic) GPPSignIn *signIn;
 @end
 
 @implementation ReachMeViewController
 @synthesize appDelegate, input_phone;
-
+static NSString * const kClientId = @"130182801305-tei60s241j8u1nnqg2fqqi8jj7nfktii.apps.googleusercontent.com";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -27,15 +28,38 @@
     
     self.appDelegate = [UIApplication sharedApplication].delegate;
     
-
+    {
+        self.signIn = [GPPSignIn sharedInstance];
+        self.signIn.shouldFetchGooglePlusUser = YES;
+        self.signIn.shouldFetchGoogleUserEmail = YES;  // Uncomment to get the user's email
+        self.signIn.shouldFetchGoogleUserID = YES;
+        // You previously set kClientId in the "Initialize the Google+ client" step
+        self.signIn.clientID = kClientId;
+        
+        // Uncomment one of these two statements for the scope you chose in the previous step
+        self.signIn.scopes = @[ kGTLAuthScopePlusLogin ];  // "https://www.googleapis.com/auth/plus.login" scope
+        self.signIn.scopes = @[ @"profile" ];            // "profile" scope
+        
+        // Optional: declare signIn.actions, see "app activities"
+        self.signIn.delegate = self;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     NSString *loginCtx = [Utils getLoginContext];
-    if ([loginCtx isEqualToString:FB] || [loginCtx isEqualToString:GPLUS]) {
+    if ([loginCtx isEqualToString:FB]) {
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timeUp) userInfo:nil repeats:NO];
-    }else {
+        if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+            
+            // If there's one, just open the session silently, without showing the user the login UI
+            [self openFBSession:YES];
+        }
+        
+    }else if ([loginCtx isEqualToString:GPLUS]){
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [self.signIn trySilentAuthentication];
+    }
+    else {
         //        [self loginToFB:nil];
     }
 }
@@ -103,23 +127,29 @@
         } else {
             // Open a session showing the user the login UI
             // You must ALWAYS ask for public_profile permissions when opening a session
-            [FBSession openActiveSessionWithReadPermissions:@[@"public_profile,email"]
-                                               allowLoginUI:YES
-                                          completionHandler:
-             ^(FBSession *session, FBSessionState state, NSError *error) {
-                 
-                 // Retrieve the app delegate
-                 
-                 // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
-                 [self sessionStateChanged:session state:state error:error];
-             }];
+            [self openFBSession:YES];
         }
     }
 
 }
 
+- (void)openFBSession:(BOOL)showLogin{
+    [FBSession openActiveSessionWithReadPermissions:@[@"public_profile,email"]
+                                       allowLoginUI:showLogin
+                                  completionHandler:
+     ^(FBSession *session, FBSessionState state, NSError *error) {
+         
+         // Retrieve the app delegate
+         
+         // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
+         [self sessionStateChanged:session state:state error:error];
+     }];
+
+}
 - (IBAction)loginToGPlus:(id)sender {
     [Utils setLoginContext:GPLUS];
+    [self.appDelegate showLoading];
+    [self.signIn authenticate];
 }
 
 - (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error
@@ -190,4 +220,15 @@
          }
 }
 
+- (void)finishedWithAuth: (GTMOAuth2Authentication *)auth error: (NSError *) error {
+//    NSLog(@"Received error %@ and auth object %@",error, auth);
+    if (!error) {
+        NSLog(@"id = %@", self.signIn.userID);
+        NSLog(@"email = %@", self.signIn.userEmail);
+        [Utils setContextId:self.signIn.userID];
+        [self showUserInfoView];
+    }else {
+        
+    }
+}
 @end

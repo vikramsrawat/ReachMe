@@ -31,8 +31,9 @@
 @property (weak,nonatomic) NSString *age;
 @property (weak,nonatomic) NSString *phone;
 @property (weak,nonatomic) NSString *business;
-@property (weak,nonatomic) NSString *street_address;
+@property (weak,nonatomic) NSString *address;
 @property (strong, nonatomic) NSMutableDictionary *directions;
 
 -(void)saveUserInfo:(NSDictionary*) userInfo;
++(User*)getInstance;
 @end
