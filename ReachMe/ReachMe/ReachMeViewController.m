@@ -45,16 +45,17 @@ static NSString * const kClientId = @"130182801305-tei60s241j8u1nnqg2fqqi8jj7nfk
         // Optional: declare signIn.actions, see "app activities"
         self.signIn.delegate = self;
     }
-}
-
-- (void)viewWillAppear:(BOOL)animated{
     NSString *loginCtx = [Utils getLoginContext];
     [[Utils getAppDelegate] showLoading];
+    
     if ([loginCtx isEqualToString:FB]) {
+        NSLog(@"stage = %u",FBSession.activeSession.state);
         if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
             
             // If there's one, just open the session silently, without showing the user the login UI
-            [self openFBSession:YES];
+            [self openFBSession:NO];
+        }else {
+            [[Utils getAppDelegate] hideLoading];
         }
         
     }else if ([loginCtx isEqualToString:GPLUS]){
@@ -64,6 +65,10 @@ static NSString * const kClientId = @"130182801305-tei60s241j8u1nnqg2fqqi8jj7nfk
     else {
         [[Utils getAppDelegate] hideLoading];
     }
+
+}
+
+- (void)viewWillAppear:(BOOL)animated{
 }
 - (void)didReceiveMemoryWarning
 {
@@ -109,7 +114,7 @@ static NSString * const kClientId = @"130182801305-tei60s241j8u1nnqg2fqqi8jj7nfk
 }
 
 - (void)openFBSession:(BOOL)showLogin{
-    [FBSession openActiveSessionWithReadPermissions:@[@"public_profile,email"]
+    [FBSession openActiveSessionWithReadPermissions:@[@"public_profile",@"email"]
                                        allowLoginUI:showLogin
                                   completionHandler:
      ^(FBSession *session, FBSessionState state, NSError *error) {
@@ -139,18 +144,23 @@ static NSString * const kClientId = @"130182801305-tei60s241j8u1nnqg2fqqi8jj7nfk
             
             NSLog(@"user = %@",user);
             [Utils setLoginContext:FB];
-            [Utils setContextId:user.objectID];
-            [self showUserInfoView];
+            [Utils setContextId:[user objectForKey:@"id"]];
+            NSMutableDictionary* userDict = [[NSMutableDictionary alloc] init];
+            [userDict setObject:[user objectForKey:@"id"] forKey:@"uid"];
+            [userDict setObject:[user objectForKey:@"email"] forKey:@"email"];
+            [userDict setObject:[user objectForKey:@"name"] forKey:@"name"];
+            [userDict setObject:[user objectForKey:@"first_name"] forKey:@"first_name"];
+            [userDict setObject:[user objectForKey:@"last_name"] forKey:@"last_name"];
+            [[User getInstance] saveUserInfo:userDict];
+            [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(getUser) userInfo:nil repeats:NO];
             return;
             
         }];
          return;
          }
          if (state == FBSessionStateClosed || state == FBSessionStateClosedLoginFailed){
-             // If the session is closed
              NSLog(@"Session closed");
-             // Show the user the logged-out UI
-//             [self userLoggedOut];
+             [[Utils getAppDelegate] hideLoading];
          }
          
          // Handle errors
@@ -232,14 +242,14 @@ static NSString * const kClientId = @"130182801305-tei60s241j8u1nnqg2fqqi8jj7nfk
 }
 -(void)processResponseAndShowUserInfo:(NSString*) data{
     if ([data isEqualToString:@"false"]) {
-        NSLog(@"resp data : %@",data);
+        NSLog(@"getUser resp data : %@",data);
         [self showUserInfoView];
         return;
     }
     NSError * localError = nil;
     NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:[data dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&localError];
     if(localError){
-        NSLog(@"error parsing json data");
+        NSLog(@"error parsing json data for getUser api");
     }
     [[User getInstance] saveUserInfo:parsedObject];
     [self showUserInfoView];

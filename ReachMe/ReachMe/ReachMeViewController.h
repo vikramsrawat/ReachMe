@@ -17,6 +17,5 @@
 - (IBAction)loginToGPlus:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *input_phone;
 
-
 -(void)processResponseAndShowUserInfo:(NSString*) data;
 @end

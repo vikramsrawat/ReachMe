@@ -42,75 +42,13 @@
         [self.addressLabel setHidden:NO];
     }
     [self setNavigationBarBtns];
-}
-
-- (void)viewWillAppear:(BOOL)animated{
     self.nameLabel.text = [User getInstance].name;
     self.emailLabel.text = [User getInstance].email;
     self.addressLabel.text = [User getInstance].address;
 }
 
-
--(void)processResponseAndShowUserInfo:(NSString*) data{
-    if ([data isEqualToString:@"false"]) {
-        NSLog(@"resp data : %@",data);
-        return;
-    }
-    NSError * localError = nil;
-    NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:[data dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&localError];
-    if(localError){
-        NSLog(@"error parsing json data");
-    }
+- (void)viewWillAppear:(BOOL)animated{
     
-    NSLog(@"%@",parsedObject);
-}
-- (void)getUser{
-    NSString *url = [NSString stringWithFormat:GETUSER,@"12345",@"facebook"];
-    STHTTPRequest * r = [STHTTPRequest requestWithURLString:url];
-    [r setHeaderWithName:@"content-type" value:@"application/x-www-form-urlencoded; charset=utf-8"];
-    [r setHTTPMethod:@"GET"];
-//    r.completionDataBlock = ^(NSDictionary* headers, NSData* data) {
-//      [self processResponseAndShowUserInfo:data];
-//    };
-    r.completionBlock=^(NSDictionary *headers, NSString *body) {
-//        NSLog(@"Body: %@", body);
-        [self processResponseAndShowUserInfo:body];
-    };
-    r.errorBlock = ^(NSError* error){
-        NSLog(@"error: %@",[error localizedDescription]);
-    };
-    [r startAsynchronous];
-}
-
-- (void)putUser {
-    NSDictionary *d = @{ @"uid":@"12345", @"name":@"vikram", @"provider":@"facebook",@"landmark":@"kidzee school",@"locality":@"kodichikanahalli",@"city":@"bangalore",@"street_address":@"kumbha lake shore, kc halli",@"phone":@"1234567890"};
-    
-    NSError *error = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:d
-                                                       options:NSJSONWritingPrettyPrinted
-                                                         error:&error];
-    
-    STHTTPRequest *request = [STHTTPRequest requestWithURLString:PUTUSER];
-    
-    [request setHeaderWithName:@"content-type" value:@"application/json; charset=utf-8"];
-    
-    request.rawPOSTData = jsonData;
-    [request setHTTPMethod:@"POST"];
-    
-    request.completionDataBlock=^(NSDictionary *headers, NSData* data){
-        NSString* newStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"resp = %@",newStr);
-    };
-    
-    request.completionBlock=^(NSDictionary *headers, NSString *body) {
-        NSLog(@"Body: %@", body);
-    };
-    
-    request.errorBlock=^(NSError *error) {
-        NSLog(@"Error: %@", [error localizedDescription]);
-    };
-    
-    [request startAsynchronous];
 }
 
 - (void)didReceiveMemoryWarning
@@ -138,8 +76,8 @@
     //[self.view addSubview:[ReachMeEditUserInfoViewController getInstance].view];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UITabBarController *userInfoVC = [storyboard instantiateViewControllerWithIdentifier:@"EditUserInfo"];
-    //[self.parentViewController.navigationController pushViewController:userInfoVC animated:YES];
-    [self.parentViewController presentViewController:userInfoVC animated:YES completion:nil];
+    [self.parentViewController.navigationController pushViewController:userInfoVC animated:YES];
+//    [self.parentViewController presentViewController:userInfoVC animated:YES completion:nil];
 }
 - (void)setNavigationBarBtns {
 //    UIViewController* vc = self.appDelegate.window.rootViewController;
@@ -151,7 +89,19 @@
 }
 
 - (void)shareAddress {
+    NSString *message = @"Whats app";
+    UIImage *image = [UIImage imageNamed:@"whatsapp.png"];
+    NSArray *arrayOfActivityItems = [NSArray arrayWithObjects:message, image, nil];
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc]
+                                            initWithActivityItems:arrayOfActivityItems applicationActivities:nil];
     
+    [self.navigationController presentViewController:activityVC animated:YES completion:nil];
+    activityVC.excludedActivityTypes = @[UIActivityTypeAssignToContact,
+                                                 UIActivityTypePrint,
+                                                 UIActivityTypeAddToReadingList,
+                                                 UIActivityTypeAirDrop,
+                                                 UIActivityTypeCopyToPasteboard,
+                                                 UIActivityTypePostToFacebook,UIActivityTypePostToFlickr];
 }
 
 @end

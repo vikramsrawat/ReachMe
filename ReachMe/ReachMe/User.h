@@ -23,17 +23,17 @@
 //}
 
 @interface User : NSObject
-@property (weak,nonatomic) NSString *uid;
-@property (weak,nonatomic) NSString *name;
-@property (weak,nonatomic) NSString *first_name;
-@property (weak,nonatomic) NSString *last_name;
-@property (weak,nonatomic) NSString *email;
-@property (weak,nonatomic) NSString *age;
-@property (weak,nonatomic) NSString *phone;
-@property (weak,nonatomic) NSString *business;
-@property (weak,nonatomic) NSString *address;
+@property (strong,nonatomic) NSString *uid;
+@property (strong,nonatomic) NSString *name;
+@property (strong,nonatomic) NSString *first_name;
+@property (strong,nonatomic) NSString *last_name;
+@property (strong,nonatomic) NSString *email;
+@property (strong,nonatomic) NSString *age;
+@property (strong,nonatomic) NSString *phone;
+@property (strong,nonatomic) NSString *business;
+@property (strong,nonatomic) NSString *address;
 @property (strong, nonatomic) NSMutableDictionary *directions;
-@property (weak,nonatomic) NSDictionary *userInfo;
+@property (strong,nonatomic) NSDictionary *userInfo;
 -(void)saveUserInfo:(NSDictionary*) userInfo;
 +(User*)getInstance;
 @end
