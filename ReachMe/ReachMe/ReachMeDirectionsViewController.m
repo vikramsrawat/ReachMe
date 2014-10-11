@@ -97,6 +97,8 @@
     if (edit) {
         vc.directionTitleText = [[self.directions objectAtIndex:self.currentPageIndex] objectAtIndex:0];
         vc.directionText = [[self.directions objectAtIndex:self.currentPageIndex] objectAtIndex:1];
+    }else {
+        vc.navigationItem.title = @"New Direction";
     }
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -108,7 +110,7 @@
     [self refreshDirectionsList];
 }
 
-- (void)addDirection:(NSNotification*)notification{
+- (void)addDirection:(NSNotification*)notification {
     NSDictionary *dict = [notification userInfo];
     NSString * label = [dict objectForKey:@"label"];
     NSString * text = [dict objectForKey:@"text"];
@@ -116,6 +118,7 @@
     [self.directions addObject:newDirections];
     [self refreshDirectionsList];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
