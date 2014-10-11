@@ -13,6 +13,7 @@
 #import "STHTTPRequest.h"
 #import "Constants.h"
 #import "User.h"
+#import "JBWhatsAppActivity.h"
 @interface ReachMeUserInfoViewController ()
 
 @end
@@ -41,14 +42,14 @@
     }else {
         [self.addressLabel setHidden:NO];
     }
-    [self setNavigationBarBtns];
+    
     self.nameLabel.text = [User getInstance].name;
     self.emailLabel.text = [User getInstance].email;
     self.addressLabel.text = [User getInstance].address;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    
+    [self setNavigationBarBtns];
 }
 
 - (void)didReceiveMemoryWarning
@@ -89,19 +90,15 @@
 }
 
 - (void)shareAddress {
-    NSString *message = @"Whats app";
-    UIImage *image = [UIImage imageNamed:@"whatsapp.png"];
-    NSArray *arrayOfActivityItems = [NSArray arrayWithObjects:message, image, nil];
-    UIActivityViewController *activityVC = [[UIActivityViewController alloc]
-                                            initWithActivityItems:arrayOfActivityItems applicationActivities:nil];
+    WhatsAppMessage *whatsappMsg = [[WhatsAppMessage alloc] initWithMessage:[User getInstance].address forABID:nil];
     
-    [self.navigationController presentViewController:activityVC animated:YES completion:nil];
-    activityVC.excludedActivityTypes = @[UIActivityTypeAssignToContact,
-                                                 UIActivityTypePrint,
-                                                 UIActivityTypeAddToReadingList,
-                                                 UIActivityTypeAirDrop,
-                                                 UIActivityTypeCopyToPasteboard,
-                                                 UIActivityTypePostToFacebook,UIActivityTypePostToFlickr];
+    NSArray *applicationActivities = @[[[JBWhatsAppActivity alloc] init]];
+    NSArray *excludedActivities    = @[UIActivityTypePrint, UIActivityTypePostToWeibo, UIActivityTypeMail, UIActivityTypeCopyToPasteboard];
+    NSArray *activityItems         = @[[User getInstance].address, whatsappMsg];
+    
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:applicationActivities];
+    activityViewController.excludedActivityTypes = excludedActivities;
+    [self.navigationController presentViewController:activityViewController animated:YES completion:nil];
 }
 
 @end

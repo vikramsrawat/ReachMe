@@ -12,4 +12,10 @@
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) NSMutableArray* directions;
 @property NSInteger currentPageIndex;
+@property (weak, nonatomic) IBOutlet UIButton *addNewDirection;
+
+- (IBAction)addNewDirection:(id)sender;
+- (IBAction)removeDirection:(id)sender;
+
+- (void)addDirection:(NSNotification*)notification;
 @end

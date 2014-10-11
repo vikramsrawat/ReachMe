@@ -49,6 +49,10 @@
 		B29D5D1519E84FB900299805 /* whatsapp.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D5D1419E84FB900299805 /* whatsapp.png */; };
 		B29D5D1C19E860C200299805 /* JBWhatsAppActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D5D1A19E860C200299805 /* JBWhatsAppActivity.m */; };
 		B29D5D1D19E860C200299805 /* whatsapp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D5D1B19E860C200299805 /* whatsapp@2x.png */; };
+		B29D5D2219E9154F00299805 /* addMore.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D5D1E19E9154F00299805 /* addMore.png */; };
+		B29D5D2319E9154F00299805 /* addMore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D5D1F19E9154F00299805 /* addMore@2x.png */; };
+		B29D5D2819E9194000299805 /* trash-48.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D5D2619E9194000299805 /* trash-48.png */; };
+		B29D5D2919E9194000299805 /* trash-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D5D2719E9194000299805 /* trash-48@2x.png */; };
 		B2ADB07319D876CC00D55A16 /* ReachMeConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2ADB07219D876CC00D55A16 /* ReachMeConnectionManager.m */; };
 		B2ADB07719DAF1F200D55A16 /* STHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B2ADB07619DAF1F200D55A16 /* STHTTPRequest.m */; };
 /* End PBXBuildFile section */
@@ -121,6 +125,10 @@
 		B29D5D1919E860C200299805 /* JBWhatsAppActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBWhatsAppActivity.h; sourceTree = "<group>"; };
 		B29D5D1A19E860C200299805 /* JBWhatsAppActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBWhatsAppActivity.m; sourceTree = "<group>"; };
 		B29D5D1B19E860C200299805 /* whatsapp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whatsapp@2x.png"; sourceTree = "<group>"; };
+		B29D5D1E19E9154F00299805 /* addMore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addMore.png; path = ../../assets/addMore.png; sourceTree = "<group>"; };
+		B29D5D1F19E9154F00299805 /* addMore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "addMore@2x.png"; path = "../../assets/addMore@2x.png"; sourceTree = "<group>"; };
+		B29D5D2619E9194000299805 /* trash-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "trash-48.png"; path = "../../assets/trash-48.png"; sourceTree = "<group>"; };
+		B29D5D2719E9194000299805 /* trash-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "trash-48@2x.png"; path = "../../assets/trash-48@2x.png"; sourceTree = "<group>"; };
 		B2ADB07119D876CC00D55A16 /* ReachMeConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachMeConnectionManager.h; sourceTree = "<group>"; };
 		B2ADB07219D876CC00D55A16 /* ReachMeConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachMeConnectionManager.m; sourceTree = "<group>"; };
 		B2ADB07519DAF1F200D55A16 /* STHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STHTTPRequest.h; sourceTree = "<group>"; };
@@ -269,6 +277,10 @@
 		B274541819B8B049003BDC07 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				B29D5D2619E9194000299805 /* trash-48.png */,
+				B29D5D2719E9194000299805 /* trash-48@2x.png */,
+				B29D5D1E19E9154F00299805 /* addMore.png */,
+				B29D5D1F19E9154F00299805 /* addMore@2x.png */,
 				B29D5D1419E84FB900299805 /* whatsapp.png */,
 				B21259DA19D48B5E002D5D8C /* facebook-login-btn.png */,
 				B21259DB19D48B5E002D5D8C /* google-plus-login-btn.png */,
@@ -385,14 +397,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B29D5D2919E9194000299805 /* trash-48@2x.png in Resources */,
 				B21259DC19D48B5E002D5D8C /* facebook-login-btn.png in Resources */,
 				B27453FC19B8AEB4003BDC07 /* Images.xcassets in Resources */,
 				B209B04D19C5504B00D1E6A5 /* address@2x.png in Resources */,
+				B29D5D2319E9154F00299805 /* addMore@2x.png in Resources */,
 				B209B04E19C5504B00D1E6A5 /* directions@2x.png in Resources */,
 				B27453EE19B8AEB4003BDC07 /* InfoPlist.strings in Resources */,
 				B209B04619C4385000D1E6A5 /* address.png in Resources */,
+				B29D5D2219E9154F00299805 /* addMore.png in Resources */,
 				B27453F719B8AEB4003BDC07 /* Main.storyboard in Resources */,
 				B21259DD19D48B5E002D5D8C /* google-plus-login-btn.png in Resources */,
+				B29D5D2819E9194000299805 /* trash-48.png in Resources */,
 				B209B04719C4385000D1E6A5 /* directions.png in Resources */,
 				B29D5D1519E84FB900299805 /* whatsapp.png in Resources */,
 				B29D5D1D19E860C200299805 /* whatsapp@2x.png in Resources */,

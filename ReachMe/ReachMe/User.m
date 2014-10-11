@@ -21,6 +21,7 @@
     self.phone = [userInfo objectForKey:@"phone"] ? [userInfo objectForKey:@"phone"] : self.phone;
     self.business = [userInfo objectForKey:@"business"] ? [userInfo objectForKey:@"business"] : self.business;
     self.address = [userInfo objectForKey:@"address"] ? [userInfo objectForKey:@"address"] : self.address;
+    self.address = @"kodichikanahalli village, begur hobli";
     self.directions = [userInfo objectForKey:@"directions"] ? [userInfo objectForKey:@"directions"] : self.directions;
     self.address = [userInfo objectForKey:@"street_address"] ? [userInfo objectForKey:@"street_address"] : self.address;
     

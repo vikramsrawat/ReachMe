@@ -32,12 +32,12 @@
     //The rounded corner part, where you specify your view's corner radius:
     _addressTextView.layer.cornerRadius = 5;
     _addressTextView.clipsToBounds = YES;
-    [self setNavigationBarBtns];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     //To make the border look very close to a UITextField
-    
+    [self setNavigationBarBtns];
 }
 
 - (void)didReceiveMemoryWarning {

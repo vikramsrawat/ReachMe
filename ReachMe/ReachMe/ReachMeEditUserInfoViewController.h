@@ -12,9 +12,8 @@
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldEmail;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldName;
-@property (weak, nonatomic) IBOutlet UITextField *textFieldBusiness;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldBusines;
 @property (weak, nonatomic) IBOutlet UITextView *addressTextView;
-
 
 - (void) saveAddress;
 - (void) setNavigationBarBtns;

@@ -68,6 +68,12 @@
 }
 
 - (void)saveDirection{
+    NSString * label = self.directionTitle.text;
+    NSString * text = self.direction.text;
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
+    [dict setObject:label forKey:@"label"];
+    [dict setObject:text forKey:@"text"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"addNewDirection" object:self userInfo:dict];
     [self removeFromParentViewController];
 }
 

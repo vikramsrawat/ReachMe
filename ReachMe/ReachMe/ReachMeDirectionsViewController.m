@@ -34,7 +34,7 @@
     [self.directions addObject:arrr];
     
     
-    NSLog(@"%@", [self.directions objectAtIndex:1]);
+    
     UIStoryboard *storyboard = [Utils getStoryBoard];
     
     self.pageViewController = [storyboard instantiateViewControllerWithIdentifier:@"PageViewVC"];
@@ -47,14 +47,20 @@
     NSArray *vcs = @[startingViewController];
     
     [self.pageViewController setViewControllers:vcs direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - [[[self tabBarController] tabBar] bounds].size.height);
+//    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - [[[self tabBarController] tabBar] bounds].size.height - 200);
+    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.addNewDirection.frame.origin.y);
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
-    [self setNavigationBarBtns];
+    
     self.currentPageIndex = 0;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addDirection:) name:@"addNewDirection" object:nil];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [self setNavigationBarBtns];
+}
 - (void)setNavigationBarBtns {
     //    UIViewController* vc = self.appDelegate.window.rootViewController;
     UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editDirection)];
@@ -65,9 +71,7 @@
 
 - (void) editDirection{
     
-    ReachMeEditDirectionViewController *vc = [ReachMeEditDirectionViewController getInstance];
-    vc.directionTitleText = [[self.directions objectAtIndex:self.currentPageIndex] objectAtIndex:0];
-    vc.directionText = [[self.directions objectAtIndex:self.currentPageIndex] objectAtIndex:1];
+    [self addEditDirection:YES];
     
 //    [UIView animateWithDuration:0.75
 //                     animations:^{
@@ -75,14 +79,43 @@
 //                         [self.navigationController pushViewController:vc animated:YES];
 //                         [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.navigationController.view cache:NO];
 //                     }];
-    [self.navigationController pushViewController:vc animated:YES];
-//    [self.navigationController presentViewController:vc animated:YES completion:nil];
+//      [self.navigationController presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)shareAddress{
     NSLog(@"share direction");
+    
 }
 
+- (void)refreshDirectionsList {
+    ReachMeDirectionsPageContentViewController *  startingViewController = [self viewControllerAtIndex:0];
+    NSArray *vcs = @[startingViewController];
+    [self.pageViewController setViewControllers:vcs direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+}
+- (void)addEditDirection:(BOOL)edit{
+    ReachMeEditDirectionViewController *vc = [ReachMeEditDirectionViewController getInstance];
+    if (edit) {
+        vc.directionTitleText = [[self.directions objectAtIndex:self.currentPageIndex] objectAtIndex:0];
+        vc.directionText = [[self.directions objectAtIndex:self.currentPageIndex] objectAtIndex:1];
+    }
+    [self.navigationController pushViewController:vc animated:YES];
+}
+- (IBAction)addNewDirection:(id)sender{
+    [self addEditDirection:NO];
+}
+- (IBAction)removeDirection:(id)sender{
+    [self.directions removeObjectAtIndex:self.currentPageIndex];
+    [self refreshDirectionsList];
+}
+
+- (void)addDirection:(NSNotification*)notification{
+    NSDictionary *dict = [notification userInfo];
+    NSString * label = [dict objectForKey:@"label"];
+    NSString * text = [dict objectForKey:@"text"];
+    NSArray *newDirections = [[NSArray alloc] initWithObjects:label,text, nil];
+    [self.directions addObject:newDirections];
+    [self refreshDirectionsList];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
