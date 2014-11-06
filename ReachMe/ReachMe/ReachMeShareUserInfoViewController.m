@@ -20,14 +20,14 @@
 //    self.view.opaque = NO;
 
     // Do any additional setup after loading the view.
-//    [UIView animateWithDuration:1.0 delay:0.0 options:UIViewAnimationOptionTransitionFlipFromTop animations:^{self.view.frame = CGRectMake(self.view.frame.origin.x, 300, self.view.frame.size.width, self.view.frame.size.height);} completion:nil;
-//    UIButton * smsBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [smsBtn setBackgroundImage:[UIImage imageNamed:@"whatsapp.png"] forState:UIControlStateNormal];
-//    [smsBtn setContentMode:UIViewContentModeCenter];
-//    [smsBtn addTarget:self action:@selector(sendSMS) forControlEvents:UIControlEventTouchUpInside];
-//    smsBtn.frame = CGRectMake(10, 10, 44, 44);
-//    UIView * subview = [self.view viewWithTag:100];
-//    [subview addSubview:smsBtn];
+    [UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionTransitionFlipFromTop animations:^{self.view.frame = CGRectMake(self.view.frame.origin.x, 300, self.view.frame.size.width, self.view.frame.size.height);} completion:nil];
+    UIButton * whtsAppBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [whtsAppBtn setImage:[UIImage imageNamed:@"whatsapp.png"] forState:UIControlStateNormal];
+    [whtsAppBtn setContentMode:UIViewContentModeCenter];
+    [whtsAppBtn addTarget:self action:@selector(sendWhatsAppMesg) forControlEvents:UIControlEventTouchUpInside];
+//    CGFloat xpos =
+    whtsAppBtn.frame = CGRectMake(10, 10, 44, 44); //hardcoded values as of now, need to b aligned as per the view
+    [self.view addSubview:whtsAppBtn];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,7 +46,7 @@
 */
 
 
--(void)sendSMS{
+-(void)sendWhatsAppMesg{
     NSLog(@"send sms");
 }
 @end

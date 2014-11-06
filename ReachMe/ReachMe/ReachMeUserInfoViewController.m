@@ -98,18 +98,13 @@
     ReachMeShareUserInfoViewController *userInfoVC = [storyboard instantiateViewControllerWithIdentifier:@"ShareBtnsVC"];
     userInfoVC.view.layer.borderWidth = 1;
     userInfoVC.view.layer.borderColor = self.view.tintColor.CGColor;
-    CGFloat width = self.view.frame.size.width * .20;
-    CGFloat height = self.view.frame.size.height * .30;
+    CGFloat width = self.view.frame.size.width * .10;
+    CGFloat height = self.view.frame.size.height * .20;
     CGFloat xpos = self.view.frame.size.width - width - 5;
     CGFloat ypos = 64; //uinavigationcontroller height
 //    CGFloat ypos = (self.view.frame.size.height - height) / 2;
     userInfoVC.view.frame = CGRectMake(xpos, ypos, width, height);
-    UIButton * whtsAppBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [whtsAppBtn setImage:[UIImage imageNamed:@"whatsapp.png"] forState:UIControlStateNormal];
-    [whtsAppBtn setContentMode:UIViewContentModeCenter];
-//    [smsBtn addTarget:self action:@selector(sendSMS) forControlEvents:UIControlEventTouchUpInside];
-    whtsAppBtn.frame = CGRectMake(10, 10, 44, 44); //hardcoded values as of now, need to b aligned as per the view
-    [userInfoVC.view addSubview:whtsAppBtn];
+    
     [self.view addSubview:userInfoVC.view];
 }
 @end
