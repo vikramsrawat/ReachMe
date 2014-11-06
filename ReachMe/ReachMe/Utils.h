@@ -18,4 +18,5 @@
 +(BOOL)isLoggedIn;
 +(ReachMeAppDelegate*)getAppDelegate;
 +(UIStoryboard*)getStoryBoard;
++(void)resetContextInfo;
 @end

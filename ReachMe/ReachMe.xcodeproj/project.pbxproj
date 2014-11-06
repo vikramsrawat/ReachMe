@@ -8,15 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B209171B19CDC167003FEE6A /* ReachMeEditUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B209171A19CDC167003FEE6A /* ReachMeEditUserInfoViewController.m */; };
-		B209B04619C4385000D1E6A5 /* address.png in Resources */ = {isa = PBXBuildFile; fileRef = B209B04419C4385000D1E6A5 /* address.png */; };
-		B209B04719C4385000D1E6A5 /* directions.png in Resources */ = {isa = PBXBuildFile; fileRef = B209B04519C4385000D1E6A5 /* directions.png */; };
-		B209B04D19C5504B00D1E6A5 /* address@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B209B04B19C5504B00D1E6A5 /* address@2x.png */; };
-		B209B04E19C5504B00D1E6A5 /* directions@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B209B04C19C5504B00D1E6A5 /* directions@2x.png */; };
 		B21259D319D1E2F0002D5D8C /* ReachMeDirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21259D219D1E2F0002D5D8C /* ReachMeDirectionsViewController.m */; };
 		B21259D619D1EB76002D5D8C /* ReachMeDirectionsPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21259D519D1EB76002D5D8C /* ReachMeDirectionsPageContentViewController.m */; };
 		B21259D919D3171B002D5D8C /* ReachMeEditDirectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21259D819D3171B002D5D8C /* ReachMeEditDirectionViewController.m */; };
-		B21259DC19D48B5E002D5D8C /* facebook-login-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = B21259DA19D48B5E002D5D8C /* facebook-login-btn.png */; };
-		B21259DD19D48B5E002D5D8C /* google-plus-login-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = B21259DB19D48B5E002D5D8C /* google-plus-login-btn.png */; };
+		B273E47A1A07E5D2000DDAAE /* ReachMeShareUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B273E4791A07E5D2000DDAAE /* ReachMeShareUserInfoViewController.m */; };
 		B27453E419B8AEB4003BDC07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27453E319B8AEB4003BDC07 /* Foundation.framework */; };
 		B27453E619B8AEB4003BDC07 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27453E519B8AEB4003BDC07 /* CoreGraphics.framework */; };
 		B27453E819B8AEB4003BDC07 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27453E719B8AEB4003BDC07 /* UIKit.framework */; };
@@ -46,15 +41,22 @@
 		B274544D19B8CF70003BDC07 /* ReachMeUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B274544C19B8CF70003BDC07 /* ReachMeUserInfoViewController.m */; };
 		B274545019B8D69D003BDC07 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = B274544F19B8D69D003BDC07 /* Utils.m */; };
 		B274545319B8EFFC003BDC07 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B274545219B8EFFC003BDC07 /* User.m */; };
-		B29D5D1519E84FB900299805 /* whatsapp.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D5D1419E84FB900299805 /* whatsapp.png */; };
 		B29D5D1C19E860C200299805 /* JBWhatsAppActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D5D1A19E860C200299805 /* JBWhatsAppActivity.m */; };
 		B29D5D1D19E860C200299805 /* whatsapp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D5D1B19E860C200299805 /* whatsapp@2x.png */; };
-		B29D5D2219E9154F00299805 /* addMore.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D5D1E19E9154F00299805 /* addMore.png */; };
-		B29D5D2319E9154F00299805 /* addMore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D5D1F19E9154F00299805 /* addMore@2x.png */; };
-		B29D5D2819E9194000299805 /* trash-48.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D5D2619E9194000299805 /* trash-48.png */; };
-		B29D5D2919E9194000299805 /* trash-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D5D2719E9194000299805 /* trash-48@2x.png */; };
 		B2ADB07319D876CC00D55A16 /* ReachMeConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2ADB07219D876CC00D55A16 /* ReachMeConnectionManager.m */; };
 		B2ADB07719DAF1F200D55A16 /* STHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B2ADB07619DAF1F200D55A16 /* STHTTPRequest.m */; };
+		B2C3150B1A0BFD68009AB40B /* addMore.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C314FF1A0BFD68009AB40B /* addMore.png */; };
+		B2C3150C1A0BFD68009AB40B /* addMore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C315001A0BFD68009AB40B /* addMore@2x.png */; };
+		B2C3150D1A0BFD68009AB40B /* address.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C315011A0BFD68009AB40B /* address.png */; };
+		B2C3150E1A0BFD68009AB40B /* address@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C315021A0BFD68009AB40B /* address@2x.png */; };
+		B2C3150F1A0BFD68009AB40B /* directions.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C315031A0BFD68009AB40B /* directions.png */; };
+		B2C315101A0BFD68009AB40B /* directions@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C315041A0BFD68009AB40B /* directions@2x.png */; };
+		B2C315111A0BFD68009AB40B /* facebook-login-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C315051A0BFD68009AB40B /* facebook-login-btn.png */; };
+		B2C315121A0BFD68009AB40B /* google-plus-login-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C315061A0BFD68009AB40B /* google-plus-login-btn.png */; };
+		B2C315131A0BFD68009AB40B /* trash-48.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C315071A0BFD68009AB40B /* trash-48.png */; };
+		B2C315141A0BFD68009AB40B /* trash-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C315081A0BFD68009AB40B /* trash-48@2x.png */; };
+		B2C315151A0BFD68009AB40B /* whatsapp.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C315091A0BFD68009AB40B /* whatsapp.png */; };
+		B2C315161A0BFD68009AB40B /* whatsapp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C3150A1A0BFD68009AB40B /* whatsapp@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,18 +72,14 @@
 /* Begin PBXFileReference section */
 		B209171919CDC167003FEE6A /* ReachMeEditUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachMeEditUserInfoViewController.h; sourceTree = "<group>"; };
 		B209171A19CDC167003FEE6A /* ReachMeEditUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachMeEditUserInfoViewController.m; sourceTree = "<group>"; };
-		B209B04419C4385000D1E6A5 /* address.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = address.png; sourceTree = "<group>"; };
-		B209B04519C4385000D1E6A5 /* directions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directions.png; sourceTree = "<group>"; };
-		B209B04B19C5504B00D1E6A5 /* address@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "address@2x.png"; sourceTree = "<group>"; };
-		B209B04C19C5504B00D1E6A5 /* directions@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "directions@2x.png"; sourceTree = "<group>"; };
 		B21259D119D1E2F0002D5D8C /* ReachMeDirectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachMeDirectionsViewController.h; sourceTree = "<group>"; };
 		B21259D219D1E2F0002D5D8C /* ReachMeDirectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachMeDirectionsViewController.m; sourceTree = "<group>"; };
 		B21259D419D1EB76002D5D8C /* ReachMeDirectionsPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachMeDirectionsPageContentViewController.h; sourceTree = "<group>"; };
 		B21259D519D1EB76002D5D8C /* ReachMeDirectionsPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachMeDirectionsPageContentViewController.m; sourceTree = "<group>"; };
 		B21259D719D3171B002D5D8C /* ReachMeEditDirectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachMeEditDirectionViewController.h; sourceTree = "<group>"; };
 		B21259D819D3171B002D5D8C /* ReachMeEditDirectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachMeEditDirectionViewController.m; sourceTree = "<group>"; };
-		B21259DA19D48B5E002D5D8C /* facebook-login-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-login-btn.png"; sourceTree = "<group>"; };
-		B21259DB19D48B5E002D5D8C /* google-plus-login-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-plus-login-btn.png"; sourceTree = "<group>"; };
+		B273E4781A07E5D2000DDAAE /* ReachMeShareUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachMeShareUserInfoViewController.h; sourceTree = "<group>"; };
+		B273E4791A07E5D2000DDAAE /* ReachMeShareUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachMeShareUserInfoViewController.m; sourceTree = "<group>"; };
 		B27453E019B8AEB4003BDC07 /* ReachMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReachMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B27453E319B8AEB4003BDC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B27453E519B8AEB4003BDC07 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -121,18 +119,25 @@
 		B274544F19B8D69D003BDC07 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		B274545119B8EFFC003BDC07 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		B274545219B8EFFC003BDC07 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		B29D5D1419E84FB900299805 /* whatsapp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whatsapp.png; path = ../../assets/whatsapp.png; sourceTree = "<group>"; };
 		B29D5D1919E860C200299805 /* JBWhatsAppActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBWhatsAppActivity.h; sourceTree = "<group>"; };
 		B29D5D1A19E860C200299805 /* JBWhatsAppActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBWhatsAppActivity.m; sourceTree = "<group>"; };
 		B29D5D1B19E860C200299805 /* whatsapp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whatsapp@2x.png"; sourceTree = "<group>"; };
-		B29D5D1E19E9154F00299805 /* addMore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addMore.png; path = ../../assets/addMore.png; sourceTree = "<group>"; };
-		B29D5D1F19E9154F00299805 /* addMore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "addMore@2x.png"; path = "../../assets/addMore@2x.png"; sourceTree = "<group>"; };
-		B29D5D2619E9194000299805 /* trash-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "trash-48.png"; path = "../../assets/trash-48.png"; sourceTree = "<group>"; };
-		B29D5D2719E9194000299805 /* trash-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "trash-48@2x.png"; path = "../../assets/trash-48@2x.png"; sourceTree = "<group>"; };
 		B2ADB07119D876CC00D55A16 /* ReachMeConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachMeConnectionManager.h; sourceTree = "<group>"; };
 		B2ADB07219D876CC00D55A16 /* ReachMeConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachMeConnectionManager.m; sourceTree = "<group>"; };
 		B2ADB07519DAF1F200D55A16 /* STHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STHTTPRequest.h; sourceTree = "<group>"; };
 		B2ADB07619DAF1F200D55A16 /* STHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STHTTPRequest.m; sourceTree = "<group>"; };
+		B2C314FF1A0BFD68009AB40B /* addMore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addMore.png; sourceTree = "<group>"; };
+		B2C315001A0BFD68009AB40B /* addMore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addMore@2x.png"; sourceTree = "<group>"; };
+		B2C315011A0BFD68009AB40B /* address.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = address.png; sourceTree = "<group>"; };
+		B2C315021A0BFD68009AB40B /* address@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "address@2x.png"; sourceTree = "<group>"; };
+		B2C315031A0BFD68009AB40B /* directions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directions.png; sourceTree = "<group>"; };
+		B2C315041A0BFD68009AB40B /* directions@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "directions@2x.png"; sourceTree = "<group>"; };
+		B2C315051A0BFD68009AB40B /* facebook-login-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-login-btn.png"; sourceTree = "<group>"; };
+		B2C315061A0BFD68009AB40B /* google-plus-login-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-plus-login-btn.png"; sourceTree = "<group>"; };
+		B2C315071A0BFD68009AB40B /* trash-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trash-48.png"; sourceTree = "<group>"; };
+		B2C315081A0BFD68009AB40B /* trash-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trash-48@2x.png"; sourceTree = "<group>"; };
+		B2C315091A0BFD68009AB40B /* whatsapp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whatsapp.png; sourceTree = "<group>"; };
+		B2C3150A1A0BFD68009AB40B /* whatsapp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whatsapp@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +246,8 @@
 				B21259D819D3171B002D5D8C /* ReachMeEditDirectionViewController.m */,
 				B2ADB07119D876CC00D55A16 /* ReachMeConnectionManager.h */,
 				B2ADB07219D876CC00D55A16 /* ReachMeConnectionManager.m */,
+				B273E4781A07E5D2000DDAAE /* ReachMeShareUserInfoViewController.h */,
+				B273E4791A07E5D2000DDAAE /* ReachMeShareUserInfoViewController.m */,
 			);
 			path = ReachMe;
 			sourceTree = "<group>";
@@ -277,17 +284,18 @@
 		B274541819B8B049003BDC07 /* assets */ = {
 			isa = PBXGroup;
 			children = (
-				B29D5D2619E9194000299805 /* trash-48.png */,
-				B29D5D2719E9194000299805 /* trash-48@2x.png */,
-				B29D5D1E19E9154F00299805 /* addMore.png */,
-				B29D5D1F19E9154F00299805 /* addMore@2x.png */,
-				B29D5D1419E84FB900299805 /* whatsapp.png */,
-				B21259DA19D48B5E002D5D8C /* facebook-login-btn.png */,
-				B21259DB19D48B5E002D5D8C /* google-plus-login-btn.png */,
-				B209B04B19C5504B00D1E6A5 /* address@2x.png */,
-				B209B04C19C5504B00D1E6A5 /* directions@2x.png */,
-				B209B04419C4385000D1E6A5 /* address.png */,
-				B209B04519C4385000D1E6A5 /* directions.png */,
+				B2C314FF1A0BFD68009AB40B /* addMore.png */,
+				B2C315001A0BFD68009AB40B /* addMore@2x.png */,
+				B2C315011A0BFD68009AB40B /* address.png */,
+				B2C315021A0BFD68009AB40B /* address@2x.png */,
+				B2C315031A0BFD68009AB40B /* directions.png */,
+				B2C315041A0BFD68009AB40B /* directions@2x.png */,
+				B2C315051A0BFD68009AB40B /* facebook-login-btn.png */,
+				B2C315061A0BFD68009AB40B /* google-plus-login-btn.png */,
+				B2C315071A0BFD68009AB40B /* trash-48.png */,
+				B2C315081A0BFD68009AB40B /* trash-48@2x.png */,
+				B2C315091A0BFD68009AB40B /* whatsapp.png */,
+				B2C3150A1A0BFD68009AB40B /* whatsapp@2x.png */,
 			);
 			path = assets;
 			sourceTree = "<group>";
@@ -397,21 +405,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B29D5D2919E9194000299805 /* trash-48@2x.png in Resources */,
-				B21259DC19D48B5E002D5D8C /* facebook-login-btn.png in Resources */,
 				B27453FC19B8AEB4003BDC07 /* Images.xcassets in Resources */,
-				B209B04D19C5504B00D1E6A5 /* address@2x.png in Resources */,
-				B29D5D2319E9154F00299805 /* addMore@2x.png in Resources */,
-				B209B04E19C5504B00D1E6A5 /* directions@2x.png in Resources */,
+				B2C3150E1A0BFD68009AB40B /* address@2x.png in Resources */,
+				B2C315151A0BFD68009AB40B /* whatsapp.png in Resources */,
+				B2C3150F1A0BFD68009AB40B /* directions.png in Resources */,
 				B27453EE19B8AEB4003BDC07 /* InfoPlist.strings in Resources */,
-				B209B04619C4385000D1E6A5 /* address.png in Resources */,
-				B29D5D2219E9154F00299805 /* addMore.png in Resources */,
+				B2C3150D1A0BFD68009AB40B /* address.png in Resources */,
+				B2C315121A0BFD68009AB40B /* google-plus-login-btn.png in Resources */,
+				B2C315161A0BFD68009AB40B /* whatsapp@2x.png in Resources */,
 				B27453F719B8AEB4003BDC07 /* Main.storyboard in Resources */,
-				B21259DD19D48B5E002D5D8C /* google-plus-login-btn.png in Resources */,
-				B29D5D2819E9194000299805 /* trash-48.png in Resources */,
-				B209B04719C4385000D1E6A5 /* directions.png in Resources */,
-				B29D5D1519E84FB900299805 /* whatsapp.png in Resources */,
+				B2C315131A0BFD68009AB40B /* trash-48.png in Resources */,
+				B2C315101A0BFD68009AB40B /* directions@2x.png in Resources */,
+				B2C3150C1A0BFD68009AB40B /* addMore@2x.png in Resources */,
+				B2C315111A0BFD68009AB40B /* facebook-login-btn.png in Resources */,
+				B2C3150B1A0BFD68009AB40B /* addMore.png in Resources */,
 				B29D5D1D19E860C200299805 /* whatsapp@2x.png in Resources */,
+				B2C315141A0BFD68009AB40B /* trash-48@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B274545319B8EFFC003BDC07 /* User.m in Sources */,
+				B273E47A1A07E5D2000DDAAE /* ReachMeShareUserInfoViewController.m in Sources */,
 				B2ADB07319D876CC00D55A16 /* ReachMeConnectionManager.m in Sources */,
 				B2ADB07719DAF1F200D55A16 /* STHTTPRequest.m in Sources */,
 				B274544019B8CDC7003BDC07 /* Constants.m in Sources */,

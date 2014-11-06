@@ -44,4 +44,10 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     return storyboard;
 }
+
++(void)resetContextInfo{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"ctx"];
+    [defaults removeObjectForKey:@"ctxId"];
+}
 @end

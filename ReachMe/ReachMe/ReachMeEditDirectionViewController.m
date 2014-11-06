@@ -73,7 +73,11 @@
     NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
     [dict setObject:label forKey:@"label"];
     [dict setObject:text forKey:@"text"];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"addNewDirection" object:self userInfo:dict];
+    if (self.mode == ADD) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"addNewDirection" object:self userInfo:dict];
+    }else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"editDirection" object:self userInfo:dict];
+    }
     [self removeFromParentViewController];
 }
 

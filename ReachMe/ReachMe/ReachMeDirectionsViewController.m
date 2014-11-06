@@ -56,6 +56,7 @@
     self.currentPageIndex = 0;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addDirection:) name:@"addNewDirection" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateDirection:) name:@"editDirection" object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -84,7 +85,6 @@
 
 - (void)shareAddress{
     NSLog(@"share direction");
-    
 }
 
 - (void)refreshDirectionsList {
@@ -94,10 +94,15 @@
 }
 - (void)addEditDirection:(BOOL)edit{
     ReachMeEditDirectionViewController *vc = [ReachMeEditDirectionViewController getInstance];
+    vc.directionTitleText = nil;
+    vc.directionText = nil;
     if (edit) {
+        vc.mode = EDIT;
         vc.directionTitleText = [[self.directions objectAtIndex:self.currentPageIndex] objectAtIndex:0];
         vc.directionText = [[self.directions objectAtIndex:self.currentPageIndex] objectAtIndex:1];
+        vc.navigationItem.title = @"Edit Direction";
     }else {
+        vc.mode = ADD;
         vc.navigationItem.title = @"New Direction";
     }
     [self.navigationController pushViewController:vc animated:YES];
@@ -110,12 +115,21 @@
     [self refreshDirectionsList];
 }
 
+- (void)updateDirection:(NSNotification*)notification {
+    NSDictionary * dict = [notification userInfo];
+    NSString * label = [dict objectForKey:@"label"];
+    NSString * text = [dict objectForKey:@"text"];
+    
+    NSArray * updatedDirection = [[NSArray alloc] initWithObjects:label, text, nil];
+    [self.directions replaceObjectAtIndex:self.currentPageIndex withObject:updatedDirection];
+    [self refreshDirectionsList];
+}
 - (void)addDirection:(NSNotification*)notification {
     NSDictionary *dict = [notification userInfo];
     NSString * label = [dict objectForKey:@"label"];
     NSString * text = [dict objectForKey:@"text"];
-    NSArray *newDirections = [[NSArray alloc] initWithObjects:label,text, nil];
-    [self.directions addObject:newDirections];
+    NSArray *newDirection = [[NSArray alloc] initWithObjects:label,text, nil];
+    [self.directions addObject:newDirection];
     [self refreshDirectionsList];
 }
 

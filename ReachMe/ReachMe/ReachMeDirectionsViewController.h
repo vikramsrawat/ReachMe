@@ -18,4 +18,5 @@
 - (IBAction)removeDirection:(id)sender;
 
 - (void)addDirection:(NSNotification*)notification;
+- (void)updateDirection:(NSNotificationCenter*)notification;
 @end

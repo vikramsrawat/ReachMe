@@ -14,6 +14,7 @@
 #import "Constants.h"
 #import "User.h"
 #import "JBWhatsAppActivity.h"
+#import "ReachMeShareUserInfoViewController.h"
 @interface ReachMeUserInfoViewController ()
 
 @end
@@ -35,6 +36,11 @@
     // Do any additional setup after loading the view.
     self.appDelegate = [Utils getAppDelegate];
     [self.appDelegate hideLoading];
+    
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
     [self.addAddressBtn setHidden:YES];
     [self.addressLabel setHidden:YES];
     if(![User getInstance].address){
@@ -42,13 +48,10 @@
     }else {
         [self.addressLabel setHidden:NO];
     }
-    
     self.nameLabel.text = [User getInstance].name;
     self.emailLabel.text = [User getInstance].email;
     self.addressLabel.text = [User getInstance].address;
-}
-
-- (void)viewWillAppear:(BOOL)animated{
+    self.phoneLabel.text = [User getInstance].phone;
     [self setNavigationBarBtns];
 }
 
@@ -74,31 +77,39 @@
 }
 
 - (void)editAddress {
-    //[self.view addSubview:[ReachMeEditUserInfoViewController getInstance].view];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UITabBarController *userInfoVC = [storyboard instantiateViewControllerWithIdentifier:@"EditUserInfo"];
     [self.parentViewController.navigationController pushViewController:userInfoVC animated:YES];
-//    [self.parentViewController presentViewController:userInfoVC animated:YES completion:nil];
 }
 - (void)setNavigationBarBtns {
-//    UIViewController* vc = self.appDelegate.window.rootViewController;
     UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editAddress)];
     self.parentViewController.navigationItem.leftBarButtonItem = leftBtn;
-//    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"Share" style:UIBarButtonItemStylePlain target:self action:@selector(shareAddress)];
     UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareAddress)];
     self.parentViewController.navigationItem.rightBarButtonItem = rightBtn;
 }
 
 - (void)shareAddress {
-    WhatsAppMessage *whatsappMsg = [[WhatsAppMessage alloc] initWithMessage:[User getInstance].address forABID:nil];
-    
-    NSArray *applicationActivities = @[[[JBWhatsAppActivity alloc] init]];
-    NSArray *excludedActivities    = @[UIActivityTypePrint, UIActivityTypePostToWeibo, UIActivityTypeMail, UIActivityTypeCopyToPasteboard];
-    NSArray *activityItems         = @[[User getInstance].address, whatsappMsg];
-    
-    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:applicationActivities];
-    activityViewController.excludedActivityTypes = excludedActivities;
-    [self.navigationController presentViewController:activityViewController animated:YES completion:nil];
+
+    [self showShareView];
 }
 
+- (void)showShareView{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ReachMeShareUserInfoViewController *userInfoVC = [storyboard instantiateViewControllerWithIdentifier:@"ShareBtnsVC"];
+    userInfoVC.view.layer.borderWidth = 1;
+    userInfoVC.view.layer.borderColor = self.view.tintColor.CGColor;
+    CGFloat width = self.view.frame.size.width * .20;
+    CGFloat height = self.view.frame.size.height * .30;
+    CGFloat xpos = self.view.frame.size.width - width - 5;
+    CGFloat ypos = 64; //uinavigationcontroller height
+//    CGFloat ypos = (self.view.frame.size.height - height) / 2;
+    userInfoVC.view.frame = CGRectMake(xpos, ypos, width, height);
+    UIButton * whtsAppBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [whtsAppBtn setImage:[UIImage imageNamed:@"whatsapp.png"] forState:UIControlStateNormal];
+    [whtsAppBtn setContentMode:UIViewContentModeCenter];
+//    [smsBtn addTarget:self action:@selector(sendSMS) forControlEvents:UIControlEventTouchUpInside];
+    whtsAppBtn.frame = CGRectMake(10, 10, 44, 44); //hardcoded values as of now, need to b aligned as per the view
+    [userInfoVC.view addSubview:whtsAppBtn];
+    [self.view addSubview:userInfoVC.view];
+}
 @end

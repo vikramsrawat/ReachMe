@@ -22,6 +22,7 @@
     // Do any additional setup after loading the view.
     self.textFieldName.text = [User getInstance].name;
     self.textFieldEmail.text = [User getInstance].email;
+    self.textFieldPhone.text = [User getInstance].phone ? [User getInstance].phone : self.textFieldPhone.text;
 //    self.textFieldBusiness.text = [User getInstance].business;
     self.addressTextView.text = [User getInstance].address ? [User getInstance].address : self.addressTextView.text;
     self.addressTextView.delegate = self;
@@ -77,6 +78,7 @@
     [userInfo setObject:[User getInstance].uid forKey:@"uid"];
     [userInfo setObject:self.textFieldName.text forKey:@"name"];
     [userInfo setObject:self.textFieldEmail.text forKey:@"email"];
+    [userInfo setObject:self.textFieldPhone.text forKey:@"phone"];
     [userInfo setObject:self.addressTextView.text forKey:@"address"];
     [self putUser:userInfo];
 }
@@ -99,39 +101,17 @@
 
 - (void)putUser:(NSDictionary*)userInfo {
     
-    NSMutableDictionary * direction = [[NSMutableDictionary alloc] init];
-    [direction setObject:@"via bommanahalli" forKey:@"label"];
-    [direction setObject:@"reach bommanahalli and take right turn" forKey:@"text"];
-    
-    NSMutableDictionary * direction2 = [[NSMutableDictionary alloc] init];
-    [direction2 setObject:@"via B.G. Road" forKey:@"label"];
-    [direction2 setObject:@"reach IIM bangalore and take left turn" forKey:@"text"];
     
     
-    NSMutableArray * directions = [[NSMutableArray alloc] init];
-    [directions addObject:direction];
-    [directions addObject:direction2];
     
-    
-    NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
-    [dict setObject:@"123456" forKey:@"uid"];
-    [dict setObject:@"facebook" forKey:@"provider"];
-    [dict setObject:@"vikram singh" forKey:@"name"];
-    [dict setObject:@"1234567890" forKey:@"phone"];
-    [dict setObject:@"kidzee school" forKey:@"landmark"];
-    [dict setObject:@"kodichikanahalli" forKey:@"locality"];
-    [dict setObject:@"bangalore" forKey:@"city"];
-    [dict setObject:@"kumbha lake shore, kc halli" forKey:@"street_address"];
-    [dict setObject:directions forKey:@"directions"];
-    
-    NSLog(@"%@", dict);
     [[Utils getAppDelegate] showLoading];
+    return;
     NSError *error = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:userInfo
                                                        options:NSJSONWritingPrettyPrinted
                                                          error:&error];
     
-    __block STHTTPRequest *request = [STHTTPRequest requestWithURLString:PUTUSER];
+    STHTTPRequest *request = [STHTTPRequest requestWithURLString:PUTUSER];
     
     [request setHeaderWithName:@"content-type" value:@"application/json; charset=utf-8"];
     
@@ -139,7 +119,7 @@
     request.rawPOSTData = jsonData;
     
     
-//    request.completionDataBlock=^(NSDictionary *headers, NSData* data){
+//    request.completionDataBlock=^(NSDictionardy *headers, NSData* data){
 //        NSString* newStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 //        NSLog(@"resp = %@",newStr);
 //        [[Utils getAppDelegate] hideLoading];
@@ -148,9 +128,12 @@
     
     request.completionBlock=^(NSDictionary *headers, NSString *body) {
         NSLog(@"Body: %@", body);
+        if (![body isEqualToString:@"false"]) {
+            NSDictionary * dict = [NSDictionary dictionaryWithObject:body forKey:@"uid"];
+            [[User getInstance] saveUserInfo:dict];
+        }
         [[Utils getAppDelegate] hideLoading];
         [self cancelEdit];
-        
     };
     
     request.errorBlock=^(NSError *error) {

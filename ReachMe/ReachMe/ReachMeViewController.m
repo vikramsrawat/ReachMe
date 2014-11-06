@@ -143,6 +143,11 @@ static NSString * const kClientId = @"130182801305-tei60s241j8u1nnqg2fqqi8jj7nfk
                                                                NSError *error2) {
             
             NSLog(@"user = %@",user);
+            if (!user) {
+                [self resetLoginInfo];
+                [[Utils getAppDelegate] hideLoading];
+                return;
+            }
             [Utils setLoginContext:FB];
             [Utils setContextId:[user objectForKey:@"id"]];
             NSMutableDictionary* userDict = [[NSMutableDictionary alloc] init];
@@ -255,4 +260,17 @@ static NSString * const kClientId = @"130182801305-tei60s241j8u1nnqg2fqqi8jj7nfk
     [self showUserInfoView];
 }
 
+-(void)resetLoginInfo{
+    NSString *loginCtx = [Utils getLoginContext];
+    [[Utils getAppDelegate] showLoading];
+    
+    if ([loginCtx isEqualToString:FB]) {
+        [FBSession.activeSession closeAndClearTokenInformation];
+        
+    }else if ([loginCtx isEqualToString:GPLUS]){
+        
+        [self.signIn signOut];
+    }
+    [Utils resetContextInfo];
+}
 @end
