@@ -57,6 +57,8 @@
 		B2C315141A0BFD68009AB40B /* trash-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C315081A0BFD68009AB40B /* trash-48@2x.png */; };
 		B2C315151A0BFD68009AB40B /* whatsapp.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C315091A0BFD68009AB40B /* whatsapp.png */; };
 		B2C315161A0BFD68009AB40B /* whatsapp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C3150A1A0BFD68009AB40B /* whatsapp@2x.png */; };
+		B2C315191A0C0875009AB40B /* sms.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C315171A0C0875009AB40B /* sms.png */; };
+		B2C3151A1A0C0875009AB40B /* sms@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C315181A0C0875009AB40B /* sms@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +140,8 @@
 		B2C315081A0BFD68009AB40B /* trash-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trash-48@2x.png"; sourceTree = "<group>"; };
 		B2C315091A0BFD68009AB40B /* whatsapp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whatsapp.png; sourceTree = "<group>"; };
 		B2C3150A1A0BFD68009AB40B /* whatsapp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whatsapp@2x.png"; sourceTree = "<group>"; };
+		B2C315171A0C0875009AB40B /* sms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sms.png; sourceTree = "<group>"; };
+		B2C315181A0C0875009AB40B /* sms@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sms@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +288,8 @@
 		B274541819B8B049003BDC07 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				B2C315171A0C0875009AB40B /* sms.png */,
+				B2C315181A0C0875009AB40B /* sms@2x.png */,
 				B2C314FF1A0BFD68009AB40B /* addMore.png */,
 				B2C315001A0BFD68009AB40B /* addMore@2x.png */,
 				B2C315011A0BFD68009AB40B /* address.png */,
@@ -407,6 +413,7 @@
 			files = (
 				B27453FC19B8AEB4003BDC07 /* Images.xcassets in Resources */,
 				B2C3150E1A0BFD68009AB40B /* address@2x.png in Resources */,
+				B2C3151A1A0C0875009AB40B /* sms@2x.png in Resources */,
 				B2C315151A0BFD68009AB40B /* whatsapp.png in Resources */,
 				B2C3150F1A0BFD68009AB40B /* directions.png in Resources */,
 				B27453EE19B8AEB4003BDC07 /* InfoPlist.strings in Resources */,
@@ -416,6 +423,7 @@
 				B27453F719B8AEB4003BDC07 /* Main.storyboard in Resources */,
 				B2C315131A0BFD68009AB40B /* trash-48.png in Resources */,
 				B2C315101A0BFD68009AB40B /* directions@2x.png in Resources */,
+				B2C315191A0C0875009AB40B /* sms.png in Resources */,
 				B2C3150C1A0BFD68009AB40B /* addMore@2x.png in Resources */,
 				B2C315111A0BFD68009AB40B /* facebook-login-btn.png in Resources */,
 				B2C3150B1A0BFD68009AB40B /* addMore.png in Resources */,

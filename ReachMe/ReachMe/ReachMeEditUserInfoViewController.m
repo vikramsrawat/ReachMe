@@ -80,6 +80,7 @@
     [userInfo setObject:self.textFieldEmail.text forKey:@"email"];
     [userInfo setObject:self.textFieldPhone.text forKey:@"phone"];
     [userInfo setObject:self.addressTextView.text forKey:@"address"];
+    [[User getInstance] saveUserInfo:userInfo];
     [self putUser:userInfo];
 }
 
@@ -105,7 +106,7 @@
     
     
     [[Utils getAppDelegate] showLoading];
-    return;
+
     NSError *error = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:userInfo
                                                        options:NSJSONWritingPrettyPrinted

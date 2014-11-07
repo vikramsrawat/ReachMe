@@ -96,15 +96,17 @@
 - (void)showShareView{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ReachMeShareUserInfoViewController *userInfoVC = [storyboard instantiateViewControllerWithIdentifier:@"ShareBtnsVC"];
+//    UIViewController *userInfoVC = [[UIViewController alloc] init];
+    
     userInfoVC.view.layer.borderWidth = 1;
     userInfoVC.view.layer.borderColor = self.view.tintColor.CGColor;
     CGFloat width = self.view.frame.size.width * .10;
     CGFloat height = self.view.frame.size.height * .20;
     CGFloat xpos = self.view.frame.size.width - width - 5;
-    CGFloat ypos = 64; //uinavigationcontroller height
+    CGFloat ypos = 62; //uinavigationcontroller height
 //    CGFloat ypos = (self.view.frame.size.height - height) / 2;
-    userInfoVC.view.frame = CGRectMake(xpos, ypos, width, height);
     
+    userInfoVC.view.frame = CGRectMake(xpos, ypos, width, height);
     [self.view addSubview:userInfoVC.view];
 }
 @end

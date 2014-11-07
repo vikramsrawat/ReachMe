@@ -32,7 +32,7 @@
                                     <action selector="loginToGPlus:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="EFj-Fn-pHD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gli-sP-o4o" userLabel="fblogin">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gli-sP-o4o" userLabel="fblogin">
                                 <rect key="frame" x="56" y="194" width="209" height="44"/>
                                 <state key="normal" image="facebook-login-btn.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -119,12 +119,12 @@
                         <viewControllerLayoutGuide type="bottom" id="DTn-4X-th5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bG6-sL-KJo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="568"/>
+                    <size key="freeformSize" width="10" height="10"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dK9-oS-9UN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
