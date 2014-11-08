@@ -101,10 +101,6 @@
 }
 
 - (void)putUser:(NSDictionary*)userInfo {
-    
-    
-    
-    
     [[Utils getAppDelegate] showLoading];
 
     NSError *error = nil;

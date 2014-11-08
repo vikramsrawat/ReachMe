@@ -10,6 +10,7 @@
 #import "Utils.h"
 #import "ReachMeDirectionsPageContentViewController.h"
 #import "ReachMeEditDirectionViewController.h"
+#import "User.h"
 @interface ReachMeDirectionsViewController ()
 
 @end
@@ -122,6 +123,7 @@
     
     NSArray * updatedDirection = [[NSArray alloc] initWithObjects:label, text, nil];
     [self.directions replaceObjectAtIndex:self.currentPageIndex withObject:updatedDirection];
+    [self saveDirection];
     [self refreshDirectionsList];
 }
 - (void)addDirection:(NSNotification*)notification {
@@ -130,9 +132,15 @@
     NSString * text = [dict objectForKey:@"text"];
     NSArray *newDirection = [[NSArray alloc] initWithObjects:label,text, nil];
     [self.directions addObject:newDirection];
+    [self saveDirection];
     [self refreshDirectionsList];
 }
 
+-(void)saveDirection{
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithDictionary:[[User getInstance] userInfo]];
+    [dict setObject:self.directions forKey:@"directions"];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
