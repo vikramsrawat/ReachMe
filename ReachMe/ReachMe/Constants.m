@@ -11,8 +11,13 @@
 @implementation Constants
 NSString *const actionSendSMS = @"sendSMS";
 NSString *const whatsAppURL = @"whatsapp://send?text=";
-NSString *const FB = @"fb";
-NSString *const GPLUS = @"gplus";
+NSString *const FB = @"facebook";
+NSString *const GPLUS = @"google";
 NSString *const PUTUSER = @"http://www.intruo.com/putUser";
 NSString *const GETUSER = @"http://www.intruo.com/getUser?uid=%@&provider=%@";
+int const SOCIAL_BTN_WIDTH = 48;
+int const SOCIAL_BTN_HEIGHT = 48;
+int const SOCIAL_BTNS_MARGIN = 2;
+int const WHATSAPP_BTN_XPOS = 10;
+int const NAVIGATIONBAR_HEIGHT = 64;
 @end

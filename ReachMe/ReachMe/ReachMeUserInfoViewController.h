@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ReachMeAppDelegate.h"
+#import "ReachMeShareUserInfoViewController.h"
 @interface ReachMeUserInfoViewController : UIViewController
+@property bool showShareView;
 @property (strong, nonatomic) ReachMeAppDelegate *appDelegate;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -16,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
 @property (weak, nonatomic) IBOutlet UIButton *addAddressBtn;
+@property (weak, nonatomic) ReachMeShareUserInfoViewController *userInfoVC;
 - (IBAction)addAddress:(id)sender;
 
 - (void)editAddress;

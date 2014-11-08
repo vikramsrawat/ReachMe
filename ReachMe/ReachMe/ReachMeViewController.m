@@ -233,6 +233,7 @@ static NSString * const kClientId = @"130182801305-tei60s241j8u1nnqg2fqqi8jj7nfk
     NSString *loginCtx = [Utils getLoginContext];
     NSString *loginId = [Utils getContextId];
     NSString *url = [NSString stringWithFormat:GETUSER,loginId,loginCtx];
+    NSLog(@"url : %@",url);
     STHTTPRequest * r = [STHTTPRequest requestWithURLString:url];
     [r setHeaderWithName:@"content-type" value:@"application/x-www-form-urlencoded; charset=utf-8"];
     [r setHTTPMethod:@"GET"];

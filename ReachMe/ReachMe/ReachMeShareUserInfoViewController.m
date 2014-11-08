@@ -7,7 +7,7 @@
 //
 
 #import "ReachMeShareUserInfoViewController.h"
-
+#import "Constants.h"
 @interface ReachMeShareUserInfoViewController ()
 
 @end
@@ -20,8 +20,8 @@
 //    self.view.opaque = NO;
 
     // Do any additional setup after loading the view.
-    [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionTransitionFlipFromTop animations:^{self.view.frame = CGRectMake(self.view.frame.origin.x, 50, self.view.frame.size.width, self.view.frame.size.height);} completion:nil];
-    }
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -29,21 +29,25 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [self addBtns];
+}
+
+-(void)addBtns{
     UIButton * whtsAppBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [whtsAppBtn setImage:[UIImage imageNamed:@"whatsapp.png"] forState:UIControlStateNormal];
-    [whtsAppBtn setContentMode:UIViewContentModeCenter];
     [whtsAppBtn addTarget:self action:@selector(sendWhatsAppMesg) forControlEvents:UIControlEventTouchUpInside];
-    whtsAppBtn.frame = CGRectMake((self.view.frame.size.width - 48) / 2, 10, 48, 48); //hardcoded values as of now, need to b aligned as per the view
+    [whtsAppBtn setContentMode:UIViewContentModeCenter];
+    whtsAppBtn.frame = CGRectMake((self.view.frame.size.width - SOCIAL_BTN_WIDTH) / 2, WHATSAPP_BTN_XPOS, SOCIAL_BTN_WIDTH, SOCIAL_BTN_HEIGHT); //hardcoded values as of now, need to b aligned as per the view
     [self.view addSubview:whtsAppBtn];
     
     UIButton * smsBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [smsBtn setImage:[UIImage imageNamed:@"sms.png"] forState:UIControlStateNormal];
-    [smsBtn setContentMode:UIViewContentModeCenter];
     [smsBtn addTarget:self action:@selector(sendSMSMesg) forControlEvents:UIControlEventTouchUpInside];
+    [smsBtn setContentMode:UIViewContentModeCenter];
+    
     //    CGFloat xpos =
-    smsBtn.frame = CGRectMake((self.view.frame.size.width - 48) / 2, 60, 48, 48); //hardcoded values as of now, need to b
+    smsBtn.frame = CGRectMake((self.view.frame.size.width - SOCIAL_BTN_WIDTH) / 2, WHATSAPP_BTN_XPOS + SOCIAL_BTNS_MARGIN + SOCIAL_BTN_HEIGHT, SOCIAL_BTN_WIDTH, SOCIAL_BTN_HEIGHT); //hardcoded values as of now, need to b
     [self.view addSubview:smsBtn];
-
 }
 /*
 #pragma mark - Navigation
@@ -54,8 +58,6 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-
 -(void)sendWhatsAppMesg{
     NSLog(@"send whatsapp mesg");
 }

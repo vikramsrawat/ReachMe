@@ -9,6 +9,4 @@
 #import <UIKit/UIKit.h>
 
 @interface ReachMeShareUserInfoViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
-
 @end
