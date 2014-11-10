@@ -42,7 +42,6 @@
 		B274545019B8D69D003BDC07 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = B274544F19B8D69D003BDC07 /* Utils.m */; };
 		B274545319B8EFFC003BDC07 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B274545219B8EFFC003BDC07 /* User.m */; };
 		B29D5D1C19E860C200299805 /* JBWhatsAppActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D5D1A19E860C200299805 /* JBWhatsAppActivity.m */; };
-		B29D5D1D19E860C200299805 /* whatsapp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29D5D1B19E860C200299805 /* whatsapp@2x.png */; };
 		B2ADB07319D876CC00D55A16 /* ReachMeConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2ADB07219D876CC00D55A16 /* ReachMeConnectionManager.m */; };
 		B2ADB07719DAF1F200D55A16 /* STHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B2ADB07619DAF1F200D55A16 /* STHTTPRequest.m */; };
 		B2C3150B1A0BFD68009AB40B /* addMore.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C314FF1A0BFD68009AB40B /* addMore.png */; };
@@ -427,7 +426,6 @@
 				B2C3150C1A0BFD68009AB40B /* addMore@2x.png in Resources */,
 				B2C315111A0BFD68009AB40B /* facebook-login-btn.png in Resources */,
 				B2C3150B1A0BFD68009AB40B /* addMore.png in Resources */,
-				B29D5D1D19E860C200299805 /* whatsapp@2x.png in Resources */,
 				B2C315141A0BFD68009AB40B /* trash-48@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

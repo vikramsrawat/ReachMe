@@ -8,5 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReachMeShareUserInfoViewController : UIViewController
+@interface ReachMeShareUserInfoView : UIView
 @end

@@ -16,7 +16,10 @@
 #import "JBWhatsAppActivity.h"
 #import "ReachMeShareUserInfoViewController.h"
 @interface ReachMeUserInfoViewController ()
-
+{
+    BOOL showShareView;
+}
+@property (strong, nonatomic) ReachMeShareUserInfoView *shareView;
 @end
 
 @implementation ReachMeUserInfoViewController
@@ -35,7 +38,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.appDelegate = [Utils getAppDelegate];
-    self.showShareView = NO;
+    showShareView = NO;
     [self.appDelegate hideLoading];
     
     
@@ -93,54 +96,35 @@
 }
 
 - (void)shareAddress {
-    self.showShareView = !self.showShareView;
-    [self toggleShareView:self.showShareView];
+    showShareView = !showShareView;
+    [self toggleShareView:showShareView];
 }
 
 - (void)toggleShareView:(BOOL)show{
     
-    if (!self.userInfoVC) {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        self.userInfoVC = [storyboard instantiateViewControllerWithIdentifier:@"ShareBtnsVC"];
-        //    UIViewController *userInfoVC = [[UIViewController alloc] init];
+    if (!self.shareView) {
+        self.shareView = [[ReachMeShareUserInfoView alloc] initWithFrame:CGRectZero];
         
-        self.userInfoVC.view.layer.borderWidth = 1;
-        self.userInfoVC.view.layer.borderColor = self.view.tintColor.CGColor;
+        self.shareView.layer.borderWidth = 1;
+        self.shareView.layer.borderColor = self.view.tintColor.CGColor;
         CGFloat width = self.view.frame.size.width * .10;
         CGFloat height = self.view.frame.size.height * .20;
         CGFloat xpos = self.view.frame.size.width - width - 5;
-        CGFloat ypos = - NAVIGATIONBAR_HEIGHT - self.userInfoVC.view.frame.size.height; //uinavigationcontroller height
+        CGFloat ypos = - NAVIGATIONBAR_HEIGHT - self.shareView.frame.size.height; //uinavigationcontroller height
         //    CGFloat ypos = (self.view.frame.size.height - height) / 2;
         
-        self.userInfoVC.view.frame = CGRectMake(xpos, ypos, width, height);
-        [self.view addSubview:self.userInfoVC.view];
+        self.shareView.frame = CGRectMake(xpos, ypos, width, height);
+        [self.view addSubview:self.shareView];
     }
     NSLog(@"%d",show);
     [UIView animateKeyframesWithDuration:0.25f delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
-        CGRect frame = self.userInfoVC.view.frame;
-        self.userInfoVC.view.frame = CGRectMake(frame.origin.x, frame.size.height * (show ? 1 : -1) + (show ? NAVIGATIONBAR_HEIGHT : -NAVIGATIONBAR_HEIGHT), frame.size.width, frame.size.height);
+        CGRect frame = self.shareView.frame;
+        self.shareView.frame = CGRectMake(frame.origin.x, frame.size.height * (show ? 1 : -1) + (show ? NAVIGATIONBAR_HEIGHT : -NAVIGATIONBAR_HEIGHT), frame.size.width, frame.size.height);
     } completion:^(BOOL finished) {
         if(!show) {
-            [self.userInfoVC.view removeFromSuperview];
-            self.userInfoVC = nil;
+            [self.shareView removeFromSuperview];
+            self.shareView = nil;
         }
     }];
-//    if (show) {
-//        [self viewSlideDown];
-//    }else {
-//        [self viewSlideUp];
-//    }
-    
-}
-
--(void)viewSlideDown{
-    
-    [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionTransitionFlipFromTop animations:^{
-        self.userInfoVC.view.frame = CGRectMake(self.userInfoVC.view.frame.origin.x, NAVIGATIONBAR_HEIGHT - 1, self.userInfoVC.view.frame.size.width, self.userInfoVC.view.frame.size.height);
-    } completion:nil];
-}
-
--(void)viewSlideUp{
-    [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionTransitionFlipFromBottom animations:^{self.userInfoVC.view.frame = CGRectMake(self.userInfoVC.view.frame.origin.x, -10, self.userInfoVC.view.frame.size.width, self.userInfoVC.view.frame.size.height);} completion:nil];
 }
 @end
