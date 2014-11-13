@@ -17,7 +17,7 @@
 #import "ReachMeShareUserInfoViewController.h"
 @interface ReachMeUserInfoViewController ()
 {
-    BOOL showShareView;
+    bool showShareView;
 }
 @property (strong, nonatomic) ReachMeShareUserInfoView *shareView;
 @end
@@ -38,10 +38,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.appDelegate = [Utils getAppDelegate];
-    showShareView = NO;
+    showShareView = false;
     [self.appDelegate hideLoading];
-    
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(smsAddress:) name:@"shareAddressViaSMS" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(whatsAppAddress:) name:@"shareAddressViaWhatsAppMesg" object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -59,9 +59,19 @@
     [self setNavigationBarBtns];
 }
 
--(void)sendWhatsAppMesg{
-    NSLog(@"sendWhatsAppMesg");
+- (void)viewDidDisappear:(BOOL)animated{
+    if (showShareView) {
+        [self toggleShareView];
+    }
 }
+-(void)smsAddress:(NSNotification*)notification{
+    NSLog(@"send sms address");
+}
+
+-(void)whatsAppAddress:(NSNotification*)notification{
+    NSLog(@"send whats app address");
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -96,12 +106,12 @@
 }
 
 - (void)shareAddress {
-    showShareView = !showShareView;
-    [self toggleShareView:showShareView];
+    
+    [self toggleShareView];
 }
 
-- (void)toggleShareView:(BOOL)show{
-    
+- (void)toggleShareView{
+    showShareView = !showShareView;
     if (!self.shareView) {
         self.shareView = [[ReachMeShareUserInfoView alloc] initWithFrame:CGRectZero];
         
@@ -110,18 +120,20 @@
         CGFloat width = self.view.frame.size.width * .10;
         CGFloat height = self.view.frame.size.height * .20;
         CGFloat xpos = self.view.frame.size.width - width - 5;
-        CGFloat ypos = - NAVIGATIONBAR_HEIGHT - self.shareView.frame.size.height; //uinavigationcontroller height
+        CGFloat ypos = -height; //uinavigationcontroller height
+        NSLog(@"ypos = %f", ypos);
         //    CGFloat ypos = (self.view.frame.size.height - height) / 2;
         
         self.shareView.frame = CGRectMake(xpos, ypos, width, height);
+        self.shareView.shareCtx = SHARE_CTX_ADDRESS;
         [self.view addSubview:self.shareView];
     }
-    NSLog(@"%d",show);
+    NSLog(@"%d",showShareView);
     [UIView animateKeyframesWithDuration:0.25f delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
         CGRect frame = self.shareView.frame;
-        self.shareView.frame = CGRectMake(frame.origin.x, frame.size.height * (show ? 1 : -1) + (show ? NAVIGATIONBAR_HEIGHT : -NAVIGATIONBAR_HEIGHT), frame.size.width, frame.size.height);
+        self.shareView.frame = CGRectMake(frame.origin.x, (showShareView ? NAVIGATIONBAR_HEIGHT - 1 : -self.shareView.frame.size.height), frame.size.width, frame.size.height);
     } completion:^(BOOL finished) {
-        if(!show) {
+        if(!showShareView) {
             [self.shareView removeFromSuperview];
             self.shareView = nil;
         }

@@ -10,11 +10,14 @@
 #import "Utils.h"
 #import "ReachMeDirectionsPageContentViewController.h"
 #import "ReachMeEditDirectionViewController.h"
+#import "ReachMeShareUserInfoViewController.h"
 #import "User.h"
-@interface ReachMeDirectionsViewController ()
-
+#import "Constants.h"
+@interface ReachMeDirectionsViewController (){
+bool showShareView;
+}
+@property (strong, nonatomic) ReachMeShareUserInfoView *shareView;
 @end
-
 @implementation ReachMeDirectionsViewController
 
 - (void)viewDidLoad {
@@ -58,9 +61,17 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addDirection:) name:@"addNewDirection" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateDirection:) name:@"editDirection" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(whatsAppDirection:) name:@"shareDirectionViaWhatsAppMesg" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(smsDirection:) name:@"shareDirectionViaSMS" object:nil];
+    showShareView = false;
 }
-
+- (void)viewDidDisappear:(BOOL)animated{
+    if (showShareView) {
+        [self toggleShareView];
+    }
+}
 - (void)viewWillAppear:(BOOL)animated{
+    
     [self setNavigationBarBtns];
 }
 - (void)setNavigationBarBtns {
@@ -86,6 +97,39 @@
 
 - (void)shareAddress{
     NSLog(@"share direction");
+    
+    [self toggleShareView];
+}
+
+-(void)toggleShareView {
+    showShareView = !showShareView;
+    if (!self.shareView) {
+        self.shareView = [[ReachMeShareUserInfoView alloc] initWithFrame:CGRectZero];
+        
+        self.shareView.layer.borderWidth = 1;
+        self.shareView.layer.borderColor = self.view.tintColor.CGColor;
+        CGFloat width = self.view.frame.size.width * .10;
+        CGFloat height = self.view.frame.size.height * .20;
+        CGFloat xpos = self.view.frame.size.width - width - 5;
+        CGFloat ypos = -height; //uinavigationcontroller height
+        NSLog(@"ypos = %f", ypos);
+        //    CGFloat ypos = (self.view.frame.size.height - height) / 2;
+        
+        self.shareView.frame = CGRectMake(xpos, ypos, width, height);
+        self.shareView.shareCtx = SHARE_CTX_DIRECTIONS;
+        [self.view addSubview:self.shareView];
+    }
+    NSLog(@"%d",showShareView);
+    [UIView animateKeyframesWithDuration:0.25f delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
+        CGRect frame = self.shareView.frame;
+        self.shareView.frame = CGRectMake(frame.origin.x, (showShareView ? NAVIGATIONBAR_HEIGHT - 1 : -self.shareView.frame.size.height), frame.size.width, frame.size.height);
+    } completion:^(BOOL finished) {
+        if(!showShareView) {
+            [self.shareView removeFromSuperview];
+            self.shareView = nil;
+        }
+    }];
+
 }
 
 - (void)refreshDirectionsList {
@@ -140,6 +184,14 @@
     NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithDictionary:[[User getInstance] userInfo]];
     [dict setObject:self.directions forKey:@"directions"];
     
+}
+
+-(void)whatsAppDirection:(NSNotification*)notification{
+    NSLog(@"notify direction via whatsapp");
+}
+
+-(void)smsDirection:(NSNotification*)notification{
+    NSLog(@"notify direction via sms");
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

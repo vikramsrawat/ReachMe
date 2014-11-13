@@ -10,46 +10,29 @@
 	<string>ReachMe</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>6132093b-7611-7e4f-381b-ce57b7db7bff++505</key>
+		<key>8EE7400962C4874916A668B1CAFB97B1A1943403</key>
 		<string>https://github.com/vikramsrawat/ReachMe.git</string>
-		<key>61e85ad2-8c7a-4cdc-a900-7bc0fc5461b1++4343</key>
-		<string>https://server.iapps.net.au:444/svn/InspectionToolbox/iOS/trunk</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>ReachMe/ReachMe.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>6132093b-7611-7e4f-381b-ce57b7db7bff++505</key>
+		<key>8EE7400962C4874916A668B1CAFB97B1A1943403</key>
 		<string>../../..</string>
-		<key>61e85ad2-8c7a-4cdc-a900-7bc0fc5461b1++4343</key>
-		<string>../../../..</string>
-	</dict>
-	<key>IDESourceControlProjectRepositoryRootDictionary</key>
-	<dict>
-		<key>61e85ad2-8c7a-4cdc-a900-7bc0fc5461b1++4343</key>
-		<string>https://server.iapps.net.au:444/svn/InspectionToolbox</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/vikramsrawat/ReachMe.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>6132093b-7611-7e4f-381b-ce57b7db7bff++505</string>
+	<string>8EE7400962C4874916A668B1CAFB97B1A1943403</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>61e85ad2-8c7a-4cdc-a900-7bc0fc5461b1++4343</string>
-			<key>IDESourceControlWCCName</key>
-			<string></string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>6132093b-7611-7e4f-381b-ce57b7db7bff++505</string>
+			<string>8EE7400962C4874916A668B1CAFB97B1A1943403</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ReachMe</string>
 		</dict>

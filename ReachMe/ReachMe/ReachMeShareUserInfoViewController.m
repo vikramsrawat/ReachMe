@@ -8,7 +8,9 @@
 
 #import "ReachMeShareUserInfoViewController.h"
 #import "Constants.h"
-@interface ReachMeShareUserInfoView ()
+@interface ReachMeShareUserInfoView (){
+    
+}
 
 @end
 
@@ -31,6 +33,7 @@
     //    CGFloat xpos =
     smsBtn.frame = CGRectMake((self.frame.size.width - SOCIAL_BTN_WIDTH) / 2, WHATSAPP_BTN_XPOS + SOCIAL_BTNS_MARGIN + SOCIAL_BTN_HEIGHT, SOCIAL_BTN_WIDTH, SOCIAL_BTN_HEIGHT); //hardcoded values as of now, need to b
     [self addSubview:smsBtn];
+    
 }
 /*
 #pragma mark - Navigation
@@ -42,10 +45,26 @@
 }
 */
 -(void)sendWhatsAppMesg{
-    NSLog(@"send whatsapp mesg");
+        NSLog(@"share ctx = %d", self.shareCtx);
+    switch (self.shareCtx) {
+        case SHARE_CTX_ADDRESS:
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"shareAddressViaWhatsAppMesg" object:self];
+            break;
+         case SHARE_CTX_DIRECTIONS:
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"shareDirectionViaWhatsAppMesg" object:self];
+            break;
+    }
 }
 
 -(void)sendSMSMesg{
-    NSLog(@"send sms");
+    NSLog(@"share ctx = %d", self.shareCtx);
+    switch (self.shareCtx) {
+        case SHARE_CTX_ADDRESS:
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"shareAddressViaSMS" object:self];
+            break;
+        case SHARE_CTX_DIRECTIONS:
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"shareDirectionViaSMS" object:self];
+            break;
+    }
 }
 @end
