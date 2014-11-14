@@ -58,6 +58,7 @@
 		B2C315161A0BFD68009AB40B /* whatsapp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C3150A1A0BFD68009AB40B /* whatsapp@2x.png */; };
 		B2C315191A0C0875009AB40B /* sms.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C315171A0C0875009AB40B /* sms.png */; };
 		B2C3151A1A0C0875009AB40B /* sms@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C315181A0C0875009AB40B /* sms@2x.png */; };
+		B2E3B16C1A167C4F00CA0F4C /* ReachMeAddressBookHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E3B16B1A167C4F00CA0F4C /* ReachMeAddressBookHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,8 @@
 		B2C3150A1A0BFD68009AB40B /* whatsapp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whatsapp@2x.png"; sourceTree = "<group>"; };
 		B2C315171A0C0875009AB40B /* sms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sms.png; sourceTree = "<group>"; };
 		B2C315181A0C0875009AB40B /* sms@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sms@2x.png"; sourceTree = "<group>"; };
+		B2E3B16A1A167C4F00CA0F4C /* ReachMeAddressBookHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachMeAddressBookHandler.h; sourceTree = "<group>"; };
+		B2E3B16B1A167C4F00CA0F4C /* ReachMeAddressBookHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachMeAddressBookHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +254,8 @@
 				B2ADB07219D876CC00D55A16 /* ReachMeConnectionManager.m */,
 				B273E4781A07E5D2000DDAAE /* ReachMeShareUserInfoViewController.h */,
 				B273E4791A07E5D2000DDAAE /* ReachMeShareUserInfoViewController.m */,
+				B2E3B16A1A167C4F00CA0F4C /* ReachMeAddressBookHandler.h */,
+				B2E3B16B1A167C4F00CA0F4C /* ReachMeAddressBookHandler.m */,
 			);
 			path = ReachMe;
 			sourceTree = "<group>";
@@ -453,6 +458,7 @@
 				B21259D619D1EB76002D5D8C /* ReachMeDirectionsPageContentViewController.m in Sources */,
 				B21259D319D1E2F0002D5D8C /* ReachMeDirectionsViewController.m in Sources */,
 				B274544D19B8CF70003BDC07 /* ReachMeUserInfoViewController.m in Sources */,
+				B2E3B16C1A167C4F00CA0F4C /* ReachMeAddressBookHandler.m in Sources */,
 				B209171B19CDC167003FEE6A /* ReachMeEditUserInfoViewController.m in Sources */,
 				B21259D919D3171B002D5D8C /* ReachMeEditDirectionViewController.m in Sources */,
 				B27453FA19B8AEB4003BDC07 /* ReachMeViewController.m in Sources */,

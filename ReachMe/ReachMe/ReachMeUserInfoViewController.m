@@ -15,6 +15,7 @@
 #import "User.h"
 #import "JBWhatsAppActivity.h"
 #import "ReachMeShareUserInfoViewController.h"
+#import "ReachMeAddressBookHandler.h"
 @interface ReachMeUserInfoViewController ()
 {
     bool showShareView;
@@ -66,14 +67,15 @@
 }
 -(void)smsAddress:(NSNotification*)notification{
     NSLog(@"send sms address");
+    ReachMeAddressBookHandler *handler = [ReachMeAddressBookHandler getInstance];
+    [handler openAddressBook:self dataToShare:[User getInstance].address];
 }
 
 -(void)whatsAppAddress:(NSNotification*)notification{
     NSLog(@"send whats app address");
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

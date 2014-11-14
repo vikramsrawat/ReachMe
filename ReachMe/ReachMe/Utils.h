@@ -19,4 +19,5 @@
 +(ReachMeAppDelegate*)getAppDelegate;
 +(UIStoryboard*)getStoryBoard;
 +(void)resetContextInfo;
++(NSString*)jsonToString:(NSObject*)obj;
 @end
