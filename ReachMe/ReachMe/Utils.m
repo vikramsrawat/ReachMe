@@ -35,21 +35,23 @@
     return [Utils getLoginContext] ? TRUE : FALSE;
 }
 
-+(ReachMeAppDelegate*)getAppDelegate {
++(ReachMeAppDelegate*)getAppDelegate{
     ReachMeAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
     return appDelegate;
 }
 
-+(UIStoryboard*)getStoryBoard{
++(UIStoryboard*)getStoryBoard {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     return storyboard;
 }
 
-+(void)resetContextInfo{
++(void)resetContextInfo {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults removeObjectForKey:@"ctx"];
     [defaults removeObjectForKey:@"ctxId"];
 }
 
-
++(NSString*)jsonToString:(NSObject *)obj{
+    return nil;
+}
 @end

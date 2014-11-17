@@ -8,11 +8,11 @@
 #import <UIKit/UIKit.h>
 #import <AddressBookUI/AddressBookUI.h>
 #import <MessageUI/MessageUI.h>
-@interface ReachMeAddressBookHandler : NSObject  <ABPeoplePickerNavigationControllerDelegate, MFMessageComposeViewControllerDelegate>
+@interface ReachMeAddressBookHandler : NSObject  
 @property (strong, nonatomic) ABPeoplePickerNavigationController *picker;
 @property (strong, nonatomic) NSString *dataToShare;
 @property (strong, nonatomic) UIViewController * parentView;
 
 +(ReachMeAddressBookHandler*)getInstance;
--(void)openAddressBook:(UIViewController*)vc dataToShare:(NSString*)data;
+-(void)openAddressBook:(UIViewController*)vc dataToShare:(NSDictionary*)data;
 @end

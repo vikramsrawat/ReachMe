@@ -13,7 +13,6 @@
 #import "STHTTPRequest.h"
 #import "Constants.h"
 #import "User.h"
-#import "JBWhatsAppActivity.h"
 #import "ReachMeShareUserInfoViewController.h"
 #import "ReachMeAddressBookHandler.h"
 @interface ReachMeUserInfoViewController ()
@@ -68,7 +67,8 @@
 -(void)smsAddress:(NSNotification*)notification{
     NSLog(@"send sms address");
     ReachMeAddressBookHandler *handler = [ReachMeAddressBookHandler getInstance];
-    [handler openAddressBook:self dataToShare:[User getInstance].address];
+    NSDictionary *address = [NSDictionary dictionaryWithObject:[User getInstance].address forKey:@"address"];
+    [handler openAddressBook:self dataToShare:address];
 }
 
 -(void)whatsAppAddress:(NSNotification*)notification{

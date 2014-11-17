@@ -9,7 +9,7 @@
 #import "Constants.h"
 
 @implementation Constants
-NSString *const actionSendSMS = @"sendSMS";
+NSString *const actionSendSMS = @"http://localhost/reachme/test.php?action=sendSMS";
 NSString *const whatsAppURL = @"whatsapp://send?text=";
 NSString *const FB = @"facebook";
 NSString *const GPLUS = @"google";

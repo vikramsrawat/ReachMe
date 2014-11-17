@@ -32,13 +32,11 @@
                                     <action selector="loginToGPlus:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="EFj-Fn-pHD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gli-sP-o4o" userLabel="fblogin">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gli-sP-o4o" userLabel="fblogin">
                                 <rect key="frame" x="56" y="194" width="209" height="44"/>
-                                <state key="normal" image="facebook-login-btn.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" image="facebook-login-btn.png"/>
                                 <connections>
-                                    <action selector="loginToFB:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7Bo-kt-PQN"/>
+                                    <action selector="loginToFB:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="TbE-OY-GNU"/>
                                 </connections>
                             </button>
                         </subviews>

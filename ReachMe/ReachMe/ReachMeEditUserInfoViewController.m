@@ -84,14 +84,14 @@
     [self putUser:userInfo];
 }
 
-- (void) cancelEdit{
+- (void) closeEdit{
 //    [self dismissViewControllerAnimated:YES completion:nil]; //if view is presented
     //if pushed
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void) setNavigationBarBtns{
-    UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelEdit)];
+    UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(closeEdit)];
 //    self.navItem.leftBarButtonItem = leftBtn; //if using this view's navitem
     self.navigationItem.leftBarButtonItem = leftBtn;
     UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveAddress)];
@@ -130,7 +130,7 @@
             [[User getInstance] saveUserInfo:dict];
         }
         [[Utils getAppDelegate] hideLoading];
-        [self cancelEdit];
+        [self closeEdit];
     };
     
     request.errorBlock=^(NSError *error) {

@@ -15,7 +15,6 @@
 @property (strong, nonatomic) ReachMeAppDelegate *appDelegate;
 - (IBAction)loginToFB:(id)sender;
 - (IBAction)loginToGPlus:(id)sender;
-@property (weak, nonatomic) IBOutlet UITextField *input_phone;
 
 -(void)processResponseAndShowUserInfo:(NSString*) data;
 @end

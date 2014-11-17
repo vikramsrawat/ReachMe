@@ -21,7 +21,7 @@
 @end
 
 @implementation ReachMeViewController
-@synthesize appDelegate, input_phone;
+@synthesize appDelegate;
 static NSString * const kClientId = @"130182801305-tei60s241j8u1nnqg2fqqi8jj7nfktii.apps.googleusercontent.com";
 - (void)viewDidLoad
 {
@@ -165,9 +165,10 @@ static NSString * const kClientId = @"130182801305-tei60s241j8u1nnqg2fqqi8jj7nfk
          }
          if (state == FBSessionStateClosed || state == FBSessionStateClosedLoginFailed){
              NSLog(@"Session closed");
+             [FBSession.activeSession closeAndClearTokenInformation];
              [[Utils getAppDelegate] hideLoading];
          }
-         
+    
          // Handle errors
          if (error){
              NSLog(@"Error");

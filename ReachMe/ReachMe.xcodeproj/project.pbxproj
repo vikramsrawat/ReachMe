@@ -41,7 +41,6 @@
 		B274544D19B8CF70003BDC07 /* ReachMeUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B274544C19B8CF70003BDC07 /* ReachMeUserInfoViewController.m */; };
 		B274545019B8D69D003BDC07 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = B274544F19B8D69D003BDC07 /* Utils.m */; };
 		B274545319B8EFFC003BDC07 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B274545219B8EFFC003BDC07 /* User.m */; };
-		B29D5D1C19E860C200299805 /* JBWhatsAppActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = B29D5D1A19E860C200299805 /* JBWhatsAppActivity.m */; };
 		B2ADB07319D876CC00D55A16 /* ReachMeConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2ADB07219D876CC00D55A16 /* ReachMeConnectionManager.m */; };
 		B2ADB07719DAF1F200D55A16 /* STHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B2ADB07619DAF1F200D55A16 /* STHTTPRequest.m */; };
 		B2C3150B1A0BFD68009AB40B /* addMore.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C314FF1A0BFD68009AB40B /* addMore.png */; };
@@ -121,9 +120,6 @@
 		B274544F19B8D69D003BDC07 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		B274545119B8EFFC003BDC07 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		B274545219B8EFFC003BDC07 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		B29D5D1919E860C200299805 /* JBWhatsAppActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBWhatsAppActivity.h; sourceTree = "<group>"; };
-		B29D5D1A19E860C200299805 /* JBWhatsAppActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBWhatsAppActivity.m; sourceTree = "<group>"; };
-		B29D5D1B19E860C200299805 /* whatsapp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whatsapp@2x.png"; sourceTree = "<group>"; };
 		B2ADB07119D876CC00D55A16 /* ReachMeConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachMeConnectionManager.h; sourceTree = "<group>"; };
 		B2ADB07219D876CC00D55A16 /* ReachMeConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachMeConnectionManager.m; sourceTree = "<group>"; };
 		B2ADB07519DAF1F200D55A16 /* STHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STHTTPRequest.h; sourceTree = "<group>"; };
@@ -183,7 +179,6 @@
 		B27453D719B8AEB4003BDC07 = {
 			isa = PBXGroup;
 			children = (
-				B29D5D1819E860C200299805 /* JBWhatsAppActivity */,
 				B2ADB07419DAF1F200D55A16 /* STHTTPRequest */,
 				B274542A19B8B66B003BDC07 /* MBProgressHUD */,
 				B274541819B8B049003BDC07 /* assets */,
@@ -317,16 +312,6 @@
 				B274542C19B8B66B003BDC07 /* MBProgressHUD.m */,
 			);
 			path = MBProgressHUD;
-			sourceTree = "<group>";
-		};
-		B29D5D1819E860C200299805 /* JBWhatsAppActivity */ = {
-			isa = PBXGroup;
-			children = (
-				B29D5D1919E860C200299805 /* JBWhatsAppActivity.h */,
-				B29D5D1A19E860C200299805 /* JBWhatsAppActivity.m */,
-				B29D5D1B19E860C200299805 /* whatsapp@2x.png */,
-			);
-			path = JBWhatsAppActivity;
 			sourceTree = "<group>";
 		};
 		B2ADB07419DAF1F200D55A16 /* STHTTPRequest */ = {
@@ -466,7 +451,6 @@
 				B27453F019B8AEB4003BDC07 /* main.m in Sources */,
 				B274545019B8D69D003BDC07 /* Utils.m in Sources */,
 				B274542D19B8B66B003BDC07 /* MBProgressHUD.m in Sources */,
-				B29D5D1C19E860C200299805 /* JBWhatsAppActivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

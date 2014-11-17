@@ -17,6 +17,6 @@
 
 - (void) saveAddress;
 - (void) setNavigationBarBtns;
-- (void) cancelEdit;
+- (void) closeEdit;
 + (ReachMeEditUserInfoViewController*) getInstance;
 @end
