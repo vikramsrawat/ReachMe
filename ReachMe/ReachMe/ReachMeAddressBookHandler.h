@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import <AddressBookUI/AddressBookUI.h>
 #import <MessageUI/MessageUI.h>
-@interface ReachMeAddressBookHandler : NSObject  
+@interface ReachMeAddressBookHandler : NSObject  <UIAlertViewDelegate>
 @property (strong, nonatomic) ABPeoplePickerNavigationController *picker;
 @property (strong, nonatomic) NSString *dataToShare;
 @property (strong, nonatomic) UIViewController * parentView;

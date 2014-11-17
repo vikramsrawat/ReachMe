@@ -94,7 +94,7 @@
             UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Sucess!" message:@"Message Successfully sent!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [alert show];
         }else {
-            [self sendSMSViaClient];
+            [self showSMSWarning];
         }
         [[Utils getAppDelegate] hideLoading];
     };
@@ -108,8 +108,13 @@
     
     [request startAsynchronous];
 }
--(void) sendSMSViaClient {
+-(void) showSMSWarning {
     //todo : inform user about charges
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning!" message:@"There was an error on the server. Would you like to send an SMS via carrier? Standard SMS rates will apply." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: @"OK", nil];
+    [alert show];
+}
+
+-(void)sendSMSViaClient{
     if(![MFMessageComposeViewController canSendText]) {
         UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Your device doesn't support SMS!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [warningAlert show];
@@ -127,6 +132,7 @@
     // Present message view controller on screen
     [self.parentView presentViewController:messageController animated:YES completion:nil];
 }
+
 #pragma MFMessageComposeViewControllerDelegate methods
 -(void) messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
     switch (result) {
@@ -135,7 +141,7 @@
             
         case MessageComposeResultFailed:
         {
-            UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Failed to send SMS! Please try again later" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Failed to send SMS. Please try again later!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [warningAlert show];
             break;
         }
@@ -150,4 +156,11 @@
     [self.parentView dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSLog(@"alert view btn index = %d", alertView.cancelButtonIndex);
+    NSLog(@"btn index = %d", buttonIndex);
+    if (buttonIndex == alertView.firstOtherButtonIndex) {
+        [self sendSMSViaClient];
+    }
+}
 @end
